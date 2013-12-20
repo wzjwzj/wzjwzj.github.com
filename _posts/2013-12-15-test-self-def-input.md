@@ -1,3 +1,4 @@
+---
 layout: post
 title: 测试自定义输入
 date: 2013-12-15 1:31
@@ -7,6 +8,8 @@ tags: Tag1 Tag2
 description: 测试
 any_key:
 categories: 杂类
+mathjx: on
+---
 
 [TOC]
 
