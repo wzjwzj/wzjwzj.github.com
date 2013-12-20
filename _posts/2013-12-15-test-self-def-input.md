@@ -1,4 +1,3 @@
----
 layout: post
 title: 测试自定义输入
 date: 2013-12-15 1:31
@@ -8,7 +7,6 @@ tags: Tag1 Tag2
 description: 测试
 any_key:
 categories: 杂类
----
 
 [TOC]
 
@@ -57,7 +55,6 @@ An [example](http://url.com/)
 
 ![alt text](/images/figures/bearlogo.jpg)
 
-
 1.  Foo
 2.  Bar
 
@@ -65,14 +62,17 @@ An [example](http://url.com/)
     With multiple paragraphs.
 *   Bar
 
+-----------
+    #!python
+    import this
+    print 'something'
+    print 'something'
+
+
 ```python
 import this
 print 'something'
 ```
--------
-
-`import this` helloworld
--------
 
 First Header | Second Header | Third Header
 ------------ | ------------- | ------------
