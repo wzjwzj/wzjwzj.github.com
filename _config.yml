@@ -92,6 +92,8 @@ JB :
   messages_path : /messages.html
   about_path : /about.html
   links_path : /links.html
+  lino_path :  /lino.html
+  slide_path : /slide.html
 
   # Settings for comments helper
   # Set 'provider' to the comment provider you want to use.
