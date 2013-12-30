@@ -11,15 +11,30 @@ categories: 杂类
 mathjx: on
 ---
 
+<a id="toc_menu" href="#toc">目录</a> 
+<script type="text/javascript">document.write("<div id='toc'>")</script>
 [TOC]
+<script type="text/javascript">document.write("</div>") </script>
+<script>
+$(document).ready(function() {
+    $('#toc_menu').sidr({
+      name: 'toc',
+      side: 'right'
+    });
+});
+</script>
 
 ## test math
 
-<script type="math/tex; mode=display">
-\left( \sum_{k=1}^n a_k b_k \right)^2  \\ \sqrt{3x-1}+(1+x)^2     
-</script>
 [mathjax tex example 在公式右键查看tex代码](http://www.mathjax.org/demos/tex-samples/)
+
+<script type="math/tex; mode=display">
+\left( \sum_{k=1}^n a_k b_k \right)^2  \\ \sqrt{3x-1}+(1+x)^2     
+</script>
+
+
 [MathJax TeX and LaTeX Support](http://docs.mathjax.org/en/latest/tex.html)
+
 <script type="math/tex; mode=display">
      \begin{aligned}
      \nabla \times \vec{\mathbf{B}} -\, \frac1c\, \frac{\partial\vec{\mathbf{E}}}{\partial t} & = \frac{4\pi}{c}\vec{\mathbf{j}}   \\\
@@ -32,8 +47,7 @@ mathjx: on
 <script type="math/tex; mode=display">
 \left( \sum_{k=1}^n a_k b_k \right)^2  \\ \sqrt{3x-1}+(1+x)^2     
 </script>
-[mathjax tex example](http://www.mathjax.org/demos/tex-samples/)
-[MathJax TeX and LaTeX Support](http://docs.mathjax.org/en/latest/tex.html)
+
 <script type="math/tex; mode=display">
      \begin{aligned}
      \nabla \times \vec{\mathbf{B}} -\, \frac1c\, \frac{\partial\vec{\mathbf{E}}}{\partial t} & = \frac{4\pi}{c}\vec{\mathbf{j}}   \\\
@@ -44,30 +58,28 @@ mathjx: on
 </script>
 
 
-## 二级
-## 三级
-### 四级四级四级四级四级四级四级四级四级四级四级四级
-#### 五级
-##### 六级
 
 *文本*   **文本**
 _文本_   __文本__
 
-An [example](http://url.com/)
-<http://url.com>
+## test links
+
+An [google](http://www.google.de)
+<http://www.google.de>
 <wzjwzj@mail.ustc.edu.cn>
 
 ## test figure
 
-![alt text](/images/figures/bearlogo.jpg)
+![bear](/images/figures/bearlogo.jpg)
 
+
+### test figure half
 <figure class="half">
 	<img src="/images/figures/bearlogo.jpg">
 	<img src="/images/figures/bearlogo.jpg">
 	<figcaption>Caption describing these two images.</figcaption>
 </figure>
-
-
+### test figure three
 <figure class="third">
 	<a href="/images/figures/bearlogo.jpg"><img src="/images/figures/bearlogo.jpg"></a>
 	<a href="/images/figures/bearlogo.jpg"><img src="/images/figures/bearlogo.jpg"></a>
@@ -75,21 +87,25 @@ An [example](http://url.com/)
 	<figcaption>Caption describing these three images.</figcaption>
 </figure>
 
-
+## test list
+### test list 1
 1.  Foo
 2.  Bar
 
+### test list 2
 *   A list item.
     With multiple paragraphs.
 *   Bar
 
 -----------
+## test highlight
+### test highlight 1
     #!python
     import this
     print 'something'
     print 'something'
 
-
+### test highlight 2
 ```python
 import this
 print 'something'
@@ -100,11 +116,12 @@ print 'something'
 <iframe width="420" height="315" src="//www.youtube.com/embed/y0ZjGvez83g" frameborder="0" allowfullscreen></iframe>
 </div>
 
+## test table
+
 First Header | Second Header | Third Header
 ------------ | ------------- | ------------
 Content Cell | Content Cell  | Content Cell
 Content Cell | Content Cell  | Content Cell
-
 
 This is emphatically [^1]
 Something else [^key2].
