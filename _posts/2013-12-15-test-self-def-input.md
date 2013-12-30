@@ -13,6 +13,8 @@ mathjx: on
 
 [TOC]
 
+## test math
+
 <script type="math/tex; mode=display">
 \left( \sum_{k=1}^n a_k b_k \right)^2  \\ \sqrt{3x-1}+(1+x)^2     
 </script>
@@ -56,7 +58,24 @@ An [example](http://url.com/)
 <http://url.com>
 <wzjwzj@mail.ustc.edu.cn>
 
+## test figure
+
 ![alt text](/images/figures/bearlogo.jpg)
+
+<figure class="half">
+	<img src="/images/figures/bearlogo.jpg">
+	<img src="/images/figures/bearlogo.jpg">
+	<figcaption>Caption describing these two images.</figcaption>
+</figure>
+
+
+<figure class="third">
+	<a href="/images/figures/bearlogo.jpg"><img src="/images/figures/bearlogo.jpg"></a>
+	<a href="/images/figures/bearlogo.jpg"><img src="/images/figures/bearlogo.jpg"></a>
+	<a href="/images/figures/bearlogo.jpg"><img src="/images/figures/bearlogo.jpg"></a>
+	<figcaption>Caption describing these three images.</figcaption>
+</figure>
+
 
 1.  Foo
 2.  Bar
@@ -76,6 +95,11 @@ An [example](http://url.com/)
 import this
 print 'something'
 ```
+
+## test video
+<div style="text-align:center">
+<iframe width="420" height="315" src="//www.youtube.com/embed/y0ZjGvez83g" frameborder="0" allowfullscreen></iframe>
+</div>
 
 First Header | Second Header | Third Header
 ------------ | ------------- | ------------
