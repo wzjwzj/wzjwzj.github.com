@@ -10,19 +10,9 @@ any_key:
 categories: 杂类
 mathjx: on
 ---
-
-<a id="toc_menu" href="#toc">目录</a> 
 <script type="text/javascript">document.write("<div id='toc'>")</script>
 [TOC]
 <script type="text/javascript">document.write("</div>") </script>
-<script>
-$(document).ready(function() {
-    $('#toc_menu').sidr({
-      name: 'toc',
-      side: 'right'
-    });
-});
-</script>
 
 ## test math
 
