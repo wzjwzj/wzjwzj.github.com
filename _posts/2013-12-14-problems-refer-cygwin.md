@@ -11,8 +11,8 @@ categories: 杂类
 ---
 
 ##jekyll in cygwin :
-*   *Generating...   Liquid Exception: No such file or directory - C:\Windows\s ystem32\cmd.exe in _posts/……*
+*   *Generating...   Liquid Exception: No such file or directory - C:\Windows\s ystem32\cmd.exe in _posts/……*    
      **export COMSPEC=/cygdrive/c/Windows/System32/cmd.exe**
    
-*   *Generating... which: no python2 in (/usr/local/GMT/bin:/usr/local/bin:……*
+*   *Generating... which: no python2 in (/usr/local/GMT/bin:/usr/local/bin:……*     
      **cp python2.7.exe python2.exe**
