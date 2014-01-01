@@ -78,7 +78,7 @@
 	  </li>
 	  
           <li{% if page.url == site.JB.about_path %} class="active"{% endif %}>
-            <a href="{{ site.JB.about_path }}" rel="nofollow" title="关于">关于</a>
+            <a href="{{ site.JB.about_path }}" rel="nofollow" title="关于我">关于我</a>
 	  </li>
 
           <li>

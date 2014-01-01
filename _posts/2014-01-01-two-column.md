@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "two column"
+title: "简单两栏布局-左边固定，右边自适应"
 keywords: [""]
 description: ""
 category: ""
@@ -8,10 +8,12 @@ tags: [""]
 ---
 {% include JB/setup %}
 
+[http://hi.baidu.com/tabooc/item/526b7c4fcf53eeec1e19bcb6](http://hi.baidu.com/tabooc/item/526b7c4fcf53eeec1e19bcb6)
+
 ```html
 <html>
     <head>
-      <title>试验场</title>
+      <title>两列布局</title>
       <style type="text/css">
         .layout {  padding-left: 200px;}
         .left   {  background-color:orange;float:right;
@@ -22,18 +24,8 @@ tags: [""]
     
     <body>
        <div class="layout">
-           <div class="right">  
-                右边右边右边右边右边右边右边右边右边右边右边右边右边右边右边右边右边
-                右边右边右边右边右边右边右边右边右边右边右边右边右边右边右边右边右边
-                右边右边右边右边右边右边右边右边右边右边右边右边右边右边右边右边右边
-                右边右边右边右边右边右边右边右边右边
-           </div>
-           <div class="left">
-                左边左边左边左边左边左边左边左边左边左边左边左边左边左边左边左边左边
-                左边左边左边左边左边左边左边左边左边左边左边左边左边左边左边左边左边
-                左边左边左边左边左边左边左边左边左边左边左边左边左边左边左边左边左边
-                左边左边
-           </div>
+           <div class="right">  右边  </div>
+           <div class="left">   左边  </div>
        </div>
     </body>
 </html>
