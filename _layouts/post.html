@@ -3,3 +3,11 @@ layout: default
 ---
 {% include JB/setup %}
 {% include themes/twitter/post.html %}
+
+<script>
+$('#toc_wraper').show();
+$('.toc').toc({
+    'selectors': 'h2,h3', 
+    'container': 'article',
+   });
+</script>

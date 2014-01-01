@@ -10,8 +10,6 @@ any_key:
 categories: 杂类
 ---
 
-[TOC]
-
 ##用dropbox虚拟github建立私有仓库[^1]
 虽然鸡肋，但也有点意思，记录下来。
 考察一般github仓库托管地址  `https://github.com/[usrname]/[repository].git`

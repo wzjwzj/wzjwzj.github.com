@@ -10,9 +10,6 @@ any_key:
 categories: 杂类
 mathjx: on
 ---
-<script type="text/javascript">document.write("<div id='toc'>")</script>
-[TOC]
-<script type="text/javascript">document.write("</div>") </script>
 
 ## test math
 
@@ -116,6 +113,12 @@ Content Cell | Content Cell  | Content Cell
 This is emphatically [^1]
 Something else [^key2].
 EOF
+
+## 二级标题
+### 三级标题
+#### 四级标题
+##### 五级标题
+###### 六级标题
 
 [^1]: emphatically: 坚决地，着重地，强调地（~ deny 坚决否定）
 [^key2]: key2的注释

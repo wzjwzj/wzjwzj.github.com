@@ -10,8 +10,6 @@ any_key:
 categories: GIT
 ---
 
-[TOC]
-
 ## GIT workflow
 ![alt My Git Workflow](/images/figures/git-transport.png)
 

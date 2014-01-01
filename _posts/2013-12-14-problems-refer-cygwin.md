@@ -10,8 +10,6 @@ any_key:
 categories: 杂类
 ---
 
-[TOC]
-
 ##jekyll in cygwin :
 *   *Generating...   Liquid Exception: No such file or directory - C:\Windows\s ystem32\cmd.exe in _posts/……*
      **export COMSPEC=/cygdrive/c/Windows/System32/cmd.exe**
