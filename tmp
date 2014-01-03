@@ -100,24 +100,25 @@
       <!-- Sidebar -->
       
       <aside id="sidebar" style="position:relative">
-        <!-- search box-->
         <section id="search-box">
-            {% include widgets/search_box %}
+          {% include widgets/search_box %}
         </section>
+
+	<div id="here_insert_toc"></div>
 	
-	<!--toc-->
-	{% if page.toc %}
-	<section id="toc_wraper" style="width:250px; background-color: #e6e6e6; margin:auto 10px; z-index:99999;" >
-	   <a href="#"><i class="icon-fixed-width icon-list"></i> 目录 </a>
-	   <div class="toc"></div>
-	</section>
-	{% endif %}
-	
-	<!--widget default include -->
-	{% if page.widget == null or page.widget %}
-	   {% include widgets/fixed_container %}
-	{% endif %}
-	
+	<div id="switch">
+        <section{% if page.date or page.title == '存档' or page.title == site.title %} class="active"{% endif %}>
+          {% include widgets/recent_posts_list %}
+        </section>
+        <section{% if page.title == '分类' %} class="active"{% endif %}>
+          {% include widgets/categories_list %}
+        </section>
+        <section{% if page.title == '标签' %} class="active"{% endif %}>
+          {% include widgets/tag_cloud %}
+        </section>
+          {% include widgets/fixed_container %}
+	</div>
+
       </aside>
 
       <!-- Main Content -->

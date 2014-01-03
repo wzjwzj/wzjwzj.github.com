@@ -8,7 +8,8 @@ tags: Tag1 Tag2
 description: 测试
 any_key:
 categories: 杂类
-mathjx: on
+toc: true
+widget: false
 ---
 
 ## test math

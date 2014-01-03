@@ -1,3 +1,34 @@
-<a href="#"><i class="icon-fixed-width icon-list"></i> 目录 </a>
-<div class="toc">
-</div>
+{% if page.toc %}
+<script type="text/javascript">
+$(document).ready(function(){
+   $('.toc').toc({
+        'selectors': 'h2,h3', 
+        'container': 'article',
+   });
+   
+   var position = $('#toc_wraper').offset();
+   $(window).scroll(function() {
+    if($(window).scrollTop() > position.top ) {
+      var h= document.getElementById('toc_wraper').offsetHeight ;
+      if( window.innerHeight - 58 < h ) {
+         var v = window.innerHeight - 58 - h ;
+         $('#toc_wraper').css('position','fixed').css('top',v);
+       } else {
+         $('#toc_wraper').css('position','fixed').css('top','0');
+       }
+     } else {
+       $('#toc_wraper').css('position','static');
+     }
+   });
+
+   if(matchMedia) {
+     var mq = matchMedia('(max-width: 999px)');
+     mq.addListener(function(mql) {
+       if (!mql.matches) {
+         position = $('#toc_wraper').offset();
+       }
+     });
+   }
+});
+</script>
+{% endif %}
