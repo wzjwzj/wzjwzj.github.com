@@ -15,6 +15,6 @@ tags : [intro, beginner, jekyll, tutorial,car,mode,fashion,jekyll,cygwin,matlab,
 2013年12月?日   添加标签墙    
 2013年12月?日   添加slide     
 2013年12月?日   添加虾米音乐    
-2014年12月?日   添加目录(toc.js)  
-2014年12月?日   修改侧边栏滚动
+2013年12月?日   添加目录(toc.js)  
+2013年12月?日   修改侧边栏滚动
 
