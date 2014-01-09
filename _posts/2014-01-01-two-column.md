@@ -2,7 +2,7 @@
 layout: post
 title: "简单两栏布局-左边固定，右边自适应"
 keywords: [""]
-description: ""
+description: "一个简单的两栏布局例子"
 category: ""
 tags: [""]
 ---

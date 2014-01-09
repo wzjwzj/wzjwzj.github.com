@@ -11,10 +11,10 @@ categories: 杂类
 ---
 
 ##用dropbox虚拟github建立私有仓库[^1]
-虽然鸡肋，但也有点意思，记录下来。
-考察一般github仓库托管地址  `https://github.com/[usrname]/[repository].git`
-不失一般性为此在dropbox某文件夹下建立仓库，作为remote端    
- `[~/dropbox/aplication/github.com]/[usrname]/[repository].git`  
+虽然鸡肋，但也有点意思，记录下来。   
+考察一般github仓库托管地址  `https://github.com/[usrname]/[repository].git`   
+不失一般性为此在dropbox某文件夹下建立仓库，作为remote端       
+ `[~/dropbox/aplication/github.com]/[usrname]/[repository].git`     
 本地建立仓库目录:    
 `${client}/[github.com]/[repository]`
 
