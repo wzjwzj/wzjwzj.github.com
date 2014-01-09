@@ -7,7 +7,7 @@ url:
 tags: dropbox github
 description: 
 any_key:
-categories: 杂类
+category: dropbox
 ---
 
 ##用dropbox虚拟github建立私有仓库[^1]

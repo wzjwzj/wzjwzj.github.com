@@ -7,7 +7,7 @@ url:
 tags: cygwin
 description:
 any_key:
-categories: 杂类
+category: cygwin
 ---
 
 ##jekyll in cygwin :

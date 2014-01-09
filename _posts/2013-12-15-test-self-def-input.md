@@ -7,7 +7,7 @@ url:
 tags: Tag1 Tag2
 description: 测试
 any_key:
-categories: 杂类
+category:
 toc: true
 widget: false
 ---

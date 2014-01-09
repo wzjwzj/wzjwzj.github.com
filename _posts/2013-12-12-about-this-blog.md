@@ -7,7 +7,7 @@ url:
 tags: FarBox Dropbo
 description: "搭建过程简单记录"
 Any_key:
-categories: 杂类
+category:
 tags : [intro, beginner, jekyll, tutorial,car,mode,fashion,jekyll,cygwin,matlab,c++,python,ruby,git,github,cygwin,cat,pig,dog,fish,flower,tree]
 ---
 

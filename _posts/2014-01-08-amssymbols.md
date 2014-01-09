@@ -3,7 +3,7 @@ layout: post
 title: "AMSsymbols"
 keywords: [""]
 description: "AMS symbols list"
-category: ""
+category: info
 tags: [""]
 ---
 {% include JB/setup %}

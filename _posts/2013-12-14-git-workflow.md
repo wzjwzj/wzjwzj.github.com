@@ -7,7 +7,7 @@ url:
 tags: git
 description: 
 any_key:
-categories: GIT
+category: GIT
 ---
 
 ## GIT workflow
