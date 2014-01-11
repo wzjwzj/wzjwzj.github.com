@@ -10,6 +10,10 @@ comments: false
 ##娱乐
 
 * [德国电视节目预告](http://www.tvmovie.de/)
+* [Karte_der_regionalen_Rundfunkanstalten](/images/figures/Karte_der_regionalen_Rundfunkanstalten_der_ARD.svg)
+    * [ZDF mediathek](http://www.zdf.de/ZDFmediathek)
+    * [ARD mediathek](http://www.ardmediathek.de/)
+    * [WDR: quarks&co](http://www1.wdr.de/mediathek/video/sendungen/quarks_und_co/index.html)
 
 ----
 ##学习
