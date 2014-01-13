@@ -10,7 +10,9 @@ widget:
 ---
 {% include JB/setup %}
 
-Haskell cabal ghc, copy from [https://gist.github.com/Dexyne/5791465](https://gist.github.com/Dexyne/5791465)
+Install Haskell (haskell-plateform-2013.2.0.0 + GHC 7.6.3) on Ubuntu
 
-{% gist 5791465 %}
+see [gist Dexyne/5791465](https://gist.github.com/Dexyne/5791465)
+
+{% gist 5791465  %}
 
