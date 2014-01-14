@@ -1,5 +1,18 @@
+<center> 
+  <form method=get action="http://www.google.com/search"> 
+    <table  style="border:none"><tr style="background-color: transparent;"><td style="border:none"> 
+      <img src="{{ ASSET_PATH }}/img/google_search.png" border="0" alt="Google" align="absmiddle" style="padding-bottom:20px" /> 
+      <input type=text name=q placeholder="站外谷歌搜索"  style="width:132px; height: 19px;padding:4px 14px; font-size: 13px;">  
+      <input type=hidden name=ie value=UTF-8 /> 
+      <input type=hidden name=oe value=UTF-8 /> 
+      <input type=hidden name=hl value=zh-CN /> 
+      <button type="submit" name="btnG" style="width:50px; margin-left: 3px;"><i class="icon-search"></i></button>
+    </td></tr></table> 
+  </form> 
+</center>
+
 <form id="search-form">
-  <input id="query" type="text" placeholder="正则搜索"></input>
+  <input id="query" type="text" placeholder="站内正则搜索"></input>
   <button type="submit"><i class="icon-search"></i></button>
 </form>
 <script type="text/javascript">
@@ -73,6 +86,9 @@ $(document).ready(function() {
       html += '<section><p>' + htmlEscape(match.content) + '</p></section>';
       html += '<footer><p>更新日期：' + match.date + '</p></footer>';
       html += '</article>';
+    }
+    if ( html == '' ) { 
+	html+= '<section id="content"><article class="page"><header><h1>sorry, no search result match</h1></header><section><p><img style="border:none" src="/assets/themes//twitter/img/404.png" alt="no result match"></p></section></article></section>';
     }
     $('#main-content').html(html);
     $('#loader').hide();
