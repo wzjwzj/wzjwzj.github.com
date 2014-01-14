@@ -14,6 +14,8 @@ widget:  true
 
 [colorpix](http://www.colorschemer.com/colorpix_info.php)
 
+<!--end_excerpt-->
+
 ## 截图
 功能非常强大，截图，屏幕测量，等等，非常实用。
 
@@ -26,4 +28,3 @@ widget:  true
 
 To Be Continued
 
-<!--end_excerpt-->
