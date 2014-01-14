@@ -59,3 +59,26 @@ figure{padding-top:10px;padding-bottom:10px;margin:0;*zoom:1}figure:before,figur
 .gist th{text-align:left;}
 .gist td{text-align:left;}
 
+.social {
+	-webkit-border-radius:50%;
+	-moz-border-radius:50%;
+	-ms-border-radius:50%;
+	-o-border-radius:50%;
+	border-radius:50%;
+	display:-moz-inline-stack;
+	display:inline-block;
+	vertical-align:middle;
+	zoom:1;
+	text-indent:-9999px;
+	opacity:0.5;
+	width:32px;
+	height:32px;
+	-webkit-transition:0.3s;
+	-moz-transition:0.3s;
+	-o-transition:0.3s;
+	transition:0.3s;
+        background-repeat: no-repeat;
+        background-color: #3b5998; 
+	border: 1px solid #3b5998;
+	margin:0px 2.5px;
+}
