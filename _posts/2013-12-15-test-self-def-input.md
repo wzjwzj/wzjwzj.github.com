@@ -1,13 +1,8 @@
 ---
 layout: post
 title: 测试自定义输入
-date: 2013-12-15 1:31
-status: public
-url:
-tags: Tag1 Tag2
-description: 测试
-any_key:
-category:
+category: uncategorized
+tags: test
 toc: true
 widget: false
 ---
@@ -20,6 +15,7 @@ widget: false
 \left( \sum_{k=1}^n a_k b_k \right)^2  \\ \sqrt{3x-1}+(1+x)^2     
 </script>
 
+<!--end_excerpt-->
 
 [MathJax TeX and LaTeX Support](http://docs.mathjax.org/en/latest/tex.html)
 

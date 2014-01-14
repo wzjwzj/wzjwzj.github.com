@@ -1,13 +1,9 @@
 ---
 layout: post
 title: "AMSsymbols"
-keywords: [""]
-description: "AMS symbols list"
 category: info
-tags: [""]
+tags: AMS symbols mathjax latex tex
 ---
-{% include JB/setup %}
-
 
  $\quad$                |          $\quad$       |          $\quad$       |               $\quad$  |      $\quad$           |     $\quad$               
 :-----------------------|------------------------|:-----------------------|------------------------|:-----------------------|------------------------
@@ -18,7 +14,7 @@ tags: [""]
  \\blacksquare          |         $\blacksquare$ | \\blacktriangle        |       $\blacktriangle$ | \\blacktriangledown    |   $\blacktriangledown$ 
  \\blacktriangleleft    |   $\blacktriangleleft$ | \\blacktriangleright   |  $\blacktriangleright$ | \\Box                  |                 $\Box$
  \\boxdot               |              $\boxdot$ | \\boxminus             |            $\boxminus$ | \\boxplus              |             $\boxplus$
- \\boxtimes             |            $\boxtimes$ | \\Bumpeq               |              $\Bumpeq$ | \\bumpeq               |              $\bumpeq$ 
+ \\boxtimes             |            $\boxtimes$ | \\Bumpeq               |              $\Bumpeq$ | \\bumpeq               |              $\bumpeq$  <!--end_excerpt--> 
  \\Cap                  |                 $\Cap$ | \\centerdot            |           $\centerdot$ | \\checkmark            |           $\checkmark$ 
  \\circeq               |              $\circeq$ | \\circlearrowleft      |     $\circlearrowleft$ | \\circlearrowright     |    $\circlearrowright$ 
  \\circledast           |          $\circledast$ | \\circledcirc          |         $\circledcirc$ | \\circleddash          |         $\circleddash$ 

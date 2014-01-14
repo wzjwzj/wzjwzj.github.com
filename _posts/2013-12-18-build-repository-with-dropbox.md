@@ -1,13 +1,8 @@
 ---
 layout: post
 title: 用dropbox虚拟github建立私有仓库
-date: 2013-12-18 22:48
-status: public
-url:
-tags: dropbox github
-description: 
-any_key:
 category: dropbox
+tags: dropbox github
 ---
 
 ##用dropbox虚拟github建立私有仓库[^1]
@@ -17,6 +12,8 @@ category: dropbox
  `[~/dropbox/aplication/github.com]/[usrname]/[repository].git`     
 本地建立仓库目录:    
 `${client}/[github.com]/[repository]`
+
+<!--end_excerpt-->
 
 ##代码示例
     #!/usr/bin/sh

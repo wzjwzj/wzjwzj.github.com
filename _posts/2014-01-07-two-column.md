@@ -1,14 +1,13 @@
 ---
 layout: post
 title: "简单两栏布局-左边固定，右边自适应"
-keywords: [""]
-description: "一个简单的两栏布局例子"
-category: code
-tags: [""]
+category: programming
+tags: html code
 ---
-{% include JB/setup %}
 
 [http://hi.baidu.com/tabooc/item/526b7c4fcf53eeec1e19bcb6](http://hi.baidu.com/tabooc/item/526b7c4fcf53eeec1e19bcb6)
+
+<!--end_excerpt-->
 
 ```html
 <html>

@@ -17,12 +17,7 @@ description: "分享折腾的点点滴滴"
 
     <section>
         <!--p>{ { post.content | strip_html | truncate:300 } }</p-->
-	<!--p>{ { post.excerpt } }</p-->
-	{% if post.description %}
-	   <p>{{ post.description }}</p>
-	{% else  %}
-	   <P>{{ post.excerpt }}</p>
-	{% endif %}
+	<p>{{ post.excerpt }}</p>
       <a class="button-link" href="{{ post.url }}" rel="nofollow" title="查看全文">read more</a>
     </section>
 

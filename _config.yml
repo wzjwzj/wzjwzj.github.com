@@ -3,6 +3,8 @@
 #permalink: /post/:title.html
 permalink: /blog/:year/:month/:day/:title
 githubEditBaseURL: https://github.com/wzjwzj/wzjwzj.github.com/edit/master/
+excerpt_separator: "<!--end_excerpt-->"
+encoding: "UTF-8"
 
 safe: false
 exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md"]

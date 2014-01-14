@@ -1,13 +1,8 @@
 ---
 layout: post
 title: cygwin下个人使用过程中所遇问题汇总
-date: 2013-12-14 10:28
-status: public
-url:
-tags: cygwin
-description:
-any_key:
-category: cygwin
+category: info
+tags: cygwin error info
 ---
 
 ##jekyll in cygwin :
@@ -16,3 +11,5 @@ category: cygwin
    
 *   *Generating... which: no python2 in (/usr/local/GMT/bin:/usr/local/bin:……*     
      **cp python2.7.exe python2.exe**
+
+<!--end_excerpt-->
