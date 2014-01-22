@@ -58,6 +58,20 @@ An [google](http://www.google.de)
 
 
 ### test figure half
+<figure class="one">
+	<img src="/images/figures/bearlogo.jpg">
+	<figcaption>Caption describing this image.</figcaption>
+</figure>
+
+<figure class="half">
+	<img src="/images/figures/bearlogo.jpg">
+	<figcaption>Caption describing this image.</figcaption>
+</figure>
+<figure class="third">
+	<img src="/images/figures/bearlogo.jpg">
+	<figcaption>Caption describing this image.</figcaption>
+</figure>
+
 <figure class="half">
 	<img src="/images/figures/bearlogo.jpg">
 	<img src="/images/figures/bearlogo.jpg">
