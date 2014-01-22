@@ -1,23 +1,32 @@
-{% if page.toc %}
 <script type="text/javascript">
 $(document).ready(function(){
+{% if page.toc %}
+   var f= $('#toc_wraper') ;
+   f.show();
    $('.toc').toc({
         'selectors': 'h2,h3', 
         'container': 'article',
    });
-   
-   var position = $('#toc_wraper').offset();
+{% else %}
+   var f= $('#fixed-container') ;
+{% endif %}
+
+   f.css({ 'background-color':'#e6e6e6',
+	   'width':'261px',
+	   'z-index':'99999'});
+
+   var position = f.offset();
    $(window).scroll(function() {
     if($(window).scrollTop() > position.top ) {
-      var h= document.getElementById('toc_wraper').offsetHeight ;
+      var h= f.height();
       if( window.innerHeight - 58 < h ) {
          var v = window.innerHeight - 58 - h ;
-         $('#toc_wraper').css('position','fixed').css('top',v);
+         f.css('position','fixed').css('top',v);
        } else {
-         $('#toc_wraper').css('position','fixed').css('top','0');
+         f.css('position','fixed').css('top','0');
        }
      } else {
-       $('#toc_wraper').css('position','static');
+       f.css('position','static');
      }
    });
 
@@ -25,10 +34,9 @@ $(document).ready(function(){
      var mq = matchMedia('(max-width: 999px)');
      mq.addListener(function(mql) {
        if (!mql.matches) {
-         position = $('#toc_wraper').offset();
+         position = f.offset();
        }
      });
    }
 });
 </script>
-{% endif %}

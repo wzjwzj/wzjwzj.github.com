@@ -90,3 +90,36 @@ description: "分享折腾的点点滴滴"
     {% endif %}
   </ul>
 </section>
+
+<script type="text/javascript">
+$(document).ready(function(){
+   var f= $('#fixed-container') ;
+   f.css({ 'background-color':'#e6e6e6',
+	   'width':'261px',
+	   'z-index':'99999'});
+   var position = f.offset();
+   $(window).scroll(function() {
+    if($(window).scrollTop() > position.top ) {
+      //var h= f.offsetHeight ;
+      var h= document.getElementById('fixed-container').offsetHeight ;
+      if( window.innerHeight - 58 < h ) {
+         var v = window.innerHeight - 58 - h ;
+         f.css('position','fixed').css('top',v);
+       } else {
+         f.css('position','fixed').css('top','0');
+       }
+     } else {
+       f.css('position','static');
+     }
+   });
+
+   if(matchMedia) {
+     var mq = matchMedia('(max-width: 999px)');
+     mq.addListener(function(mql) {
+       if (!mql.matches) {
+         position = f.offset();
+       }
+     });
+   }
+});
+</script>

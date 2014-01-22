@@ -1,45 +1,12 @@
-<div id="fixed-container">
-  <section{% if page.date or page.title == '存档' or page.title == site.title %} class="active"{% endif %}>
-       {% include widgets/recent_posts_list %}
-  </section>
-  <section{% if page.title == '分类' %} class="active"{% endif %}>
-       {% include widgets/categories_list %}
-  </section>
-  <section{% if page.title == '标签' %} class="active"{% endif %}>
-        {% include widgets/tag_cloud %}
-  </section>
-  <section>
-    {% include widgets/repos_list %}
-  </section>
-  <section>
-    <div id="xiami" style="padding:10px">{% include widgets/xiami %}</div>
-  </section>
-  <div style="position: relative; background-color: #e6e6e6;top: -49px;margin:auto 5px">
-     <section>{% include widgets/contacts_list %}</section>
-     <section>{% include widgets/links_list    %}</section>
-  </div>
-</div>
 
-<!--
-<script type="text/javascript">
-$(document).ready(function() {
-  var position = $('#toc_wraper').offset();
-  $(window).scroll(function() {
-    if($(window).scrollTop() > position.top) {
-      $('#toc_wraper').css('position','fixed').css('top','0');
-    } else {
-      $('#toc_wraper').css('position','static');
-    }
-  });
-  if(matchMedia) {
-    var mq = matchMedia('(max-width: 999px)');
-    mq.addListener(function(mql) {
-      if (!mql.matches) {
-        position = $('#toc_wraper').offset();
-      }
-    });
-  }
-});
-</script>
--->
+  <section {% if page.date or page.title == '存档' or page.title == site.title %} class="active"{% endif %}>{% include widgets/recent_posts_list %}</section>
+  <section {% if page.title == '分类' %} class="active"{% endif %}>{% include widgets/categories_list %}</section>
+  <section {% if page.title == '标签' %} class="active"{% endif %}>{% include widgets/tag_cloud %}</section>
+  <section id="xiami" style="padding-top:10px; height:275px; overflow-y:hidden;">{% include widgets/xiami %}</section>
+
+<div id="fixed-container">
+  <section id="rlist">{% include widgets/repos_list %}</section>
+  <section id="llist">{% include widgets/links_list %}</section>
+  <section id="clist">{% include widgets/contacts_list %}</section>
+</div>
 
