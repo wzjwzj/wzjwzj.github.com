@@ -17,11 +17,18 @@ galleries :
     viewer : AutoViewer       
 ---
 
+<style>
+.gb{	
+ display: inline-block;
+ margin: 8px;
+ box-shadow: 2px 2px 12px #787878;
+}
+</style>
 <!-- auto view replace-->
 <script type="text/javascript">
-    var w = $("#main-content").width()*0.45;
-    var h = w ;
-    var tv = new SWFObject("/gallery/TiltViewer.swf", "{{ gallery.dir }}_TiltViewer", w, h, "8", "#FFFFFF");
+    var w = ($("#main-content").width()-8*4)*0.5;
+    var h = w*3/4 ;
+    var tv = new SWFObject("/gallery/TiltViewer.swf", "{{ gallery.dir }}_TiltViewer", "100%", "100%", "8", "#FFFFFF");
     tv.addVariable("useFlickr", "false");
     tv.addVariable("maxJPGSize","640");
     tv.addVariable("useReloadButton", "false");
@@ -35,19 +42,23 @@ galleries :
     tv.addVariable("bkgndOuterColor", "0xFFFFFF");
     tv.addParam("allowFullScreen","true");
 
-    var pv  = new FlashObject("/gallery/PostcardViewer.swf", "{{ gallery.dir }}_PostcardViewer", w, h, "8", "#FFFFFF");
+    var pv  = new FlashObject("/gallery/PostcardViewer.swf", "{{ gallery.dir }}_PostcardViewer", "100%", "100%", "8", "#FFFFFF");
     //pv.addVariable("langOpenImage", "Open Image in New Window");
     //pv.addVariable("langAbout", "About");
-
-    var av = new SWFObject("/gallery/AutoViewer.swf", "{{ gallery.dir }}_AutoViewer",w, h, "8", "#FFFFFF");
+    pv.addParam("allowFullScreen","true");
+    
+    var av = new SWFObject("/gallery/AutoViewer.swf", "{{ gallery.dir }}_AutoViewer","100%", "100%", "8", "#FFFFFF");
     //av.addVariable("langOpenImage", "Open Image in New Window");
     //av.addVariable("langAbout", "About");
+    av.addParam("allowFullScreen","true");
 
     var viewer = "{{ page.viewer }}" ;
     {% for gallery in page.galleries %}
         viewer = "{{ gallery.viewer }}" ;  
-        $("#main-content").append( "<div  style='display:inline-block' id='{{ gallery.dir }}'>Viewer requires JavaScript and the latest Flash Player.<a href='http://www.macromedia.com/go/getflashplayer/'>Get Flash here.</a></div>" );
+        //$("#main-content").append( "<div  style='display:inline-block' id='{{ gallery.dir }}'>Viewer requires JavaScript and the latest Flash Player.<a href='http://www.macromedia.com/go/getflashplayer/'>Get Flash here.</a></div>" );
+        $("#main-content").append( "<div  class='gb' style='width:"+w+"px; height:"+h+"px' id='{{ gallery.dir }}'>Viewer requires JavaScript and the latest Flash Player.<a href='http://www.macromedia.com/go/getflashplayer/'>Get Flash here.</a></div>" );
 	if( viewer == "TiltViewer" ){
+
 	    tv.addVariable("xmlURL", "/gallery/{{ gallery.dir }}/gallery.xml" );
 	    tv.write("{{ gallery.dir }}");
 	}else if( viewer == "PostcardViewer" ){
