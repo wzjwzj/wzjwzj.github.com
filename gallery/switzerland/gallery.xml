@@ -1,0 +1,35 @@
+---
+layout : gallery_xml
+galleries :
+  - name : 瑞士
+    dir  : switzerland/
+    discription :  和小伙伴们去瑞士旅游照片
+    files:       
+      - IMG_092020.jpg
+      - IMG_133256.jpg
+      - IMG_140629.jpg
+      - IMG_160326.jpg
+      - IMG_6993.jpg
+      - IMG_6999.jpg
+      - IMG_7013.jpg
+      - IMG_7030.jpg
+      - IMG_7033.jpg
+      - IMG_7043.jpg
+      - IMG_7050.jpg
+      - IMG_7051.jpg
+      - IMG_7089.jpg
+      - IMG_7117.jpg
+      - IMG_7199.jpg
+      - IMG_7200.jpg
+      - IMG_7224.jpg
+      - IMG_7230.jpg
+      - IMG_7233.jpg
+      - IMG_7238.jpg
+      - IMG_7269.jpg
+      - IMG_7287.jpg
+      - IMG_7308.jpg
+      - IMG_7309.jpg
+      - IMG_7310.jpg
+      - IMG_7326.jpg
+      - IMG_7335.jpg
+---
