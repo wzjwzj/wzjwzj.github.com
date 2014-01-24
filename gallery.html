@@ -1,0 +1,41 @@
+---
+layout: default
+title: "孤月谁明相册"
+description: "gallery"
+group: navigation
+comments : false
+galleries :
+  - name : 瑞士1
+    dir  : switzerland
+    discription :  和小伙伴们去瑞士旅游照片
+  - name : golm
+    dir  : golm
+    discription :  golm 田园风光
+---
+
+{% for gallery in page.galleries %}
+    <div style="display:inline-block" id={{ gallery.dir }}>TiltViewer requires JavaScript and the latest Flash Player. 
+        <a href="http://www.macromedia.com/go/getflashplayer/">Get Flash here.</a>
+    </div>
+{% endfor %}
+
+<script type="text/javascript">
+	var fo  = new SWFObject("/gallery/TiltViewer.swf", "{{ gallery.dir }}_viewer", "50%", "100%", "9.0.28", "#FFFFFF");
+        fo.addVariable("useFlickr", "false");
+	fo.addVariable("maxJPGSize","640");
+	fo.addVariable("useReloadButton", "false");
+	fo.addVariable("columns", "3");
+	fo.addVariable("rows", "3");
+	fo.addVariable("frameColor", "0xFFFFFF");
+	fo.addVariable("backColor", "0xFFFF00");
+	//fo.addVariable("bkgndInnerColor", "0x333333");
+	//fo.addVariable("bkgndOuterColor", "0x000000");
+	fo.addVariable("bkgndInnerColor", "0xAAAAAA");
+	fo.addVariable("bkgndOuterColor", "0xFFFFFF");
+	fo.addParam("allowFullScreen","true");
+        {% for gallery in page.galleries %}
+	fo.addVariable("xmlURL", "/gallery/{{ gallery.dir }}/gallery.xml" );
+	fo.write("{{ gallery.dir }}");
+	$("#{{ gallery.dir }}").prepend( "<div style='position:absolute'><a href='/gallery?q={{ gallery.dir }}'>{{ gallery.name }}</a></div>" );
+        {% endfor %}
+</script>

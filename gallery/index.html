@@ -83,7 +83,7 @@
     		  html += "/"+decodeURIComponent(matchstr[1].replace(/\+/g, " ")).replace(/\+/g, " ").replace(/[\[]/,"\\\[").replace(/[\]]/,"\\\]");
   		}
 		html += "</div>";
-		$("#flashcontent").before( html );
+		$("#flashcontent").prepend( html );
 	  } else {
 		$("#flashcontent").load("/gallery.html #main-content");
 	  }
