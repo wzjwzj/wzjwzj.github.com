@@ -8,9 +8,6 @@ galleries :
   - name : 瑞士
     dir  : switzerland/
     discription :  和小伙伴们去瑞士旅游照片
-  - name : 瑞士
-    dir  : 瑞士
-    discription :  和小伙伴们去瑞士旅游照片
 ---
 
 <ul>
