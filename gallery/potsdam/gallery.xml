@@ -1,8 +1,8 @@
 ---
-layout :  PostcardViewer
+layout :  AutoViewer
 galleries :
-  - name : golm
-    discription :  golm的田园风光
+  - name : potsdam
+    discription :  potsdam的田园风光
     files:       
       - 2013-11-11-16.18.45.jpg
       - 2013-11-11-16.19.13.jpg

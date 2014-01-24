@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<gallery cellDimension="800" columns="5" zoomOutPerc="15" zoomInPerc="100" frameWidth="20">
+  {% for gallery in page.galleries %}
+     {% for filelst in gallery.files %}   
+        {% assign files = filelst | replace:',',' ' | split: " " %}
+        {% for file  in  files  %}
+	<image>
+	   <url>{{ page.url | remove: 'gallery.xml' }}/{{ file }}</url>
+	   <caption>{{ file }}</caption>
+	   <description> 相册：{{ gallery.name }} 描述：{{ gallery.discription }} </description>
+	</image>
+        {% endfor %}
+     {% endfor %}
+  {% endfor %}
+</gallery>

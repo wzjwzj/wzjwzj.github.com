@@ -1,5 +1,5 @@
 ---
-layout : gallery_xml
+layout :  TiltViewer
 galleries :
   - name : 瑞士
     dir  : switzerland/

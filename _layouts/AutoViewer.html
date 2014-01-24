@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gallery frameColor="0xffffff" frameWidth="15" imagePadding="20" displayTime="6" enableRightClickOpen="false">
+  {% for gallery in page.galleries %}
+     {% for filelst in gallery.files %}   
+        {% assign files = filelst | replace:',',' ' | split: " " %}
+        {% for file  in  files  %}
+	<image>
+            <url>{{ page.url | remove: 'gallery.xml' }}/{{ file }}</url>
+            <caption>{{ file }}</caption>
+            <width>640</width>
+            <height>383</height>
+        </image>
+        {% endfor %}
+     {% endfor %}
+  {% endfor %}
+</gallery>

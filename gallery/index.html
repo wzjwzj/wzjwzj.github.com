@@ -32,52 +32,62 @@
 </style>
 </head>
 <body>
-    <div id="flashcontent">TiltViewer requires JavaScript and the latest Flash Player. <a href="http://www.macromedia.com/go/getflashplayer/">Get Flash here.</a></div>
+    <div id="flashcontent">Viewer requires JavaScript and the latest Flash Player. <a href="http://www.macromedia.com/go/getflashplayer/">Get Flash here.</a></div>
     <script type="text/javascript">
 	  var matchstr = location.search.match(/q=([^&]*)(&|$)/);
 	  if(matchstr && matchstr[1]){
 		var xml = "/gallery/"+matchstr[1]+"/gallery.xml" ;
-		var fo = new SWFObject("/gallery/TiltViewer.swf", "viewer", "100%", "100%", "9.0.28", "#000000");
-	          
-		// TILTVIEWER CONFIGURATION OPTIONS
-		// To use an option, uncomment it by removing the "//" at the start of the line
-		// For a description of config options, go to: 
-		// http://www.airtightinteractive.com/projects/tiltviewer/config_options.html
+		var viewer = "/gallery/PostcardViewer.swf" ;
+		matchstr = location.search.match(/v=([^&]*)(&|$)/);
+		if( matchstr && matchstr[1] && (matchstr[1] == "TiltViewer" || matchstr[1] == "AutoViewer" )){
+		    if( matchstr[1] == "TiltViewer" ){
+			 var fo = new SWFObject( "/gallery/TiltViewer.swf", "TiltViewer", "100%", "100%", "9.0.28", "#000000");
+		         // TILTVIEWER CONFIGURATION OPTIONS
+		         // To use an option, uncomment it by removing the "//" at the start of the line
+		         // For a description of config options, go to: 
+		         // http://www.airtightinteractive.com/projects/tiltviewer/config_options.html
 
-		//FLICKR GALLERY OPTIONS
-		// To use images from Flickr, uncomment this block
-		//fo.addVariable("useFlickr", "true");
-		//fo.addVariable("user_id", "48508968@N00");
-		//fo.addVariable("tags", "jump,smile");
-		//fo.addVariable("tag_mode", "all");
-		//fo.addVariable("showTakenByText", "true");
+		         //FLICKR GALLERY OPTIONS
+		         // To use images from Flickr, uncomment this block
+		         //fo.addVariable("useFlickr", "true");
+		         //fo.addVariable("user_id", "48508968@N00");
+		         //fo.addVariable("tags", "jump,smile");
+		         //fo.addVariable("tag_mode", "all");
+		         //fo.addVariable("showTakenByText", "true");
 
-		// XML GALLERY OPTIONS
-		// To use local images defined in an XML document, use this block
-		fo.addVariable("useFlickr", "false");
+		         // XML GALLERY OPTIONS
+		         // To use local images defined in an XML document, use this block
+		         fo.addVariable("useFlickr", "false");
+		         fo.addVariable("maxJPGSize","640");
+		
+		         //GENERAL OPTIONS
+		         fo.addVariable("useReloadButton", "false");
+		         fo.addVariable("columns", "3");
+		         fo.addVariable("rows", "3");
+		         //fo.addVariable("showFullscreenOption", "true");
+		         //fo.addVariable("showFlipButton", "true");
+		         //fo.addVariable("showLinkButton", "true");
+		         //fo.addVariable("linkLabel", "View image info");
+		         fo.addVariable("frameColor", "0xFFFFFF");
+		         fo.addVariable("backColor", "0xFFFF00");
+		         fo.addVariable("bkgndInnerColor", "0x333333");
+		         fo.addVariable("bkgndOuterColor", "0x000000");
+		         //fo.addVariable("langAbout", "About");
+		         // END TILTVIEWER CONFIGURATION OPTIONS
+		         fo.addParam("allowFullScreen","true");
+		         
+		    } else {
+			 var fo = new SWFObject( "/gallery/AutoViewer.swf" , "PostcardViewer", "100%", "100%", "9.0.28", "#000000");		 
+		    }
+		} else {
+		    var fo = new FlashObject("/gallery/PostcardViewer.swf", "PostcardViewer", "100%", "100%", "8", "#181818");
+		    //Optional Configuration
+		    fo.addVariable("langOpenImage", "Open Image in New Window");
+		    fo.addVariable("langAbout", "About");
+		}
 		fo.addVariable("xmlURL", xml );
-		fo.addVariable("maxJPGSize","640");
-		
-		//GENERAL OPTIONS
-		fo.addVariable("useReloadButton", "false");
-		fo.addVariable("columns", "3");
-		fo.addVariable("rows", "3");
-		//fo.addVariable("showFullscreenOption", "true");
-		//fo.addVariable("showFlipButton", "true");
-		//fo.addVariable("showLinkButton", "true");
-		//fo.addVariable("linkLabel", "View image info");
-		fo.addVariable("frameColor", "0xFFFFFF");
-		fo.addVariable("backColor", "0xFFFF00");
-		fo.addVariable("bkgndInnerColor", "0x333333");
-		fo.addVariable("bkgndOuterColor", "0x000000");
-		//fo.addVariable("langAbout", "About");
-		
-		// END TILTVIEWER CONFIGURATION OPTIONS
-		
-		fo.addParam("allowFullScreen","true");
 		fo.write("flashcontent");
-
-		matchstr = location.search.match(/nm=([^&]*)(&|$)/);
+		matchstr = location.search.match(/n=([^&]*)(&|$)/);
 		var html= "<div style='position:absolute'><a href='/gallery.html'>相册主页</a>";
   		if(matchstr && matchstr[1]){
     		  html += "/"+decodeURIComponent(matchstr[1].replace(/\+/g, " ")).replace(/\+/g, " ").replace(/[\[]/,"\\\[").replace(/[\]]/,"\\\]");

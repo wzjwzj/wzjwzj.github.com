@@ -5,7 +5,7 @@
      {% for filelst in gallery.files %}   
         {% assign files = filelst | replace:',',' ' | split: " " %}
         {% for file  in  files  %}
-	<photo imageurl="/gallery/{{ gallery.dir }}/{{ file }}" showFlipButton="true">
+	<photo imageurl="{{ page.url | remove: 'gallery.xml' }}/{{ file }}" showFlipButton="true">
 	   <title>{{ file }}</title>
 	   <description> 相册：{{ gallery.name }} 描述：{{ gallery.discription }} </description>
         </photo>	
