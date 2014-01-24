@@ -10,6 +10,8 @@ galleries :
     discription :  和小伙伴们去瑞士旅游照片
 ---
 
-
-* [瑞士](/gallery?q=switzerland)
-
+<ul>
+  {% for gallery in page.galleries %}
+    <li><a href="/gallery?q={{ gallery.dir }}&nm={{ gallery.name }}">{{gallery.name}}</a></li>
+  {% endfor %}
+</ul>

@@ -35,9 +35,9 @@
     <div id="flashcontent">TiltViewer requires JavaScript and the latest Flash Player. <a href="http://www.macromedia.com/go/getflashplayer/">Get Flash here.</a></div>
     <script type="text/javascript">
 	  var matchstr = location.search.match(/q=([^&]*)(&|$)/);
-  	  if(matchstr && matchstr[1]){
-	        var xml = "/gallery/"+matchstr[1]+"/gallery.xml" ;
-	        var fo = new SWFObject("/gallery/TiltViewer.swf", "viewer", "100%", "100%", "9.0.28", "#000000");
+	  if(matchstr && matchstr[1]){
+		var xml = "/gallery/"+matchstr[1]+"/gallery.xml" ;
+		var fo = new SWFObject("/gallery/TiltViewer.swf", "viewer", "100%", "100%", "9.0.28", "#000000");
 	          
 		// TILTVIEWER CONFIGURATION OPTIONS
 		// To use an option, uncomment it by removing the "//" at the start of the line
@@ -76,6 +76,14 @@
 		
 		fo.addParam("allowFullScreen","true");
 		fo.write("flashcontent");
+
+		matchstr = location.search.match(/nm=([^&]*)(&|$)/);
+		var html= "<div style='position:absolute'><a href='/gallery.html'>相册主页</a>";
+  		if(matchstr && matchstr[1]){
+    		  html += "/"+decodeURIComponent(matchstr[1].replace(/\+/g, " ")).replace(/\+/g, " ").replace(/[\[]/,"\\\[").replace(/[\]]/,"\\\]");
+  		}
+		html += "</div>";
+		$("#flashcontent").before( html );
 	  } else {
 		$("#flashcontent").load("/gallery.html #main-content");
 	  }
