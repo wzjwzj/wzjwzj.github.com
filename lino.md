@@ -6,7 +6,7 @@ group: navigation
 ---
 {% include JB/setup %}
 
-
+## 贴一贴心情好
 
 <div style="width:100%;height:800px; margin-top:80px">
     <div style="position: relative;height:20px;top:19px; z-index: 60000;background-color: #FFFFFF;"></div>
