@@ -101,7 +101,7 @@ An [google](http://www.google.de)
     #!python
     import this
     print 'something'
-    print 'something'
+    print 'something fasdf fasdfad fasd fsa dfa sfasdf as df afas dfa fa df asdf as dfasdf a dfasfa f adfa fa faf fadf a f'
 
 ### test highlight 2
 ```python
