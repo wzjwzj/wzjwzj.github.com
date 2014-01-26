@@ -103,14 +103,14 @@
     <section id="main">
 
       <!-- Sidebar -->
-      
+      <!-- sidebar shift inside main-inner-->
+      <!-- Main Content -->
       <aside id="sidebar">
         <section id="search-box">
 	 {% include widgets/search_box %}
 	</section>
-	
-        <section>
-         <div style="padding:22px 18px">
+	<section>
+	 <div style="padding:22px 18px">
 	 <a class=social style="background-image: url('/images/social/godic.png');"  target="_blank" href="http://dict.godic.net/" title="德语助手">godic</a>
 	 <a class=social style="background-image: url('/images/social/eudic.png');"  target="_blank" href="http://dict.eudic.net/" title="欧路英语">eudic</a>
 	 <a class=social style="background-image: url('/images/social/douban.png');" target="_blank" href="http://www.douban.com/people/wzjwzj/" title="豆瓣">豆瓣</a>
@@ -118,7 +118,6 @@
 	 <a class=social style="background-image: url('/images/social/social.png');" href="" title="social">social</a>
 	 </div>
 	</section>
-	 
 	<!--toc-->
 	<div id="toc_wraper" style="display:none">
 	<section>
@@ -126,14 +125,11 @@
 	   <div class="toc">
 	</section>
 	</div>
-
 	<!--widget default include -->
 	{% if page.widget == null or page.widget %}
 	   {% include widgets/fixed_container %}
 	{% endif %}
-	
       </aside>
-
       <!-- Main Content -->
       <div id="main-inner">
         <div id="loader"><img src="{{ ASSET_PATH }}/img/loading.gif" alt="请稍侯"></div>
@@ -142,12 +138,11 @@
         </div>
       </div>
 
-      <script>
-         $( "#main-inner" ).css({"min-height":$( "#sidebar" ).css( "height" )});
-      </script>
+      
+      <!--script>$( "#main-inner" ).css({"min-height":$( "#sidebar" ).css( "height" )});</script-->
+      <!--script>$( "#sidebar" ).css({ "min-height":$( "#main-inner" ).css( "height")});</script-->
       
       {% include widgets/back_top_button %}
-
     </section>
 
     <footer id="bottom">

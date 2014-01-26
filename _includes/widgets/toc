@@ -11,23 +11,26 @@ $(document).ready(function(){
    var f= $('#fixed-container') ;
 {% endif %}
 
-   f.css({ 'background-color':'#e6e6e6',
-	   'width':'261px',
-	   'z-index':'99999'});
+   f.css({ 'background-color':'white',
+	   'width':'247px',
+	   'z-index':'99999',
+           'margin':'0px 12px 12px',
+	   /*'box-shadow':'2px 0px 12px #787878 inset',
+	   'border-radius':'3px'*/});
 
    var position = f.offset();
    $(window).scroll(function() {
-    if($(window).scrollTop() > position.top ) {
-      var h= f.height();
-      if( window.innerHeight - 58 < h ) {
-         var v = window.innerHeight - 58 - h ;
-         f.css('position','fixed').css('top',v);
-       } else {
-         f.css('position','fixed').css('top','0');
-       }
-     } else {
+      if($(window).scrollTop() > position.top ) {
+         h= f.height();
+         if( $(window).innerHeight() - 129 < h ) {
+            v = $(window).innerHeight() - 129 - h ;
+            f.css('position','fixed').css('top',v);
+         } else {
+            f.css('position','fixed').css('top','0');
+         }
+      } else {
        f.css('position','static');
-     }
+      }
    });
 
    if(matchMedia) {
