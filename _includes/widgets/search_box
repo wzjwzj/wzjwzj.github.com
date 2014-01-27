@@ -23,7 +23,7 @@
   <button type="submit" class="search-button" ><i class="icon-search"></i></button>
 </form>
 
-<form style="margin-top:65px" method="get" action="/dict.html">
+<form style="margin-top:65px" method="get" action="/dict.html#dict">
   <input  type="text"   class="search-query" name="q" id="dict_query"  placeholder="dict.cn 海词"></input>   
   <button type="submit" class="search-button" ><i class="icon-search"></i></button>
 </form>

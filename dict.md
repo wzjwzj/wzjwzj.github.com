@@ -6,7 +6,7 @@ group: navigation
 comments: false
 ---
 
-<header> <img src="assets/themes/twitter/img/dict.gif"  alt="dict" style="padding-bottom:10px"/></header>
+<header> <img src="assets/themes/twitter/img/dict.png"  alt="dict" style="padding:50px 0px 10px"/></header>
 
 <iframe id="dict" name="dict" frameborder="0"  style="height:100%;width:100%"></iframe>
 
