@@ -1,7 +1,7 @@
 
 <CENTER>
 <!--img src="{{ ASSET_PATH }}/img/google_search.png" border="0" alt="Google" align="absmiddle" style="padding-bottom:20px" /--> 
-<FONT class='wdnx' ><B>惟德乃兴</B></FONT>
+<!--FONT class='wdnx' ><B>惟德乃兴</B></FONT-->
 </CENTER>
 
 <form style="margin-top:20px" method="get" action="http://www.google.com/search"> 
