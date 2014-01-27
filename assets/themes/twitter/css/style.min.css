@@ -1166,3 +1166,8 @@ figure a img:hover {
 	border:1px solid #3b5998;
 	margin:0px 2.5px;
 }
+.wdnx{
+    font-family:Helvetica,Arial,sans-serif;font-weight:bold;font-size:3em;
+    color:rgba(255,255,255,0.85);
+    text-shadow:1px 3px 6px #777777;
+}
