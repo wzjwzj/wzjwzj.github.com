@@ -23,18 +23,12 @@ $(document).ready(function(){
    f.css({ 'width':'247px', 'z-index':'99999', 'margin':'0px 12px 12px'});
 
    var position = f.offset();
-   /*var b=$('#main-inner').offset().top+$('#main-inner').innerHeight();*/
    $(window).scroll(function() {
       if($(window).scrollTop() > position.top ) {
-         v = $(window).innerHeight() - 129 - h ;
-         if( v < 0 ) {
-            if ( $( document ).height()-$(window).scrollTop()-$(window).innerHeight() < h ){
-               vv=v+$( document ).height()-$(window).scrollTop()-$(window).innerHeight();
- 	       if(vv>0) {vv=0};
-               f.css('position','fixed').css('top',vv);
-            }else {
-               f.css('position','fixed').css('top',0);
-            }
+         v = 129 + h - $(window).innerHeight()  ;
+         u = $( document ).height()-$(window).scrollTop()-$(window).innerHeight();
+         if( v > 0 && u < h && u < v ) {
+            f.css('position','fixed').css('top',u+v);
          } else {
             f.css('position','fixed').css('top','0');
          }
