@@ -5,8 +5,8 @@ $(document).ready(function(){
         'selectors': 'h2,h3', 
         'container': 'article',
    });
-   var f= $('#toc_wraper') ; f.show();
-   var h= f.height();
+   var f= $('#toc_wraper') ; f.show(); 
+   var h= f.height(); 
    if( h > 500 ) {
        f.css({ 'background':'url({{ ASSET_PATH }}/img/bgs/bg_toc.png) top left no-repeat,url({{ ASSET_PATH }}/img/bgs/bg_toc.png) bottom right no-repeat #FFFFFF'});
    } else if( h>200 ) {
@@ -14,29 +14,24 @@ $(document).ready(function(){
    } else {
        f.css({ 'background':'#FFFFFF'});
    }
-   
 {% else %}
-   var f= $('#fixed-container') ;
+   var f= $('#fixed-container') ; 
    var h= f.height();
 {% endif %}
-
-   f.css({ 'width':'247px', 'z-index':'99999', 'margin':'0px 12px 12px'});
+   f.css({ 
+	   'width':'247px',
+	   'z-index':'5',
+           'margin':'0px 12px',
+	 });
 
    var position = f.offset();
-   /*var b=$('#main-inner').offset().top+$('#main-inner').innerHeight();*/
+   var b=$('#main-inner').offset().top+$('#main-inner').inner.Height();
    $(window).scroll(function() {
       if($(window).scrollTop() > position.top ) {
-         v = $(window).innerHeight() - 129 - h ;
-         if( v < 0 ) {
-            if ( $( document ).height()-$(window).scrollTop()-$(window).innerHeight() < h ){
-               vv=v+$( document ).height()-$(window).scrollTop()-$(window).innerHeight();
- 	       if(vv>0) {vv=0};
-               f.css('position','fixed').css('top',vv);
-            }else {
-               f.css('position','fixed').css('top',0);
-            }
-         } else {
-            f.css('position','fixed').css('top','0');
+         f.css('position','fixed').css('top','0');
+         v=$(window).innerHeight() - 129 - h ;
+         if( v<0 ) {
+            f.css('position','fixed').css('top',v);
          }
       } else {
        f.css('position','static');

@@ -80,7 +80,7 @@ body,select,input,textarea {
 body {
 	/*background:#e2e2e2 url(../img/bgs/bg_header.png) no-repeat top;*/
 	/*background: url(../img/bgs/bg_header.png) top no-repeat, url(../img/bgs/bg_center.jpg) top repeat;*/
-	background: url(../img/bgs/bg_header.png) top no-repeat,url(../img/bgs/bg_bottom.png) bottom no-repeat;;
+	background: url(../img/bgs/bg_header.png) top no-repeat,url(../img/bgs/bg_bottom.png) bottom no-repeat;
 	font-family:Verdana,Arial,sans-serif,"Hiragino Sans GB","Microsoft YaHei";
 	font-size:13px;
 	*font-size:small;
