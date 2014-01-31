@@ -4,70 +4,22 @@ title: "孤月谁明相册"
 description: "galleries specify gallery, with parm dir name viewer"
 group: navigation
 viewer : TiltViewer
-galleries :
-  - name : 瑞士
-    dir  : switzerland
-    viewer : TiltViewer
-  - name : golm小调
-    dir  : golm
-    viewer : PostcardViewer
-  - name : potsdam大调
-    dir  : potsdam
-    viewer : AutoViewer       
+galleries : [
+    ['golm',    'golm小调',  '3'],
+    ['golm',    'golm',  '4']
+]
 ---
 
-<style>
-.gb{	
- display: inline-block;
- margin: 8px;
- box-shadow: 2px 2px 12px #787878;
-}
-</style>
-<!-- auto view replace-->
-<script type="text/javascript">
-    var w = ($("#main-content").width()-8*4)*0.5;
-    var h = w*3/4 ;
-    var tv = new SWFObject("/gallery/TiltViewer.swf", "{{ gallery.dir }}_TiltViewer", "100%", "100%", "8", "#FFFFFF");
-    tv.addVariable("useFlickr", "false");
-    tv.addVariable("maxJPGSize","640");
-    tv.addVariable("useReloadButton", "false");
-    tv.addVariable("columns", "3");
-    tv.addVariable("rows", "3");
-    tv.addVariable("frameColor", "0xFFFFFF");
-    tv.addVariable("backColor", "0xFFFF00");
-    //fo.addVariable("bkgndInnerColor", "0x333333");
-    //fo.addVariable("bkgndOuterColor", "0x000000");
-    tv.addVariable("bkgndInnerColor", "0xAAAAAA");
-    tv.addVariable("bkgndOuterColor", "0xFFFFFF");
-    tv.addParam("allowFullScreen","true");
 
-    var pv  = new FlashObject("/gallery/PostcardViewer.swf", "{{ gallery.dir }}_PostcardViewer", "100%", "100%", "8", "#FFFFFF");
-    //pv.addVariable("langOpenImage", "Open Image in New Window");
-    //pv.addVariable("langAbout", "About");
-    pv.addParam("allowFullScreen","true");
-    
-    var av = new SWFObject("/gallery/AutoViewer.swf", "{{ gallery.dir }}_AutoViewer","100%", "100%", "8", "#FFFFFF");
-    //av.addVariable("langOpenImage", "Open Image in New Window");
-    //av.addVariable("langAbout", "About");
-    av.addParam("allowFullScreen","true");
+<div class="iw_wrapper">
+<ul class="iw_thumbs" id="iw_thumbs">
+{% for gallery in page.galleries %}
+<li><a href="/gallery/{{gallery[0]}}/?q={{gallery[2]}}">
+<img src="/gallery/{{gallery[0]}}/thumbs/{{gallery[2]}}.jpg"  alt="{{gallery[1]}}"/>
+<div><h2>{{gallery[1]}}</h2></div>
+</a></li>
 
-    var viewer = "{{ page.viewer }}" ;
-    {% for gallery in page.galleries %}
-        viewer = "{{ gallery.viewer }}" ;  
-        //$("#main-content").append( "<div  style='display:inline-block' id='{{ gallery.dir }}'>Viewer requires JavaScript and the latest Flash Player.<a href='http://www.macromedia.com/go/getflashplayer/'>Get Flash here.</a></div>" );
-        $("#main-content").append( "<div  class='gb' style='width:"+w+"px; height:"+h+"px' id='{{ gallery.dir }}'>Viewer requires JavaScript and the latest Flash Player.<a href='http://www.macromedia.com/go/getflashplayer/'>Get Flash here.</a></div>" );
-	if( viewer == "TiltViewer" ){
+{% endfor %}
+</ul>
+</div>
 
-	    tv.addVariable("xmlURL", "/gallery/{{ gallery.dir }}/gallery.xml" );
-	    tv.write("{{ gallery.dir }}");
-	}else if( viewer == "PostcardViewer" ){
-	    pv.addVariable("xmlURL", "/gallery/{{ gallery.dir }}/gallery.xml" );
-	    pv.write("{{ gallery.dir }}");
-	}else {
-	    av.addVariable("xmlURL", "/gallery/{{ gallery.dir }}/gallery.xml" ); 
-	    av.write("{{ gallery.dir }}");
-	}
-	$("#{{ gallery.dir }}").prepend( "<div style='position:absolute'><a href='/gallery?q={{ gallery.dir }}&v={{gallery.viewer}}&n={{gallery.name}}'>{{ gallery.name }}</a></div>" );
-    {% endfor %}
-
-</script>
