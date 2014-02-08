@@ -470,9 +470,13 @@ button:disabled {
 }
 article img {
 	padding:4px;
-	background-color:#fff;
+	/*background-color:#fff;*/
 	border:1px solid #b3b3b3;
 }
+
+.gm-style img {
+}
+
 input {
 	background-color:transparent;
 	/*border:#ddd 1px solid;
