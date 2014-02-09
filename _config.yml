@@ -99,6 +99,7 @@ JB :
   lino_path :  /lino.html
   slide_path : /slide.html
   gallery_path : /gallery.html
+  docs_path : /docs/
 
   # Settings for comments helper
   # Set 'provider' to the comment provider you want to use.
