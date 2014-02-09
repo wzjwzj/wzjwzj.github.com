@@ -10,15 +10,16 @@ comments: false
 
 两个字： 宅，男!
 
-
-本人网名，孤月谁明，网络上如果碰巧看见孤月谁明，那应该就是我了。
-
+本人以网名，孤月谁明，活跃在各网络上，如果碰巧看见，那应该就是我了。
 
 ----------
 
-
 ##关于本博客
 ###*奇文共欣赏，疑义相与析*
+
+本站目的说大点“奇文共欣赏，疑义相与析”，主要还是个人用来做笔记，个人比较懒，笔记也大多是些零零碎碎的信息，谷歌自网络。零碎的可能只有我自己能看懂，个人技术贴很少。很多文章也只是不觉明厉的，收集保留而已，比如建站过程收集的一些网络知识，因为本人网络知识入门门槛还没跨过。 某些文章您要是觉得抄袭？剽窃？侵权？敬请email 或留言知会声，关于个人技术贴，个人知识水平有限，欢迎大家指正和探讨。
+
+欢迎留下你的脚步……
 
 {% comment %}
 <pre style="font: 10px/5px monospace; border: initial; background: initial;"><span style="color: #d7deb5;"></span><span style="color: #d9e0b7;">#</span><span style="color: #d8deba;">#</span><span style="color: #dde1c6;">#</span><span style="color: #dfe3ca;">#</span><span style="color: #dce1c3;">#</span><span style="color: #e0e5c5;">#</span><span style="color: #dadec3;">#</span><span style="color: #dde1c6;">#</span><span style="color: #dde1c6;">#</span><span style="color: #dce0c5;">#</span><span style="color: #dadec3;">#</span><span style="color: #dbdfc4;">#</span><span style="color: #d9ddc2;">#</span><span style="color: #dbdfc4;">#</span><span style="color: #d9ddc2;">#</span><span style="color: #d8dcc1;">#</span><span style="color: #e0e4c9;">#</span><span style="color: #d9ddc2;">#</span><span style="color: #d7dbc0;">#</span><span style="color: #d7dbc0;">#</span><span style="color: #d6dabf;">#</span><span style="color: #d4d9bb;">#</span><span style="color: #d7dcbe;">#</span><span style="color: #d7dbc0;">#</span><span style="color: #d2d5c0;">#</span><span style="color: #d5d8c5;">#</span><span style="color: #d9dccb;">#</span><span style="color: #d8dcc1;">#</span><span style="color: #d6dbbd;">#</span><span style="color: #d0d5b7;">#</span><span style="color: #d7dcbc;">#</span><span style="color: #d4d9b9;">#</span><span style="color: #cfd4b6;">#</span><span style="color: #c8cdaf;">#</span><span style="color: #dadfbf;">#</span><span style="color: #ccd2b0;">#</span><span style="color: #ccd2ae;">#</span><span style="color: #ced4b0;">#</span><span style="color: #cfd4b4;">#</span><span style="color: #d1d6b6;">#</span><span style="color: #d8ddbf;">#</span><span style="color: #d1d6b8;">#</span><span style="color: #d2d6bb;">#</span><span style="color: #d8ddbd;">#</span><span style="color: #d3d8ba;">#</span><span style="color: #d5dabc;">#</span><span style="color: #d9ddc2;">#</span><span style="color: #d7dbc2;">#</span><span style="color: #d4d8bd;">#</span><span style="color: #d4d8bd;">#</span><span style="color: #d4d8bd;">#</span><span style="color: #d7dbc0;">#</span><span style="color: #d7dbc0;">#</span><span style="color: #d7dbc0;">#</span><span style="color: #dbdbc1;">#</span><span style="color: #d8d8be;">#</span><span style="color: #d8d8be;">#</span><span style="color: #d9d9bf;">#</span><span style="color: #dadac0;">#</span><span style="color: #daddc8;">#</span><span style="color: #d8dbbe;">#</span><span style="color: #d5d7bf;">#</span><span style="color: #deddc1;">#
