@@ -28,7 +28,8 @@
   <!-- Scripts -->
   <script type="text/javascript" src="{{ ASSET_PATH }}/js/jquery-1.10.1.min.js"></script>
   <script type="text/javascript" src="{{ ASSET_PATH }}/js/jquery.toc.min.js"></script>
-  <script type="text/javascript" src="/gallery/swfobject.js"></script>
+  
+  {% if page.mathjax %}	
   <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML-full.js">
        MathJax.Hub.Config({
            tex2jax: {
@@ -38,7 +39,10 @@
             messageStyle: "none"
         });
   </script>
-  
+  {% endif %}
+
+
+  {% if page.prettify %}	
   <script type="text/javascript">
      $(document).ready(function(){
        $('pre').addClass('prettyprint linenums'); //添加Google code Hight需要的class
@@ -47,6 +51,7 @@
        });
     });
   </script>
+  {% endif %}
 
   {{ page.htmlhead }}
 

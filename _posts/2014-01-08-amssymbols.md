@@ -3,6 +3,7 @@ layout: post
 title: "AMSsymbols"
 category: info
 tags: AMS symbols mathjax latex tex
+mathjax: true
 ---
 
  $\quad$                |          $\quad$       |          $\quad$       |               $\quad$  |      $\quad$           |     $\quad$               

@@ -3,6 +3,7 @@ layout: post
 title: 用dropbox虚拟github建立私有仓库
 category: dropbox
 tags: dropbox github
+prettify: true
 ---
 
 ##用dropbox虚拟github建立私有仓库[^1]

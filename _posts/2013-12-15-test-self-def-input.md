@@ -5,6 +5,8 @@ category: uncategorized
 tags: test
 toc: true
 widget: false
+mathjax: true
+prettify: true
 ---
 
 ## test math
