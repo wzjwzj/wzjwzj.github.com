@@ -26,5 +26,8 @@ widget:  true
 
 [小众软件合集](http://love.appinn.com/)
 
+[picture2ascii](http://picascii.com/)
+
 To Be Continued
+
 
