@@ -3,11 +3,14 @@ layout: post
 title: git workflow
 tags: git
 category: GIT
+toc: true
 ---
 
 ## GIT workflow
 ![alt My Git Workflow](/images/figures/git-transport.png)
 <!--end_excerpt-->
+
+[TOC]
 
 ## GIT 基本命令
  
@@ -370,7 +373,73 @@ Git 创建与使用示例：
 
 因为，这样建立的`branch`是以`master`为基础建立的，再`pull`下来的话，会和`master`的内容进行合并，有可能会发生冲突
 
+## Git学习笔记04\-\-git checkout【转】[^4]
+
+摘自《Git权威指南》
+
+ 
+
+检出命令git
+checkout是git最常用的命令之一，同时也是一个很危险的命令，因为这条命令会重写工作区。检出命令的用法如下：
+
+用法一：git checkout [-q] [&lt;commit&gt;] [\-\-] &lt;paths&gt;...
+
+用法二：git checkout [&lt;branch&gt;]
+
+用法三：git checkout [-m] [[-b]\-\-orphan] &lt;new\_branch&gt;] [&lt;start_point&gt;]
+
+上面列出的第一种用法和第二种用法的区别在于，第一种用法在命令中包含路径&lt;paths&gt;。为了避免路径和引用（或者提交ID）同名而发生冲突，可以在&lt;paths&gt;前用两个连续的短线（短号）作为分隔。
+
+第一种用法的&lt;commit&gt;是可选项，如果省略则相当于从暂存区（index）进行检出。这和上一章的重置命令大不相同：重置的默认值是HEAD，而检出的默认值是暂存区。因此重置一般用于重置暂存区（除非使用\-\-hard参数，否则不会重置工作区），而检出命令主要是覆盖工作区（如果&lt;commit&gt;不省略，也会替换暂存区中相应的文件）。
+
+第一种用法（包含了路径&lt;paths&gt;的用法）不会改变HEAD头指针，主要是用于指定版本的文件覆盖工作区中对应的文件。如果省略&lt;commit&gt;，则会用暂存区的文件覆盖工作区的文件，否则用指定提交中的文件覆盖暂存区中和工作区中对应的文件。
+
+第二种用法（不使用路径&lt;paths&gt;的用法）则会改变HEAD头指针。之所以后面的参数会写作&lt;branch&gt;，是因为只有HEAD切换到一个分支才可以对提交进行跟踪，否则仍然会进入“分离头指针”的状态。在“分离头指针”状态下的提交不能被引用关联到，从而可能丢失。所以用法二最主要的作用就是切换到分支。如果省略&lt;branch&gt;则相当于对工作区进行状态检查。
+
+第三种用法主要是创建和切换到新的分支（&lt;new\_branch&gt;），新的分支从&lt;start\_point&gt;指定的提交开始创建。新分支和我们熟悉的master分支没有什么实质的不同，都是在refs/heads命名空间下的引用。
+
+下图所示的版本库模型图描述了git checkout实际完成的操作。
+
+<figure class="one">
+        <img src="/images/figures/201211042021098287.gif">
+        <figcaption>&nbsp;</figcaption>
+</figure>
+
+下面通过一些示例具体看一下检出命令的不同用法。
+
+    $ git checkout branch
+
+检出branch分支。要完成图中的三个步骤，更新HEAD以指向branch分支，以及用branch 
+指向的树更新暂存区和工作区。
+
+    $ git checkout
+
+汇总显示工作区、暂存区与HEAD的差异。
+
+    $ git checkout HEAD
+
+同上
+
+    $ git checkout -- filename
+
+用暂存区中filename文件来覆盖工作区中的filename文件。相当于取消自上次执行git
+add filename以来（如果执行过）的本地修改。
+
+    $ git checkout branch -- filename
+
+维持HEAD的指向不变。用branch所指向的提交中filename替换暂存区和工作区中相  
+应的文件。注意会将暂存区和工作区中的filename文件直接覆盖。
+
+    $ git checkout -- . 或写作 git checkout .
+
+注意git checkout
+命令后的参数为一个点（“.”）。这条命令最危险！会取消所有本地的 
+修改（相对于暂存区）。相当于用暂存区的所有文件直接覆盖本地文件，不给用户任何      
+确认的机会！
+
+
 
 [^1]:[GIT命令详解](http://blog.csdn.net/ithomer/article/details/7529022)
 [^2]:[Git 常用命令速查表](http://blog.csdn.net/ithomer/article/details/7529841)
 [^3]:[GIT 远程分支](http://blog.csdn.net/xqs83/article/details/7382074)
+[^4]:[Git学习笔记04--git checkout](http://www.cnblogs.com/craftor/archive/2012/11/04/2754147.html)
