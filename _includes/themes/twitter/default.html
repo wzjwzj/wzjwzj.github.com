@@ -45,7 +45,7 @@
   {% if page.prettify %}	
   <script type="text/javascript">
      $(document).ready(function(){
-		     $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto'); //添加Google code Hight需要的class
+       $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto'); //添加Google code Hight需要的class
        $.getScript('{{ ASSET_PATH }}/js/prettify/prettify.js',function(){
           prettyPrint();
        });
@@ -108,6 +108,10 @@
           <li>
             <a href="{{ site.JB.rss_path }}" rel="nofollow" title="订阅 RSS"><i class="icon-large icon-fixed-width icon-rss"></i></a>
           </li>
+          <li >
+            <i id="icon-resize" class="icon-large icon-fixed-width icon-resize-full"></i>
+            <!--i class="icon-large icon-fixed-width icon-resize-small"></i-->
+          </li>
         </ul>
       </nav>
     </header>
@@ -168,9 +172,25 @@
   {% include JB/analytics %}
 
 {% include widgets/toc %}
-<script src="http://dict.cn/hc/" type="text/javascript"></script>
+<script src="{{ ASSET_PATH }}/js/hc.js" type="text/javascript"></script>
 <script type="text/javascript">
    dictInit();
+</script>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    $("#icon-resize").click(function(){
+      if($(this).hasClass("icon-resize-full")){
+        $(this).removeClass("icon-resize-full");
+        $(this).addClass("icon-resize-small");
+	$("#wrap").css("width","100%");
+      } else{
+        $(this).removeClass("icon-resize-small");
+        $(this).addClass("icon-resize-full");
+	$("#wrap").css("width","1000px");
+      }
+    });
+  });
 </script>
 
 </body>
