@@ -11,7 +11,9 @@ prettify:
 htmlhead: '<style>div.tog:hover{background:#FFFFE0;cursor:pointer;}div.tog h2:after{content:"+";float:right;color:red;font-weight:bold;}div.tog.active h2:after{content:"-";float:right;color:red;font-weight:bold;}.nav-module{border:1px solid #e1e1e1;padding:5px;position:relative;overflow:hidden;background:#fcfcfc;zoom:1;width:calc(100% - 12px);}.nav-module h2{width:100%;overflow:hidden;}.nav-module .table{border-collapse:collapse;border-spacing:0;empty-cells:show;display:table;border-color:gray;margin:0;color:#666;width:100%;}.nav-module tbody{display:table-row-group;vertical-align:middle;border-color:inherit;}.nav-module tr{display:table-row;vertical-align:inherit;border-color:inherit;}.nav-module td{background:#fff;padding:5px 10px;border:1px solid #ddd;vertical-align:top;margin:0;font:12px/1.2 Arial,宋体,sans-serif;line-height:22px;text-align:left;}.navData a:link {color: #ae432e} .navData a:visited {color: #0000AA} .navData a:hover {color: #FF00FF} .navData a:active {color: #0000FF}</style><script>$(document).ready(function(){$("div.tog").click(function(){$(this).toggleClass("active");$(this).next("div.navData").stop("true","true").toggle();});});</script>'
 ---
 {% include JB/setup %}
- 
+
+我的理想就是把这些菜都自己尝试做一遍。
+
 <!--end_excerpt-->
 
 <div class="nav-module">
