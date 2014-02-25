@@ -116,7 +116,7 @@ a:hover {
 }
 a:hover,a:active {
 	outline:none;
-	/*color: #900;*/
+	color: #900;
 }
 
 .small {
