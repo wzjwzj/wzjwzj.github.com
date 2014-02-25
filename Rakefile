@@ -68,6 +68,9 @@ task :post do
     post.puts ' '
     post.puts 'toc:'
     post.puts 'widget:'
+    post.puts 'mathjax:'
+    post.puts 'prettify:'
+    post.puts 'htmlhead:'
     post.puts "---"
     post.puts "{% include JB/setup %}"
     post.puts ' '
