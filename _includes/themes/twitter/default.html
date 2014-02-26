@@ -181,6 +181,7 @@ dictInit();
 
 <script type="text/javascript">
   $(document).ready(function() {
+    $("table.highlighttable").wrap('<div style="overflow:auto;border: 1px solid rgba(0,0,0,0.15);"></div>');
     $("#icon-resize").click(function(){
       if($(this).hasClass("icon-resize-full")){
         $(this).removeClass("icon-resize-full");
