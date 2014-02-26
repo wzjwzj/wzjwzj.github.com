@@ -566,8 +566,8 @@ table.highlighttable div.highlight pre {
 }
 
 td.linenos {
-	width:40px;
-	min-width:40px;
+	width:32.5px;
+	min-width:32.5px;
 }
 
 div.linenodiv pre{

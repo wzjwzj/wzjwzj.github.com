@@ -168,13 +168,13 @@
     $.getScript('{{ ASSET_PATH }}/js/prettify/prettify.js',function(){ prettyPrint();});
     $("#icon-resize").click(function(){
       if($(this).hasClass("icon-resize-full")){
-         $(this).removeClass("icon-resize-full");
-         $(this).addClass("icon-resize-small");
-	 $("#wrap").css("width","100%");
+        $(this).removeClass("icon-resize-full");
+        $(this).addClass("icon-resize-small");
+	$("#wrap").css("width","100%");
       } else{
-         $(this).removeClass("icon-resize-small");
-         $(this).addClass("icon-resize-full");
-	 $("#wrap").css("width","1000px");
+        $(this).removeClass("icon-resize-small");
+        $(this).addClass("icon-resize-full");
+	$("#wrap").css("width","1000px");
       }
     });
   });

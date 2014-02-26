@@ -28,7 +28,7 @@ $(document).ready(function(){
          v = 129 + h - $(window).innerHeight()  ;
          u = $( document ).height()-$(window).scrollTop()-$(window).innerHeight();
          if( v > 0 && u < h && u < v ) {
-            f.css('position','fixed').css('top',-(u+v));
+            f.css('position','fixed').css('top',u+v);
          } else {
             f.css('position','fixed').css('top','0');
          }

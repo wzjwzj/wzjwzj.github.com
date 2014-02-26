@@ -517,7 +517,7 @@ tbody tr:nth-child(even) {
 code,pre {
 	font-family:monospace,Monaco,Menlo,Consolas,"Courier New";
 	font-size:inherit;
-	font-weight:bold;
+	/*font-weight:bold;*/
 }
 code {
 	padding:0 3px;
