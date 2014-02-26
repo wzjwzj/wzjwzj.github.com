@@ -326,6 +326,7 @@ article section ul li {
 article section ol li {
 	line-height:180%;
 }
+
 article footer {
 	border-top:1px solid #bfbfbf;
 	padding-top:10px;
@@ -512,7 +513,7 @@ tbody tr:hover {
 	background-color:#e2e2e2;
 }
 code,pre {
-	font-family:Monaco,Menlo,Consolas,"Courier New",monospace;
+	font-family:monospace,Monaco,Menlo,Consolas,"Courier New";
 	font-size:inherit;
 }
 code {
@@ -531,7 +532,7 @@ pre {
 	word-break:break-all;
 	word-wrap:break-word;
 	white-space:pre-wrap;
-	background-color:#e2e2e2;
+	/*background-color:#e2e2e2;*/
 	border:1px solid rgba(0,0,0,0.15);
 	border-radius:4px;
 }
