@@ -27,7 +27,7 @@
   
   <!-- Scripts -->
   <script type="text/javascript" src="{{ ASSET_PATH }}/js/jquery-1.10.1.min.js"></script>
-  <script type="text/javascript" src="{{ ASSET_PATH }}/js/jquery.toc.min.js"></script>
+  <script type="text/javascript" src="/assets/themes/twitter/js/jquery-ui.min.js"></script>
   
   {% if page.mathjax %}	
   <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML-full.js">
@@ -41,6 +41,13 @@
   </script>
   {% endif %}
 
+  {% if page.osmplayer %}	
+  <link rel="stylesheet" href="/osmplayer/jquery-ui/dark-hive/jquery-ui.css">
+  <link rel="stylesheet" href="/osmplayer/templates/default/css/osmplayer_default.css">
+  <script type="text/javascript" src="/osmplayer/bin/osmplayer.compressed.js"></script>
+  <script type="text/javascript" src="/osmplayer/templates/default/osmplayer.default.js"></script>
+  {% endif %}
+
   {{ page.htmlhead }}
 
 </head>
@@ -49,9 +56,6 @@
 
   <div id="wrap">
     <header id="top">
-      <!-- Home Link -->
-      <!--a id="logo" href="{{ HOME_PATH }}" title="回到首页"><img src="{{ ASSET_PATH }}/img/logo.png" alt="{{ site.title }}"></a-->
-      <!--a id="logo" href="{{ HOME_PATH }}" title="回到首页">孤月谁明</a-->
       <!-- Navigation Bar -->
       <nav id="navbar">
         <ul>
@@ -98,7 +102,6 @@
           </li>
           <li >
             <i id="icon-resize" class="icon-large icon-fixed-width icon-resize-full"></i>
-            <!--i class="icon-large icon-fixed-width icon-resize-small"></i-->
           </li>
         </ul>
       </nav>
@@ -107,8 +110,6 @@
     <section id="main">
 
       <!-- Sidebar -->
-      <!-- sidebar shift inside main-inner-->
-      <!-- Main Content -->
       <aside id="sidebar">
         <section id="search-box">
 	 {% include widgets/search_box %}
@@ -129,8 +130,8 @@
 	   <div class="toc">
 	</section>
 	</div>
-	<!--widget default include -->
-	{% if page.widget == null or page.widget %}
+	<!--widget default include  -->
+	{% if page.widget != false %}
 	   {% include widgets/fixed_container %}
 	{% endif %}
       </aside>
@@ -141,10 +142,6 @@
           {{ content }}
         </div>
       </div>
-
-      
-      <!--script>$( "#main-inner" ).css({"min-height":$( "#sidebar" ).css( "height" )});</script-->
-      <!--script>$( "#sidebar" ).css({ "min-height":$( "#main-inner" ).css( "height")});</script-->
       
       {% include widgets/back_top_button %}
     </section>
@@ -157,10 +154,8 @@
     </footer>
   </div>
 
-  {% include JB/analytics %}
 
 {% include widgets/toc %}
-
 <script type="text/javascript">
   $(document).ready(function() {
     $("table.highlighttable").wrap('<div style="overflow:auto;border: 1px solid rgba(0,0,0,0.15);border-radius: 4px;"></div>');
@@ -177,9 +172,12 @@
 	 $("#wrap").css("width","1000px");
       }
     });
+    $( "#main-inner" ).css({"min-height":$( "#sidebar" ).css( "height" )});
   });
 </script>
-
+<!--script>$( "#main-inner" ).css({"min-height":$( "#sidebar" ).css( "height" )});</script-->
+<!--script>$( "#sidebar" ).css({ "min-height":$( "#main-inner" ).css( "height")});</script-->
+{% include JB/analytics %}
 <script src="{{ ASSET_PATH }}/js/hc.js" type="text/javascript"></script>
 <!--script src="http://dict.cn/hc/" type="text/javascript"></script-->
 <script type="text/javascript">

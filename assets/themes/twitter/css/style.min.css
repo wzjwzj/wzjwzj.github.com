@@ -265,7 +265,7 @@ a:hover,a:active {
 }
 #main-inner {
 	/*background-color:#fff;*/
-	min-height:1300px;
+	/*min-height:1300px;*/
 	margin-left:271px;
 	padding:40px;
         box-shadow: -2px 0px 14px #bbbbbb, 2px 0px 12px #cccccc inset;
