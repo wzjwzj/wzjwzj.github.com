@@ -20,5 +20,4 @@ osmplayer: true
 </script>
 <video id="youtube"></video>
 
-playlist: 'https://gdata.youtube.com/feeds/api/playlists/8BCDD04DE8F771B2?v=2&prettyprint=true'
 
