@@ -22,7 +22,7 @@ osmplayer: true
 <video id="youtube"></video>
 
 <br/>
-
+<p>jojo 第一季</p>
 <script type="text/javascript">
   $(function() {
     $("#jojo-sucht-das-gluck").osmplayer({
@@ -32,4 +32,12 @@ osmplayer: true
   });
 </script>
 <div id="jojo-sucht-das-gluck"></div>
+
+<br/>
+<p>jojo 第二季</p>
+<iframe src="http://vdt.dw.de/index.php?v=deu_zwojojo&amp;w=460&amp;id=2&amp;showtranscript=0" width="480" height="260" scrolling="no" marginheight="0" marginwidth="0" frameborder="0" style="border-bottom:solid 10px #ffffff;">
+</iframe>
+
+<iframe src="http://vdt.dw.de/index.php?v=deu_zwojojo&amp;w=460&amp;id=3&amp;showtranscript=0" width="480" height="260" scrolling="no" marginheight="0" marginwidth="0" frameborder="0" style="border-bottom:solid 10px #ffffff;" >
+</iframe>
 
