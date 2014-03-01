@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<playlist version="1" xmlns="http://xspf.org/ns/0/">
+   <trackList>
+      <track>
+         <title>Folge 1: Die Ankunft</title>
+         <location>http://tv-download.dw.de/Events/mp4/vdt_deu_jojo/vdt_deu_jojo20100625_folge01_sd.mp4</location>
+         <image>http://www.dw.de/static/stills/images/vdt_deu_jojo/jojo20100217_folge1.jpg</image>
+	 <subtitle>http://www.dw.de/static/stills/captions/vdt_deu_jojo/vdt_deu_jojo20100625_folge01.xml</subtitle>
+      </track>
+      <track>
+         <title>Folge 2: Jojo aus Brasilien</title>
+         <location>http://tv-download.dw.de/Events/mp4/vdt_deu_jojo/vdt_deu_jojo20100625_folge2v2_sd.mp4</location>
+         <image>http://www.dw.de/static/stills/images/vdt_deu_jojo/vdt_deu_jojo20100706_folge2.jpg</image>
+	 <subtitle>http://www.dw.de/static/stills/captions/vdt_deu_jojo/vdt_deu_jojo20100625_folge2v2.xml</subtitle>
+      </track>
+   </trackList>
+</playlist>
+
