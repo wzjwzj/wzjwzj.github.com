@@ -26,7 +26,7 @@ osmplayer: true
 <script type="text/javascript">
   $(function() {
     $("#jojo-sucht-das-gluck").osmplayer({
-      playlist: 'video/deutsch-lernen/jojo-sucht-das-gluck/playlist.xml',
+      playlist: '/video/deutsch-lernen/jojo-sucht-das-gluck/playlist.xml',
       height: '439px'
     });
   });
