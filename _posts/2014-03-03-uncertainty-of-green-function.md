@@ -30,7 +30,7 @@ min: \left(d-Ha\right)^t E^{-1} (d-Ha)
 
 ## mathematical formulation
 
-**GreenFunction.**
+**forward modeling:**
 
 <script type="math/tex; mode=display">
 u_j\left(t\right)=\sum_{q=1}^2 \int_s G_{qj}^0\left(t,\xi\right)*\dot{D}_q^0\left(t,\xi\right)~d\xi +e_{bj}\left( t \right)
@@ -41,6 +41,7 @@ u_j\left(t\right)=\sum_{q=1}^2 \int_s G_{qj}^0\left(t,\xi\right)*\dot{D}_q^0\lef
 + integration in space :  $ \int_s ~d\xi $ 
 + integration in time :  convolution operator \* 
 
+** suppose: **
 <script type="math/tex; mode=display">
 \dot{D}_q^0\left(t,\xi\right) \thickapprox \sum_{k=1}^K \sum_{l=1}^L a_{qkl}X_k\left(\xi\right)T_l\left(t-t_k\right)
 </script>
@@ -55,7 +56,13 @@ u_j\left(t\right)=\sum_{q=1}^2 \int_s G_{qj}^0\left(t,\xi\right)*\dot{D}_q^0\lef
 ---
 
 <script type="math/tex; mode=display">
-u_j\left(t\right)=\sum_{q=1}^2 \sum_{k=1}^K \sum_{l=1}^l a_{qkl} T_l \left( t - t_k \right) * g_{qkj}^0\left( t \right) +e_{bj}\left( t \right)
+\begin{aligned}
+
+u_j\left(t\right)&=\sum_{q=1}^2 \int_s G_{qj}^0\left(t,\xi\right)*\dot{D}_q^0\left(t,\xi\right)~d\xi +e_{bj}\left( t \right)\\
+                 &=\sum_{q=1}^2 \int_s G_{qj}^0\left(t,\xi\right)* \sum_{k=1}^K \sum_{l=1}^L a_{qkl}X_k\left(\xi\right)T_l\left(t-t_k\right) ~d\xi +e_{bj}\left( t \right)\\
+                 &=\sum_{q=1}^2 \sum_{k=1}^K \sum_{l=1}^L a_{qkl} T_l \left( t - t_k \right) * g_{qkj}^0\left( t \right) +e_{bj}\left( t \right) \\
+
+\end{aligned}
 </script>
 
 with 
