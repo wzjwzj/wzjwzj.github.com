@@ -55,12 +55,12 @@ u_j\left(t\right)=\sum_{q=1}^2 \int_s G_{qj}^0\left(t,\xi\right)*\dot{D}_q^0\lef
 ---
 
 <script type="math/tex; mode=display">
-u_j\left(t\right)=\sum_{q=1}^2 \sum_{k=1}^K \sum_{l=1}^l a_{qkl} T_l \left( t - t_k \right) * g_{qkl}^0\left( t \right) +e_{bj}\left( t \right)
+u_j\left(t\right)=\sum_{q=1}^2 \sum_{k=1}^K \sum_{l=1}^l a_{qkl} T_l \left( t - t_k \right) * g_{qkj}^0\left( t \right) +e_{bj}\left( t \right)
 </script>
 
 with 
 <script type="math/tex; mode=display">
- g_{qkl}^0\left( t \right) = \int_s X_k \left( \xi \right) G_{ql}^0\left(t,\xi\right) ~d\xi
+ g_{qkj}^0\left( t \right) = \int_s X_k \left( \xi \right) G_{qj}^0\left(t,\xi\right) ~d\xi
 </script>
 
 suppose: 
@@ -133,12 +133,12 @@ e_j(a) &= \sum_{q=1}^2 \sum_{k=1}^K P_{qkj}\left(a\right)  \delta g_{qkj} \left(
             \bbox[#fee]{  \sum_{l=1}^L B\left(t\right)*a_{qkl}T_l\left(t-t_k\right)}  * \color{red}{ \delta g_{qkj} \left( t \right) }
            + B\left(t\right)*e_{bj}\left( t \right)} \\
 	  &=\bbox[#eee]{\sum_{q=1}^2 \sum_{k=1}^K 
-           \bbox[#fee]{  \sum_{l=1}^L B\left(t\right)*a_{qkl}T_l\left(t-t_k\right)}  * \color{red}{ \int_s X_k \left( \xi \right)   \delta G_{ql}^0\left(t,\xi\right) ~d\xi }
+           \bbox[#fee]{  \sum_{l=1}^L B\left(t\right)*a_{qkl}T_l\left(t-t_k\right)}  * \color{red}{ \int_s X_k \left( \xi \right)   \delta G_{qj}^0\left(t,\xi\right) ~d\xi }
            + B\left(t\right)*e_{bj}\left( t \right)} \\
 	  &=B\left(t\right)  * \sum_{q=1}^2 \color{red}{ \int_s \sum_{k=1}^K 
-            \sum_{l=1}^L   a_{qkl} X_k \left( \xi \right) T_l\left(t-t_k\right) * \delta G_{ql}^0\left(t,\xi\right) ~d\xi }
+            \sum_{l=1}^L   a_{qkl} X_k \left( \xi \right) T_l\left(t-t_k\right) * \delta G_{qj}^0\left(t,\xi\right) ~d\xi }
            + B\left(t\right)*e_{bj}\left( t \right) \\
-	  &=B\left(t\right)  * \sum_{q=1}^2 \color{red}{ \int_s \dot{D}_q^0\left(t,\xi\right) * \delta G_{ql}^0\left(t,\xi\right) ~d\xi }
+	  &=B\left(t\right)  * \sum_{q=1}^2 \color{red}{ \int_s \dot{D}_q^0\left(t,\xi\right) * \delta G_{qj}^0\left(t,\xi\right) ~d\xi }
            + B\left(t\right)*e_{bj}\left( t \right) \\
 \end{aligned}
 </script>
