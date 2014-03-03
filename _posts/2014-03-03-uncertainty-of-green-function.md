@@ -26,6 +26,8 @@ overflow-y: hidden;
 min: \left(d-Ha\right)^t E^{-1} (d-Ha)
 </script>
 
+<!--end_excerpt-->
+
 ## mathematical formulation
 
 **GreenFunction.**
@@ -145,4 +147,4 @@ e_j(a) &= \sum_{q=1}^2 \sum_{k=1}^K P_{qkj}\left(a\right)  \delta g_{qkj} \left(
 
 
 
-<!--end_excerpt-->
+
