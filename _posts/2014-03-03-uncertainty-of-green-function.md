@@ -228,3 +228,101 @@ f_k &= \sum_i^n A_{ki} x_i  , (k=1\dots m); \mathbf{f} =\mathbf{A_{mn}x}  \\
 </script>
 
 ## [Bézier curve](http://en.wikipedia.org/wiki/B%C3%A9zier_curve)
+### recursion formula
+<script type="math/tex; mode=display">
+\begin{aligned}
+B_{j,0}(x) &:= \left\{
+\begin{matrix} 
+1 & \mathrm{if} \quad t_j \leq x < t_{j+1} \\
+0 & \mathrm{otherwise} 
+\end{matrix}\right. \\
+B_{i,k}(x) &:= \frac{x - t_i}{t_{i+k-1} - t_i} B_{i,k-1}(x) + \frac{t_{i+k} - x}{t_{i+k} - t_{i+1}} B_{i+1,k-1}(x).
+\end{aligned}
+</script>
+
+### General form of a NURBS surface
+A NURBS surface is obtained as the tensor product of two NURBS curves, thus using two independent parameters u and v (with indices i and j respectively):
+<script type="math/tex; mode=display">
+S(u,v) = \sum_{i=1}^k \sum_{j=1}^l R_{i,j}(u,v) \mathbf{P}_{i,j} 
+</script>
+with
+<script type="math/tex; mode=display">
+R_{i,j}(u,v) = \frac {N_{i,n}(u) N_{j,m}(v) w_{i,j}} {\sum_{p=1}^k \sum_{q=1}^l N_{p,n}(u) N_{q,m}(v) w_{p,q}}
+</script>
+as rational basis functions.
+
+
+
+## simple introduction of Bayesian rule
+Joint probability of two events A and B:
+<script type="math/tex; mode=display">
+P\left(AB\right) = P\left(A|B\right)P\left(B\right)=P\left(B|A\right)P\left(A\right)
+</script>
+
+In Bayesian probablity theory: one "events" is <font color=red>H</font>ypothesis. the other is <font color=red>D</font>ata. so:
+<script type="math/tex; mode=display">
+P\left(H|D\right) = \frac{P\left(D|H\right)P\left(H\right)}{P\left(D\right)}
+</script>
++ $P\left(D|H\right)$: likelihood function, as it assesses the probablity of the observed data arising from hypothesis. 
++ $P\left(H\right)$: prior, as it reflects one&prime; prior knowledge before the data are considered.
++ $P\left(H|D\right)$: Posterior, as its name suggests. reflects the probability of the hypothesis after consideration.
+
+**A simple example**
+
+let&prime;s say we have some quantity in the world, $x$, and our observation of this quantity,$y$, is corrupted by additive Gaussian noise, e:  
+<script type="math/tex; mode=display">
+y=x+e, \quad e ~ \left(0, \sigma^2\right)
+</script>
++ we might want to pick the value of $x$ that maximizes this distribution 
+<script type="math/tex; mode=display">
+\widehat{x} = arg\,\underset{x}{min}\,P\left(x|y\right)
+</script>  
+
++ alternatively, we may want minimize the mean squared error of our guesses, then we should pick the mean of (Px|y);  
+<script type="math/tex; mode=display">
+\widehat{x} = \int x P\left(x|y\right)~dx
+</script>  
+
+let&prime;s draw upon our existing knowledge. x with mean of 12,variance of 1. Thus,
+
+<script type="math/tex; mode=display">
+\begin{aligned}
+P\left(x|y\right) &= \frac{P\left(y|x\right)P\left(x\right)}{P\left(y\right)} \\
+P\left(y|x\right) &= \frac{1}{\sqrt{2\pi}\sigma}e^{-\frac{\left(y-x\right)^2}{2\sigma^2}} \\
+P\left(x\right)   &= \frac{1}{2\pi}e^{-\frac{\left(x-12\right)^2}{2}}\\
+P\left(x|y\right) &\varpropto  e^{-\frac{\left(y-x\right)^2}{2\sigma^2}}e^{-\frac{\left(x-12\right)^2}{2}}
+\end{aligned}
+</script>
+
+The x which maximizes $P(x|y)$ is the same as that which minimizes the exponent in
+brackets which may be found by simple algebraic manipulation to be:
+
+<script type="math/tex; mode=display">
+\widehat{x}=\frac{\mathbf{y}+12\sigma^2}{1+\sigma^2}
+</script>
+
+----
+## normalized bicubic B-splines
+<script type="math/tex; mode=display">
+\Phi_{kl}\left(\xi_1,\xi_2\right)=N_k\left(\xi_1\right)N_l\left(\xi_2\right)\qquad \left(k=1,...,K;l=1,...,L\right)
+</script>
+where
+<script type="math/tex; mode=display">
+N_j\left(s\right)=4 \Delta s M_{4,j+2}\left(s\right)
+</script>
+
+which $ M_{4,j}(s) $ is the B-spline function of order 4(degree 3)
+
+<script type="math/tex; mode=display">
+\begin{aligned}
+M_{1,j}\left(s\right) &=
+  \begin{cases}
+    1/\Delta s & \left( s_j - \Delta s  \leq  s               \lt    s_j \right) \\
+    0         & \left( s               \lt   s_j - \Delta s ; s_j \leq   s   \right) 
+  \end{cases} \\  
+M_{r,j}\left( s \right) &= \frac{1}{ r \Delta s} \left\{ \left[  s-s_j+\left( j-r \right) \Delta s  \right] M_{r-1,j-1}\left( s \right) + \left( s_j - s \right) M_{r-1,j}\left( s \right) \right\}
+\end{aligned}
+</script>
+
+
+

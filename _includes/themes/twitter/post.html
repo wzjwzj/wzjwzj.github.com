@@ -10,9 +10,11 @@
         <div class="pull-left">
 	   <span>{{ page.date | date_to_long_string }}  <a href="{{site:githubEditBaseURL}}{{ page.path }}">编辑本文</a></span>
         </div>
+	{% comment %}
         <div class="pull-right">
-          {% include widgets/share_buttons %}
+          { % include widgets/share_buttons % }
         </div>
+	{% endcomment %}
       </div>
       {{ content }}
       {% if page.license != false %}
