@@ -325,4 +325,14 @@ M_{r,j}\left( s \right) &= \frac{1}{ r \Delta s} \left\{ \left[  s-s_j+\left( j-
 </script>
 
 
+<script type="math/tex; mode=display">
+\begin{aligned}
+M_{1,j}\left(s\right) &=
+  \begin{cases}
+    1/\Delta s & \left( s_j - \Delta s  \leq  s               \lt    s_j \right) \\
+    0         & \left( s               \lt   s_j - \Delta s ; s_j \leq   s   \right) 
+  \end{cases} \\  
+M_{r,j}\left( s \right) &= \frac{1}{ r \Delta s} \left\{ \left[ s-s_{j-r}  \right] M_{r-1,j-1}\left( s \right) + \left( s_j - s \right) M_{r-1,j}\left( s \right) \right\}
+\end{aligned}
+</script>
 
