@@ -8,9 +8,7 @@ comments: false
 
 <header> <img src="assets/themes/twitter/img/dict.png"  alt="dict" style="padding:50px 0px 10px"/></header>
 
-<iframe id="dict" name="dict" frameborder="0"  style="height:100%;width:100%"></iframe>
-
-<div id="mask" style="background-color:white;width:16px;position:absolute;bottom:3px;right:0px"></div>
+<iframe id="dict" name="dict" frameborder="0"  style="height:100%;width:calc( 100% + 143px )"></iframe>
 
 <script type="text/javascript">
 $(document).ready(function() {
