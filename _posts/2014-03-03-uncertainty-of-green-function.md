@@ -8,10 +8,7 @@ toc:
 widget:
 mathjax: true
 prettify: 
-htmlhead: '<style> div.MathJax_Display {
-overflow-x: auto;
-overflow-y: hidden;
-} </style>'
+htmlhead: 
 ---
 {% include JB/setup %}
  
@@ -314,14 +311,17 @@ N_j\left(s\right)=4 \Delta s M_{4,j+2}\left(s\right)
 which $ M_{4,j}(s) $ is the B-spline function of order 4(degree 3)
 
 <script type="math/tex; mode=display">
+\begin{equation}
 \begin{aligned}
 M_{1,j}\left(s\right) &=
   \begin{cases}
     1/\Delta s & \left( s_j - \Delta s  \leq  s               \lt    s_j \right) \\
     0         & \left( s               \lt   s_j - \Delta s ; s_j \leq   s   \right) 
   \end{cases} \\  
-M_{r,j}\left( s \right) &= \frac{1}{ r \Delta s} \left\{ \left[  s-s_j+\left( j-r \right) \Delta s  \right] M_{r-1,j-1}\left( s \right) + \left( s_j - s \right) M_{r-1,j}\left( s \right) \right\}
+
+M_{r,j}\left( s \right) &= \frac{1}{ r \Delta s} \left\{ \cancelto{ \left( s-s_{j-r} \right) }{ \left[   s-s_j+\left( j-r \right) \Delta s  \right] } M_{r-1,j-1}\left( s \right) + \left( s_j - s \right) M_{r-1,j}\left( s \right) \right\}
 \end{aligned}
+\end{equation}
 </script>
 
 
@@ -332,7 +332,51 @@ M_{1,j}\left(s\right) &=
     1/\Delta s & \left( s_j - \Delta s  \leq  s               \lt    s_j \right) \\
     0         & \left( s               \lt   s_j - \Delta s ; s_j \leq   s   \right) 
   \end{cases} \\  
-M_{r,j}\left( s \right) &= \frac{1}{ r \Delta s} \left\{ \left[ s-s_{j-r}  \right] M_{r-1,j-1}\left( s \right) + \left( s_j - s \right) M_{r-1,j}\left( s \right) \right\}
+M_{r,j}\left( s \right) &= \frac{1}{ r \Delta s} \left\{ \left( s-s_{j-r}  \right) M_{r-1,j-1}\left( s \right) + \left( s_j - s \right) M_{r-1,j}\left( s \right) \right\} 
 \end{aligned}
 </script>
 
+<script type="math/tex; mode=display">
+\begin{aligned}
+\Delta s M_{1,j}\left(s\right) &=
+  \begin{cases}
+    1          & \left( s_{j-1}  \leq  s    \lt    s_j \right) \\
+    0          & \left( s        \lt   s_{j-1} ;   s_j  \leq   s   \right) 
+  \end{cases} \\  
+2 \Delta s^2 M_{2,j}\left( s \right) &= 
+  \begin{cases}
+    \left( s-s_{j-2}\right) & \left( s_{j-2}  \leq  s   \lt    s_{j-1} \right) \\
+    \left( s_j-s   \right)  & \left( s_{j-1}  \leq  s   \lt    s_j \right) \\
+    0          & \left( s        \lt   s_{j-2} ;  s_j \leq   s   \right) 
+  \end{cases} \\  
+6 \Delta s^3 M_{3,j}\left( s \right) &= 
+  \begin{cases}
+    \left( s-s_{j-3}\right)^2 & \left( s_{j-3}  \leq  s   \lt    s_{j-2} \right) \\
+    \left( s-s_{j-3}\right)\left(s_{j-1}-s\right)+\left( s_j-s \right)\left(s-s_{j-2}\right) & \left( s_{j-2}  \leq  s   \lt    s_{j-1} \right) \\
+    \left( s_j-s   \right)^2  & \left( s_{j-1}  \leq  s   \lt    s_j \right) \\
+    0          & \left( s        \lt   s_{j-3} ;  s_j \leq   s   \right) 
+  \end{cases} \\  
+24 \Delta s^4 M_{4,j}\left( s \right) &= 
+  \begin{cases}
+    \left( s-s_{j-4}\right)^3                                     & \left( s_{j-4}  \leq  s   \lt    s_{j-3} \right) \\
+    \left( s - s_{j-4}\right)^2 \left(s_{j-2} - s\right) +
+    \left( s - s_{j-4}\right)   \left(s_{j-1} - s\right)    \left(s - s_{j-3}\right) +
+    \left( s_j-s \right)        \left(s-s_{j-3}\right)^2          & \left( s_{j-3}  \leq  s   \lt    s_{j-2} \right) \\
+    \left( s-s_{j-4}\right)     \left(s_{j-1}-s\right)^2 +
+    \left( s_j - s \right)      \left(s - s_{j-3}\right)    \left(s_{j-1} - s\right) + 
+    \left( s_j - s \right)^2    \left(s - s_{j-2}\right)          & \left( s_{j-2}  \leq  s   \lt    s_{j-1} \right) \\
+    \left( s_j - s \right)^3  & \left( s_{j-1}  \leq  s   \lt    s_j \right) \\
+    0          & \left( s        \lt   s_{j-3} ;  s_j \leq   s   \right) 
+  \end{cases} \\  
+\end{aligned}
+</script>
+
+
+
+<script type="math/tex; mode=display">
+\left(\sum_{i=0}^n a_i\right)^2 = \sum_{i,j=1}^n a_k a_l \\
+\left(\sum_{i=0}^n a_{ij}\right)^2 = \sum_{i,j=1}^n a_{kl} a_{pq} 
+</script>
+
+M_4,i 积分，微分，最大值，
+M_4,j * M_4,j 积分微分
