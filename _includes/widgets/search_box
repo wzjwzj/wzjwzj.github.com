@@ -11,7 +11,6 @@
   <input  type="hidden" name="ie" value="UTF-8" /> 
   <input  type="hidden" name="oe" value="UTF-8" /> 
   <input  type="hidden" name="hl" value="zh-CN" /> 
-  <!--button type="submit" name="btnG"  class="search-button" /*style="background-image:url('/images/social/google.png')*/"><i class="icon-search"></i></button-->
   <button type="submit" name="btnG"  class="search-button" ><i class="icon-search"></i></button>
   <div style="display:inline-block; padding:10px 0 0 18px">
     <input  type="radio"  name="sitesearch" id="gWZJ" value="wzjwzj.github.io" checked="checked" /><label  for="gwiki">站内搜索</label>
@@ -28,4 +27,64 @@
   <input  type="text"   class="search-query" name="q" id="dict_query"  placeholder="dict.cn 海词"></input>   
   <button type="submit" class="search-button" ><i class="icon-search"></i></button>
 </form>
+
+
+<form id="glosbe" name="glosbe" style="margin-top:125px" method="get" action="/glosbe.html"> 
+  <select name="from" onchange='set_item_from( )'>
+    <option value="deu" >deutsch</option>
+    <option value="eng" >english</option>
+    <option value="zho" >汉语</option>
+  </select>
+  <select name="dest" onchange='set_item_dest( )' >
+    <option value="zho">汉语</option>
+    <option value="eng">english</option>
+    <option value="deu">deutsch</option>
+  </select> 
+  <input  type="text"   id="phrase"  name="phrase"  placeholder="dictionary" class="search-query">  
+  <button type="submit" class="search-button" ><i class="icon-search"></i></button>
+</form> 
+<div id="keyboard" style="display:none; padding:5px 40px"> 
+	<a href="javascript:addSpecChar('ä')" class="btn">ä</a> 
+	<a href="javascript:addSpecChar('Ä')" class="btn">Ä</a> 
+	<a href="javascript:addSpecChar('ö')" class="btn">ö</a> 
+	<a href="javascript:addSpecChar('Ö')" class="btn">Ö</a> 
+	<a href="javascript:addSpecChar('ü')" class="btn">ü</a> 
+	<a href="javascript:addSpecChar('Ü')" class="btn">Ü</a> 
+	<a href="javascript:addSpecChar('ß')" class="btn">ß</a> 
+	<a href="javascript:addSpecChar('ẞ')" class="btn">ẞ</a> 
+</div>
+
+
+<SCRIPT language=JavaScript>
+  function showhidekeyboard(){
+    if($('#glosbe select[name="from"]').val() == 'deu' ){
+	$('#keyboard').css("display","inline-block");
+    }else{
+	$('#keyboard').css("display","none");
+    }
+  }
+  if ( !sessionStorage.getItem("from") ) {  
+	sessionStorage.setItem("from", "deu");
+        $('#glosbe select[name="from"]').val("deu");
+  }else{
+	$('#glosbe select[name="from"]').val(sessionStorage.getItem("from"));
+  }
+  showhidekeyboard();
+  if ( !sessionStorage.getItem("dest") ) {  
+	sessionStorage.setItem("dest", "zho");
+        $('#glosbe select[name="dest"]').val("zho");
+  }else{
+        $('#glosbe select[name="dest"]').val(sessionStorage.getItem("dest"));
+  }
+  function set_item_from( ){
+	sessionStorage.setItem('from', $('#glosbe select[name="from"]').val());
+	showhidekeyboard();
+  }
+  function set_item_dest( ){
+	sessionStorage.setItem('dest', $('#glosbe select[name="dest"]').val());
+  }
+  function addSpecChar(NewCode) {
+    document.glosbe.phrase.value += ''+NewCode+''; 
+  };
+</SCRIPT>
 
