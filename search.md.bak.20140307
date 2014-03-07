@@ -57,14 +57,14 @@ $(document).ready(function() {
   function findEntries(q) {
     var matches = [];
     var rq = new RegExp(q, 'im');
-    var rl = /^http:\/\/wzjwzj\.github\.com\/blog\/(.+)$/;  
+        var rl = /^http:\/\/wzjwzj\.github\.com\/blog\/(.+)$/;  
     for (var i = 0; i < entries.length; i++) {
       var entry = entries[i];
       var title = $(entry.getElementsByTagName('title')[0]).text();
       var link = $(entry.getElementsByTagName('link')[0]).attr('href');
       var title_en = rl.exec(link)[1].replace(/-/g, ' ');
       var content = $(entry.getElementsByTagName('content')[0]).text();          
-      if (rq.test(title) || rq.test(title_en) || rq.test( {{ content | strip_html }} )) {
+      if (rq.test(title) || rq.test(title_en) || rq.test(content)) {
         var updated = formatDate(xmlDateToJavascriptDate($(entry.getElementsByTagName('updated')[0]).text()));
         matches.push({'title': title, 'link': link, 'date': updated, 'content': content});
       }
@@ -74,7 +74,7 @@ $(document).ready(function() {
       var match = matches[i]; 
       html += '<article class="nested">';
       html += '<header><h2><a href="' + match.link + '">' + htmlEscape(match.title) + '</a></h2></header>';
-      html += '<section><p>' + match.content + '</p></section>';
+      html += '<section><p>' + htmlEscape(match.content) + '</p></section>';
       html += '<footer><p>更新日期：' + match.date + '</p></footer>';
       html += '</article>';
     }
@@ -99,6 +99,7 @@ $(document).ready(function() {
         entries = data.getElementsByTagName('entry');
         findEntries(query);
       }});
+
     } else {
       findEntries(query);
     }

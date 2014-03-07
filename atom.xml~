@@ -13,6 +13,7 @@ title : Atom Feed
     <name>{{ site.author.name }}</name>
     <email>{{ site.author.email }}</email>
   </author>
+
 {% for post in site.posts %}
   <entry>
     <title>{{ post.title }}</title>
@@ -22,4 +23,5 @@ title : Atom Feed
     <content type="html">{{ post.excerpt | xml_escape }}{% unless post.tags == empty %}{% capture taglist %}<ul class="tag-box inline"><li><i class="icon-large icon-tags"></i></li>{% assign tags_list = post.tags %}{% include JB/tags_list %}</ul>{% endcapture %}{{ taglist | xml_escape }}{% assign taglist = nil %}{% endunless %}</content>
   </entry>
 {% endfor %}
+
 </feed>
