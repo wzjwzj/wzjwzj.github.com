@@ -4,23 +4,24 @@
 <!--FONT class='wdnx' ><B>惟德乃兴</B></FONT-->
 </CENTER>
 
-<form style="margin-top:20px" method="get" action="/gsearch.html">
+<form  method="get" action="/gsearch.html">
   <input  type="text"   class="search-query" name="q"   placeholder="谷歌引擎搜索"></input>   
-  <button type="submit" class="search-button" ><i class="icon-search"></i></button>
+  <!--button type="submit" class="search-button" ><i class="icon-search"></i></button-->
 </form>
 
-<form style="margin-top:20px" method="get" action="/search.html">
+<form  method="get" action="/search.html">
   <input  type="text"   class="search-query" name="q"   placeholder="站内正则搜索"></input>   
-  <button type="submit" class="search-button" ><i class="icon-search"></i></button>
+  <!--button type="submit" class="search-button" ><i class="icon-search"></i></button-->
 </form>
 
-<form style="margin-top:65px" method="get" action="/dict.html">
+<form  method="get" action="/dict.html">
   <input  type="text"   class="search-query" name="q"   placeholder="dict.cn 海词"></input>   
-  <button type="submit" class="search-button" ><i class="icon-search"></i></button>
+  <!--button type="submit" class="search-button" ><i class="icon-search"></i></button-->
 </form>
 
-
-<form id="glosbe" name="glosbe" style="margin-top:125px" method="get" action="/glosbe.html"> 
+<form id="glosbe" name="glosbe"  method="get" action="/glosbe.html"> 
+  <input  type="text"   id="phrase"  name="phrase"  placeholder="dictionary" class="search-query">  
+  <center>
   <select name="from" onchange='set_item_from( )'>
     <option value="deu" >deutsch</option>
     <option value="eng" >english</option>
@@ -31,10 +32,12 @@
     <option value="eng">english</option>
     <option value="deu">deutsch</option>
   </select> 
-  <input  type="text"   id="phrase"  name="phrase"  placeholder="dictionary" class="search-query">  
-  <button type="submit" class="search-button" ><i class="icon-search"></i></button>
+  </center>
+  <!--input  type="text"   id="phrase"  name="phrase"  placeholder="dictionary" class="search-query"-->  
+  <!--button type="submit" class="search-button" ><i class="icon-search"></i></button-->
 </form> 
-<div id="keyboard" style="display:none; padding:5px 40px"> 
+<center>
+<div id="keyboard" style="display:none; "> 
 	<a href="javascript:addSpecChar('ä')" class="btn">ä</a> 
 	<a href="javascript:addSpecChar('Ä')" class="btn">Ä</a> 
 	<a href="javascript:addSpecChar('ö')" class="btn">ö</a> 
@@ -44,7 +47,7 @@
 	<a href="javascript:addSpecChar('ß')" class="btn">ß</a> 
 	<a href="javascript:addSpecChar('ẞ')" class="btn">ẞ</a> 
 </div>
-
+</center>
 
 <SCRIPT language=JavaScript>
   function showhidekeyboard(){
