@@ -4,27 +4,18 @@
 <!--FONT class='wdnx' ><B>惟德乃兴</B></FONT-->
 </CENTER>
 
-<form style="margin-top:20px" method="get" action="http://www.google.com/search"> 
-  <input  type=text name=q placeholder="谷歌搜索" class="search-query">  
-  <input  type="hidden" name="domains" value="wzjwzj.github.io" />
-  <input  type="hidden" name="num" value="50" />
-  <input  type="hidden" name="ie" value="UTF-8" /> 
-  <input  type="hidden" name="oe" value="UTF-8" /> 
-  <input  type="hidden" name="hl" value="zh-CN" /> 
-  <button type="submit" name="btnG"  class="search-button" ><i class="icon-search"></i></button>
-  <div style="display:inline-block; padding:10px 0 0 18px">
-    <input  type="radio"  name="sitesearch" id="gWZJ" value="wzjwzj.github.io" checked="checked" /><label  for="gwiki">站内搜索</label>
-    <input  type="radio"  name="sitesearch" id="gWWW" value="" /><label for="gWWW">站外搜索</label>
-  </div>
-</form> 
-
-<form style="margin-top:20px" method="get" action="/search.html">
-  <input  type="text"   class="search-query" name="q"  id="query"  placeholder="站内正则搜索"></input>   
+<form style="margin-top:20px" method="get" action="/gsearch.html">
+  <input  type="text"   class="search-query" name="q"   placeholder="谷歌引擎搜索"></input>   
   <button type="submit" class="search-button" ><i class="icon-search"></i></button>
 </form>
 
-<form style="margin-top:65px" method="get" action="/dict.html#dict">
-  <input  type="text"   class="search-query" name="q" id="dict_query"  placeholder="dict.cn 海词"></input>   
+<form style="margin-top:20px" method="get" action="/search.html">
+  <input  type="text"   class="search-query" name="q"   placeholder="站内正则搜索"></input>   
+  <button type="submit" class="search-button" ><i class="icon-search"></i></button>
+</form>
+
+<form style="margin-top:65px" method="get" action="/dict.html">
+  <input  type="text"   class="search-query" name="q"   placeholder="dict.cn 海词"></input>   
   <button type="submit" class="search-button" ><i class="icon-search"></i></button>
 </form>
 
