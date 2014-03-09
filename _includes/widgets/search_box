@@ -2,7 +2,6 @@
 <CENTER>
 <!--img src="{{ ASSET_PATH }}/img/google_search.png" border="0" alt="Google" align="absmiddle" style="padding-bottom:20px" /--> 
 <!--FONT class='wdnx' ><B>惟德乃兴</B></FONT-->
-</CENTER>
 
 <form  method="get" action="/gsearch.html">
   <input  type="text"   class="search-query" name="q"   placeholder="谷歌引擎搜索"></input>   
@@ -21,7 +20,6 @@
 
 <form id="glosbe" name="glosbe"  method="get" action="/glosbe.html"> 
   <input  type="text"   id="phrase"  name="phrase"  placeholder="dictionary" class="search-query">  
-  <center>
   <select name="from" onchange='set_item_from( )'>
     <option value="deu" >deutsch</option>
     <option value="eng" >english</option>
@@ -32,11 +30,9 @@
     <option value="eng">english</option>
     <option value="deu">deutsch</option>
   </select> 
-  </center>
   <!--input  type="text"   id="phrase"  name="phrase"  placeholder="dictionary" class="search-query"-->  
   <!--button type="submit" class="search-button" ><i class="icon-search"></i></button-->
 </form> 
-<center>
 <div id="keyboard" style="display:none; "> 
 	<a href="javascript:addSpecChar('ä')" class="btn">ä</a> 
 	<a href="javascript:addSpecChar('Ä')" class="btn">Ä</a> 
@@ -47,7 +43,8 @@
 	<a href="javascript:addSpecChar('ß')" class="btn">ß</a> 
 	<a href="javascript:addSpecChar('ẞ')" class="btn">ẞ</a> 
 </div>
-</center>
+</CENTER>
+
 
 <SCRIPT language=JavaScript>
   function showhidekeyboard(){
@@ -79,6 +76,7 @@
   }
   function addSpecChar(NewCode) {
     document.glosbe.phrase.value += ''+NewCode+''; 
+    var t=$("#phrase").val(); $("#phrase").val("").focus().val(t);
   };
 </SCRIPT>
 
