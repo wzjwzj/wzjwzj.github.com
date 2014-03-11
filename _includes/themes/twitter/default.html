@@ -28,6 +28,7 @@
   <!-- Scripts -->
   <script type="text/javascript" src="{{ ASSET_PATH }}/js/jquery-1.10.1.min.js"></script>
   <script type="text/javascript" src="/assets/jquery-ui/js/jquery-ui-1.10.4.custom.min.js"></script>
+  <link   rel="stylesheet"      href="/assets/jquery-ui/css/smoothness/jquery-ui-1.10.4.custom.min.css">
 
   {% if page.mathjax %}	
    <script type="text/x-mathjax-config">
@@ -76,11 +77,8 @@
           <li{% if page.url == home_url %} class="active"{% endif %}>
             <a href="{{ HOME_PATH }}" rel="nofollow" title="首页">首页</a>
           </li>
-          <li{% if page.url == site.JB.categories_path %} class="active"{% endif %}>
-            <a href="{{ site.JB.categories_path }}" rel="nofollow" title="分类">分类</a>
-          </li>
-          <li{% if page.url == site.JB.tags_path %} class="active"{% endif %}>
-            <a href="{{ site.JB.tags_path }}" rel="nofollow" title="标签">标签</a>
+          <li{% if page.url == site.JB.archives_path %} class="active"{% endif %}>
+            <a href="{{ site.JB.archives_path }}" rel="nofollow" title="archives">归档</a>
           </li>
           <li{% if page.url == site.JB.messages_path %} class="active"{% endif %}>
             <a href="{{ site.JB.messages_path }}" rel="nofollow" title="留言板">留言板</a>

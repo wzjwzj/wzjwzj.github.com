@@ -1,0 +1,80 @@
+---
+layout: default
+title: 归档
+header: Post Archive
+group: navigation
+comments: false
+htmlhead: '<style>
+.ui-widget-content {
+  border: initial;
+  background: initial;
+  color: initial;
+}
+.ui-widget-content a {
+  color: #ae432e;
+}
+.ui-widget-header {
+border: initial;
+background: initial;
+}
+</style>
+<script>
+  $(function() {
+    $( "#tabs" ).tabs();
+  });
+</script>'
+---
+{% include JB/setup %}
+
+
+<section id="content">
+  <article class="page">
+    <section>
+
+
+<div id="tabs">
+  <ul>
+    <li><a href="#tabs-archive">归档</a></li>
+    <li><a href="#tabs-category">分类</a></li>
+    <li><a href="#tabs-tag">标签</a></li>
+  </ul>
+
+  <div id='tabs-archive'>
+    {% assign posts_collate = site.posts %}
+    {% include JB/posts_collate %}
+  </div>
+
+  <div id='tabs-category'>
+    <ul class="tag-box inline" style="margin-bottom: 20px;">
+      {% assign categories_list = site.categories %}
+      {% include JB/categories_list %}
+    </ul>
+    {% for category in site.categories %} 
+    <h2 id="{{ category[0] }}-ref">{{ category[0] | join: "/" }}</h2>
+    <ul>
+      {% assign pages_list = category[1] %}  
+      {% include JB/pages_list %}
+    </ul>
+    {% endfor %}
+  </div>
+
+  <div id='tabs-tag'>
+    <ul class="tag-box inline" style="margin-bottom: 20px;">
+      {% assign tags_list = site.tags %}  
+      {% include JB/tags_list %}
+    </ul>
+    {% for tag in site.tags %} 
+    <h2 id="{{ tag[0] }}-ref">{{ tag[0] }}</h2>
+    <ul>
+      {% assign pages_list = tag[1] %}  
+      {% include JB/pages_list %}
+    </ul>
+    {% endfor %}
+  </div>
+
+</div>
+
+
+ 	</section>
+  </article>
+</section>
