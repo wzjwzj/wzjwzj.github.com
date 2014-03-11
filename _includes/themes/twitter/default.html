@@ -23,11 +23,11 @@
   <!-- Styles -->
   <link rel="stylesheet" href="{{ ASSET_PATH }}/css/style.min.css">
   <link rel="stylesheet" href="{{ ASSET_PATH }}/css/font-awesome.min.css">
-  <link rel="stylesheet" href="{{ ASSET_PATH }}/js/prettify/prettify.css">
+  <link rel="stylesheet" href="/assets/prettify/prettify.css">
   
   <!-- Scripts -->
   <script type="text/javascript" src="{{ ASSET_PATH }}/js/jquery-1.10.1.min.js"></script>
-  <script type="text/javascript" src="/assets/themes/twitter/js/jquery-ui.min.js"></script>
+  <script type="text/javascript" src="/assets/jquery-ui/js/jquery-ui-1.10.4.custom.min.js"></script>
 
   {% if page.mathjax %}	
    <script type="text/x-mathjax-config">
@@ -55,10 +55,10 @@
   {% endif %}
 
   {% if page.osmplayer %}	
-  <link rel="stylesheet" href="/osmplayer/jquery-ui/dark-hive/jquery-ui.css">
-  <link rel="stylesheet" href="/osmplayer/templates/default/css/osmplayer_default.css">
-  <script type="text/javascript" src="/osmplayer/bin/osmplayer.compressed.js"></script>
-  <script type="text/javascript" src="/osmplayer/templates/default/osmplayer.default.js"></script>
+  <link rel="stylesheet" href="/assets/jquery-ui/css/dark-hive/jquery-ui-1.10.4.custom.min.css">
+  <link rel="stylesheet" href="/assets/osmplayer/templates/default/css/osmplayer_default.css">
+  <script type="text/javascript" src="/assets/osmplayer/js/osmplayer.compressed.js"></script>
+  <script type="text/javascript" src="/assets/osmplayer/templates/default/osmplayer.default.js"></script>
   {% endif %}
 
   {{ page.htmlhead }}
@@ -173,7 +173,7 @@
   $(document).ready(function() {
     $("table.highlighttable").wrap('<div style="overflow:auto;border: 1px solid rgba(0,0,0,0.15);border-radius: 4px;"></div>');
     $('pre:not(table.highlighttable pre, div.highlight pre, div.gist pre)').addClass('prettyprint linenums').attr('style', 'overflow:auto'); 
-    $.getScript('{{ ASSET_PATH }}/js/prettify/prettify.js',function(){ prettyPrint();});
+    $.getScript('/assets/prettify/prettify.js',function(){ prettyPrint();});
     $("#icon-resize").click(function(){
       if($(this).hasClass("icon-resize-full")){
          $(this).removeClass("icon-resize-full");
