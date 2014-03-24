@@ -36,12 +36,13 @@
 		config: ["MMLorHTML.js"],
 		tex2jax: {
 			inlineMath: [ ['$','$'], ['\\(','\\)'] ],
+			displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
 			processEscapes:true
   		},
   		jax: ["input/TeX","input/MathML","output/HTML-CSS","output/NativeMML"],
   		extensions: ["tex2jax.js","mml2jax.js","MathMenu.js","MathZoom.js"],
   		TeX: {
-			extensions: ["AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js","autobold.js","cancel.js"],
+			extensions: ["AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js","autobold.js","color.js","cancel.js"],
 			equationNumbers: { autoNumber: "AMS" }
   		},
 		styles: {
