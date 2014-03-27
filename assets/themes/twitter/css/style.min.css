@@ -237,9 +237,7 @@ a:hover,a:active {
 	color:#444;
 	text-decoration:none;
 }
-#sidebar section div.toc a {
-	color:#219b42;
-}
+
 #sidebar section div.toc .toc-active a {
 	color:#800;
 }
@@ -1162,24 +1160,27 @@ figure a img:hover {
 	box-shadow:0px 0px 10px 5px #e2e2e2 inset;*/
 }
 
+/*
 div.toc ul li :before {
-	/*background:white;
-	box-shadow:0px 0px 10px 5px #e2e2e2 inset;*/
-	content: "\f105";
+	content: "\f111";
 	font-family: FontAwesome;
 	color: #219b42;
 	margin-left: -11px;
 	position: relative;
-	left:-15px;
+	font-size:9px;
+	left:-5px;
 }
 
+#sidebar section div.toc a {
+	color:#219b42;
+}
+*/
 
-.toc-active :before {
-	/*background:white;
-	box-shadow:0px 0px 10px 5px #e2e2e2 inset;*/
+div.toc ul li.toc-active :before {
 	content: "\f04b";
 	font-family: FontAwesome;
-	color: #800;
+	color: #F00;
+	text-shadow: 0px 1px 2px #000;
 	margin-left: -11px;
 	position: relative;
 	left:-15px;
