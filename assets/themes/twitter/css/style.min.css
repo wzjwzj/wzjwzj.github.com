@@ -241,7 +241,7 @@ a:hover,a:active {
 	color:#219b42;
 }
 #sidebar section div.toc .toc-active a {
-	color:red;
+	color:#800;
 }
 
 #sidebar section a:hover {
