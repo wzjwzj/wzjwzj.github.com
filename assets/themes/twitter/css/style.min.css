@@ -239,7 +239,17 @@ a:hover,a:active {
 }
 
 #sidebar section div.toc .toc-active a {
-	color:#800;
+	color:#e00;
+	text-shadow: 0px 1px 1px #000;
+}
+
+div.toc ul li.toc-active :before {
+	content: "\f04b";
+	font-family: FontAwesome;
+	color: #e00;
+	margin-left: -11px;
+	position: relative;
+	left:-15px;
 }
 
 #sidebar section a:hover {
@@ -1175,17 +1185,6 @@ div.toc ul li :before {
 	color:#219b42;
 }
 */
-
-div.toc ul li.toc-active :before {
-	content: "\f04b";
-	font-family: FontAwesome;
-	color: #F00;
-	text-shadow: 0px 1px 2px #000;
-	margin-left: -11px;
-	position: relative;
-	left:-15px;
-}
-
 
 
 
