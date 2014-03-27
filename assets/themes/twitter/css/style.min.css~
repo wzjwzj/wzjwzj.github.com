@@ -240,9 +240,6 @@ a:hover,a:active {
 #sidebar section div.toc a {
 	color:#219b42;
 }
-#sidebar section div.toc .toc-active a {
-	color:red;
-}
 
 #sidebar section a:hover {
 	color:#ae432e;
