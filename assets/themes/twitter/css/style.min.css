@@ -1162,6 +1162,18 @@ figure a img:hover {
 	box-shadow:0px 0px 10px 5px #e2e2e2 inset;*/
 }
 
+div.toc ul li :before {
+	/*background:white;
+	box-shadow:0px 0px 10px 5px #e2e2e2 inset;*/
+	content: "\f105";
+	font-family: FontAwesome;
+	color: #219b42;
+	margin-left: -11px;
+	position: relative;
+	left:-15px;
+}
+
+
 .toc-active :before {
 	/*background:white;
 	box-shadow:0px 0px 10px 5px #e2e2e2 inset;*/
@@ -1172,6 +1184,8 @@ figure a img:hover {
 	position: relative;
 	left:-15px;
 }
+
+
 
 
 .social {
