@@ -246,7 +246,7 @@ a:hover,a:active {
 div.toc ul li.toc-active :before {
 	content: "\f04b";
 	font-family: FontAwesome;
-	color: #e00;
+	color: #800;
 	margin-left: -11px;
 	position: relative;
 	left:-15px;
