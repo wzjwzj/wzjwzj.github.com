@@ -1202,15 +1202,31 @@ div.toc ul li :before {
 	opacity:1.0;
 	width:32px;
 	height:32px;
-	-webkit-transition:0.3s;
-	-moz-transition:0.3s;
-	-o-transition:0.3s;
-	transition:0.3s;
-	/*background-repeat:no-repeat;
-	background-color:#3b5998;*/
+	background-size:32px 32px;
 	border:1px solid #3b5998;
 	margin:0px 2.5px;
 }
+
+.social  {
+-webkit-transition:All 1.0s ease;
+   -moz-transition:All 1.0s ease;
+     -o-transition:All 1.0s ease;
+        transition:All 1.0s ease;
+-webkit-transform: rotate(0deg) scale(1) skew(0deg) translate(0px);
+   -moz-transform: rotate(0deg) scale(1) skew(0deg) translate(0px);
+    -ms-transform: rotate(0deg) scale(1) skew(0deg) translate(0px);
+     -o-transform: rotate(0deg) scale(1) skew(0deg) translate(0px);
+        transform: rotate(0deg) scale(1) skew(0deg) translate(0px);
+}
+.social:hover{
+-webkit-transform: rotate(0deg) scale(1.5) skew(0deg) translate(0px); 
+   -moz-transform: rotate(0deg) scale(1.5) skew(0deg) translate(0px);
+    -ms-transform: rotate(0deg) scale(1.5) skew(0deg) translate(0px);
+     -o-transform: rotate(0deg) scale(1.5) skew(0deg) translate(0px);
+        transform: rotate(0deg) scale(1.5) skew(0deg) translate(0px);
+}
+
+
 .wdnx{
     font-family:Helvetica,Arial,sans-serif;font-weight:bold;font-size:3em;
     color:rgba(255,255,255,0.85);
