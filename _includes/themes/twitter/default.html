@@ -22,7 +22,9 @@
 
   <!-- Styles -->
   <link rel="stylesheet" href="{{ ASSET_PATH }}/css/style.min.css">
-  <link rel="stylesheet" href="{{ ASSET_PATH }}/css/font-awesome.min.css">
+  <!--link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet"-->
+  <link rel="stylesheet" href="/assets/font-awesome-4.0.3/css/font-awesome.min.css">
+  <!--link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet"-->
   <link rel="stylesheet" href="/assets/prettify/prettify.css">
   
   <!-- Scripts -->
@@ -110,10 +112,10 @@
 	  </li>
 
           <li>
-            <a href="{{ site.JB.rss_path }}" rel="nofollow" title="订阅 RSS"><i class="icon-large icon-fixed-width icon-rss"></i></a>
+            <a href="{{ site.JB.rss_path }}" rel="nofollow" title="订阅 RSS"><i class="fa fa-rss fa-2"></i></a>
           </li>
-          <li >
-            <i id="icon-resize" class="icon-large icon-fixed-width icon-resize-full"></i>
+	  <li >
+            <i id="icon-resize" class="fa fa-expand fa-2"></i>
           </li>
         </ul>
       </nav>
@@ -138,7 +140,7 @@
 	<!--toc-->
 	<div id="toc_wraper" style="display:none">
 	<section>
-	   <a href="#"><i class="icon-fixed-width icon-list"></i> 目录 </a>
+	   <a href="#"><i class="fa fa-list fa-2"></i> 目录 </a>
 	   <div class="toc">
 	</section>
 	</div>
@@ -174,13 +176,13 @@
     $('pre:not(table.highlighttable pre, div.highlight pre, div.gist pre)').addClass('prettyprint linenums').attr('style', 'overflow:auto'); 
     $.getScript('/assets/prettify/prettify.js',function(){ prettyPrint();});
     $("#icon-resize").click(function(){
-      if($(this).hasClass("icon-resize-full")){
-         $(this).removeClass("icon-resize-full");
-         $(this).addClass("icon-resize-small");
+      if($(this).hasClass("fa-expand")){
+         $(this).removeClass("fa-expand");
+         $(this).addClass("fa-compress");
 	 $("#wrap").css("width","100%");
       } else{
-         $(this).removeClass("icon-resize-small");
-         $(this).addClass("icon-resize-full");
+         $(this).removeClass("fa-compress");
+         $(this).addClass("fa-expand");
 	 $("#wrap").css("width","1000px");
       }
     });

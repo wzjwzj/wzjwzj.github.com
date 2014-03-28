@@ -1233,7 +1233,19 @@ div.toc ul li :before {
     text-shadow:1px 3px 6px #777777;
 }
 
-
+.fa-2{
+	font-size: 1.1428571428571428em;
+}
+.fa-3{
+	margin: 0px 3px;
+	font-size: 1.4285714285714286em;
+}
+.fa-4{
+	position: relative;
+	margin: 0px 3px;
+	font-size: 1.4285714285714286em;
+	top: 9px;
+}
 
 .iw_wrapper{
 	width:100%;
