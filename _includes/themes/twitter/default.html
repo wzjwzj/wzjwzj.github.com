@@ -141,8 +141,8 @@
 	 <a class=social style="background-image: url('/images/social/Icon_Seminar.jpg');"  target="_blank" href="http://seismo.geo.uni-potsdam.de/upseismo/wiki/SeminarTalks" title="Seminar Talks">social</a>
 	 <a class=social style="background-image: url('/images/social/mail-icon.jpg');"  target="_blank" href="https://coesite.geo.uni-potsdam.de/src/login.php" title="Email Coesite">social</a>
 	 <a class=social style="background-image: url('/images/social/calligraphy.png');"  target="_blank" href="/demos/calligraphy.html" title="每日一字">calligraphy</a>
-	 <a class=social style="background-image: url('/images/social/social.png');"  target="_blank" href="#" title="社交">social</a>
-	 <a class=social style="background-image: url('/images/social/social.png');"  target="_blank" href="#" title="社交">social</a>
+	 <a class=social style="background-image: url('/images/social/gmt_nav.gif');"  target="_blank" href="http://gmt.soest.hawaii.edu/doc/5.1.0/index.html" title="gmt">gmt</a>
+	 <a class=social style="background-image: url('/images/social/kiwi.png');"  target="_blank" href="http://kinherd.org/" title="kiwi tools">kiwi</a>
 	 </div>
 	</section>
 	<!--toc-->
@@ -193,14 +193,16 @@
          $(this).addClass("fa-expand");
 	 $("#wrap").css("width","1000px");
       }
-      });
-    {% if page.syntaxhighlighter %} 
-    $('pre>code').each(function(){
+     });
+     {% if page.syntaxhighlighter %}
+     /*$('pre>code').each(function(){
 	$(this).parent().attr("class",$(this).attr("class"));
 	$(this).parent().html($(this).html());
-    });
-    SyntaxHighlighter.all(); 
-    {% endif %}
+     });*/
+     $('section>pre>code').unwrap();
+     SyntaxHighlighter.config.tagName="code";	
+     SyntaxHighlighter.all();
+     {% endif %}	
   });
 </script>
 {% include JB/analytics %}
