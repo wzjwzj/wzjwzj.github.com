@@ -6,7 +6,7 @@ tags: test
 toc: true
 widget: false
 mathjax: true
-prettify: true
+syntaxhighlighter: true
 ---
 
 ## test math
@@ -101,10 +101,10 @@ An [google](http://www.google.de)
 ## test highlight
 
 <section>
-\`\`\`bash   
+\`\`\`brush: bash   
 \`\`\`
 
-```bash
+```brush: bash
 $cat test_sa1.sh
 ../minimizer <<EOF                             #   !  dip   .and.  strike  
   make clean                                   #

@@ -659,6 +659,13 @@ table.highlighttable{
 	width:calc(100% - 2px);
 }
 
+pre.plain{
+word-break: normal;
+word-wrap: normal;
+white-space: pre;
+overflow: auto;
+}
+
 /* copy from http://pygments.org/_static/pygments.css */
 pre .hll { background-color: #ffffcc }
 /*pre  { background: #f0f0f0; }*/

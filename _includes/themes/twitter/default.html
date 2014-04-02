@@ -25,7 +25,7 @@
   <!--link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet"-->
   <link rel="stylesheet" href="/assets/font-awesome-4.0.3/css/font-awesome.min.css">
   <!--link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet"-->
-  <link rel="stylesheet" href="/assets/prettify/prettify.css">
+  <!--link rel="stylesheet" href="/assets/prettify/prettify.css"-->
   
   <!-- Scripts -->
   <script type="text/javascript" src="{{ ASSET_PATH }}/js/jquery-1.10.1.min.js"></script>
@@ -63,6 +63,14 @@
   <link rel="stylesheet" href="/assets/osmplayer/templates/default/css/osmplayer_default.css">
   <script type="text/javascript" src="/assets/osmplayer/js/osmplayer.compressed.js"></script>
   <script type="text/javascript" src="/assets/osmplayer/templates/default/osmplayer.default.js"></script>
+  {% endif %}
+
+  {% if page.syntaxhighlighter %}
+  <script type="text/javascript" src="/assets/syntaxhighlighter/scripts/shCore.js"></script>
+  <script type="text/javascript" src="/assets/syntaxhighlighter/scripts/shBrushJScript.js"></script>
+  <script type="text/javascript" src="/assets/syntaxhighlighter/scripts/shBrushBash.js"></script>
+  <script type="text/javascript" src="/assets/syntaxhighlighter/scripts/shBrushFortran.js"></script>
+  <link type="text/css" rel="stylesheet" href="/assets/syntaxhighlighter/styles/shCoreDefault.css"/>
   {% endif %}
 
   {{ page.htmlhead }}
@@ -173,8 +181,8 @@
 <script type="text/javascript">
   $(document).ready(function() {
     $("table.highlighttable").wrap('<div style="overflow:auto;border: 1px solid rgba(0,0,0,0.15);border-radius: 4px;"></div>');
-    $('pre:not(table.highlighttable pre, div.highlight pre, div.gist pre)').addClass('prettyprint linenums').attr('style', 'overflow:auto'); 
-    $.getScript('/assets/prettify/prettify.js',function(){ prettyPrint();});
+    /*$('pre:not(table.highlighttable pre, div.highlight pre, div.gist pre, pre.plain)').addClass('prettyprint linenums').attr('style', 'overflow:auto'); 
+      $.getScript('/assets/prettify/prettify.js',function(){ prettyPrint();});*/
     $("#icon-resize").click(function(){
       if($(this).hasClass("fa-expand")){
          $(this).removeClass("fa-expand");
@@ -185,8 +193,14 @@
          $(this).addClass("fa-expand");
 	 $("#wrap").css("width","1000px");
       }
+      });
+    {% if page.syntaxhighlighter %} 
+    $('pre>code').each(function(){
+	$(this).parent().attr("class",$(this).attr("class"));
+	$(this).parent().html($(this).html());
     });
-    /*$( "#main-inner" ).css({"min-height":$( "#sidebar" ).css( "height" )});*/
+    SyntaxHighlighter.all(); 
+    {% endif %}
   });
 </script>
 {% include JB/analytics %}
