@@ -92,3 +92,14 @@ htmlhead: '<script type="text/x-mathjax-config">MathJax.Hub.Config({messageStyle
     {% endif %}
   </ul>
 </section>
+
+<script>
+	$(window).bind('keydown', function(e){
+		if (e.target && e.target.tagName.toLowerCase()!='input')
+		    if (e.keyCode==37)
+			location.href = $("section.pagination ul li:eq(1) a").attr('href');
+		    else if (e.keyCode==39)
+			location.href = $("section.pagination ul li:eq(3) a").attr('href');
+	});
+</script>
+
