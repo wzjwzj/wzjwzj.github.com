@@ -119,5 +119,5 @@ frame | psxyz -R  -Jx -Jz  \
           -W2p,0/0/0 -P -N -K -O -m >> $psfile
 }
 
-#plot1
+plot1
 
