@@ -16,7 +16,7 @@ ps_xy(){
  }' 
 }
 
-ps_xy |  psxy -R0/14/0/14 -Jx1i -P -K -Gp300/29:FblackBwhite -W5p/100/100/100 -O -Ss -BWSNE >> $psfile
+ps_xy |  psxy -R0/14/0/14 -Jx1i -P -K -Gp300/29:FblackBwhite -W5p/200/200/200 -O -Ss -BWSNE >> $psfile
 
 pstext -R -Jx -K -P -O  -N  -BWSNE  -Gred << EOF >> $psfile
  8.0 6.0   120 0 4 MC C

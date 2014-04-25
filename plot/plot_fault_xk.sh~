@@ -133,7 +133,7 @@ done
 gmtset GRID_PEN_PRIMARY = 2p 
 psbasemap -R0/`expr $nw + 3`/0/`expr $nh + 3`  -JX${x3}i/${y1}i  -P  -K -Bg1 -O -X${h}i  >> $psfile
 gawk 'BEGIN { for(ix=1.1; ix<=4.9; ix=ix+0.1) { print ix,1 ; print ix,5 ; print ">"} ; 
-              for(iy=1.1; iy<=4.9; iy=iy+0.1) { print 1,iy ; print 5,iy ; print ">"} }' | psxy -R -JX -W6px/205/140/140 -K -P -O -m -Bg1 >> $psfile
+              for(iy=1.1; iy<=4.9; iy=iy+0.1) { print 1,iy ; print 5,iy ; print ">"} }' | psxy -R -JX -W1px/205/140/140 -K -P -O -m -Bg1 >> $psfile
 gawk -v nh=$nh -v nw=$nw 'BEGIN { for(ix=0; ix<nw+3; ix++) for(iy=0; iy<nh+3; iy++) print ix+0.5,iy+0.5 }' | psxy -R -JX -Sc8p -G240/240/240 -K -P -N -O >> $psfile
 gawk -v nh=$nh -v nw=$nw 'BEGIN { for(ix=2; ix<nw+2; ix++) for(iy=2; iy<nh+2; iy++) print ix,iy }' | psxy -R -JX -Sc12p -G250/150/150 -K -P -N -O  >> $psfile
 

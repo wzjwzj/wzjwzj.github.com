@@ -44,7 +44,8 @@
   		jax: ["input/TeX","input/MathML","output/HTML-CSS","output/NativeMML"],
   		extensions: ["tex2jax.js","mml2jax.js","MathMenu.js","MathZoom.js"],
   		TeX: {
-			extensions: ["AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js","autobold.js","color.js","cancel.js"],
+	  {% comment %} extensions: ["AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js","color.js","cancel.js","autobold.js"], {% endcomment %}
+			extensions: ["AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js","color.js","cancel.js"],
 			equationNumbers: { autoNumber: "AMS" }
   		},
 		styles: {
@@ -145,13 +146,24 @@
 	 <a class=social style="background-image: url('/images/social/kiwi.png');"  target="_blank" href="http://kinherd.org/" title="kiwi tools">kiwi</a>
 	 </div>
 	</section>
-	<!--toc-->
+	<!--toc>
 	<div id="toc_wraper" style="display:none">
 	<section>
 	   <a href="#"><i class="fa fa-list fa-2"></i> 目录 </a>
 	   <div class="toc">
 	</section>
-	</div>
+	</div-->
+	
+	<!--toc-->
+	{% if page.toc %}
+	<section style="padding-top:1px">
+	   <div id="toc_wraper" >
+	     <a href="#"><i class="fa fa-list fa-2"></i> 目录 </a>
+	     <div class="toc"></div>
+	   </div>
+	</section>
+	{% endif %}
+
 	<!--widget default include  -->
 	{% if page.widget != false %}
 	   {% include widgets/fixed_container %}

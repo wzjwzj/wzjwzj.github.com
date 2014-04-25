@@ -1,20 +1,8 @@
 # GMT common arguments shelf
--Bwsne
--JX1i/2i
--Jx0.6c
--Jz1c
--R0/2/0/1
--X0.75i
--x0.5i
--Y9i
--y1.5i
--jX1i/2i
+-BWSNE
+-JX1i
+-Jx1i
+-R0/14/0/14
+-X6i
+-jx1i
 EOF
-
-EOF
-
-F
-
-EOF
-EOF
-

@@ -9,6 +9,7 @@ mathjax: true
 syntaxhighlighter: true
 ---
 
+
 ## test math
 
 [mathjax tex example 在公式右键查看tex代码](http://www.mathjax.org/demos/tex-samples/)
@@ -18,6 +19,8 @@ syntaxhighlighter: true
 </script>
 
 <!--end_excerpt-->
+
+[TOC]
 
 [MathJax TeX and LaTeX Support](http://docs.mathjax.org/en/latest/tex.html)
 
@@ -183,8 +186,9 @@ EOF
 ### 三级标题
 #### 四级标题
 ##### 五级标题
-###### 六级标题
 
+## 二级标题
+###### 六级标题
 ## 测试缩进
 >一级缩进
 >>二级缩进二级缩进二级缩进二级缩进二级缩进二级缩进二级缩进二级缩进二级缩进二级缩进二级缩进二级缩进二级缩进二级缩进二级缩进二级缩进二级缩进二级缩进二级缩进二级缩进二级缩进二级缩进二级缩进二级缩进二级缩进二级缩进二级缩进二级缩进二级缩进二级缩进二级缩进二级缩进
