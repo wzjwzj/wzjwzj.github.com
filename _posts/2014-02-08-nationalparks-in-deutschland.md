@@ -5,8 +5,7 @@ category: "旅游"
 tags: info
 toc:
 widget:
-htmlhead: '
-<style type="text/css">  
+htmlhead: ' <style type="text/css">  
    .labels {
      color: red;
      background-color: white;
@@ -27,38 +26,45 @@ htmlhead: '
 从阿尔卑斯山麓到北部沿海地区，德国国土上分布着十几个大小不一的国家公园。这里有原始森林、峻岭群山；有海岸沙滩、峡谷湖泊；有世界上飞得最高的金雕、还有肉眼难以发现的海蚯蚓,它们的共同点是：拥有大片未受人工雕琢的自然景观和各种罕见的珍稀动植物。 
 
 <!--end_excerpt-->
-
 <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyBR0NgEYSTNc4qn2CQeHp8lYj49mbu2UGw&sensor=false"></script>
 <script type="text/javascript" src="/assets/themes/twitter/js/markerwithlabel.js"></script>
 <script type="text/javascript">
-      function initialize() {
+    function initmap() {
 	var locations = [
-     		['Berchtesgaden', 47.55,12.916635, '<a href="#Berchtesgaden">Berchtesgaden</a>'],
-     		['test', 51.082822,10.933578, 'loc2'],
-     		['测试', 49.082822,12.433578, 'loc3'],
+     		['Berchtesgaden', 47.55,12.916635,'#wzj1','<a href="#Berchtesgaden">Berchtesgaden</a>'],
+     		['test', 51.082822,10.933578, '#wzj2' ,'loc2'],
+     		['测试', 49.082822,12.433578, '#wzj3' ,'loc3']
 	];
 	var mapOptions = {
           center: new google.maps.LatLng(51.002822,10.433578),
-          zoom: 6,
+          zoom: 5,
 	  mapTypeId: google.maps.MapTypeId.HYBRID
         };
         var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
 	for (var i = 0; i < locations.length; i++) {
-		var loc = locations[i];
-		var myLatLng = new google.maps.LatLng(loc[1], loc[2]);
-		var marker = new MarkerWithLabel({
-			position: myLatLng,
-			draggable: true,
+		 var marker = new MarkerWithLabel({
+			position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+			draggable: false,
 			raiseOnDrag: true,
 			map: map,
-			labelContent: loc[0],
+			url: locations[i][3],
+			labelContent: locations[i][0],
 			labelAnchor: new google.maps.Point(22, 0),
 			labelClass: "labels",
 			labelStyle: {opacity: 0.65}
-		});
+		 });
+    		 attachInfo(marker, i);
 	}
-      }
-      google.maps.event.addDomListener(window, "load", initialize);
+	function attachInfo(marker, i) {
+  		 var infowindow = new google.maps.InfoWindow({ content: locations[i][4]});
+  		 /*google.maps.event.addListener(marker, 'click',    function() {infowindow.open(map, marker);map.panTo(marker.getPosition());});*/
+  		 google.maps.event.addListener(marker, 'click',    function() {infowindow.open(map, marker);});
+  		 google.maps.event.addListener(marker, 'dblclick', function() {window.location.href = marker.url;});
+	}
+	google.maps.event.addDomListener( document.getElementById("icon-resize"),"click",function(){ google.maps.event.trigger(map, 'resize');});
+	/*google.maps.event.addDomListener( $("#icon-resize"),"click",function(){ google.maps.event.trigger(map, 'resize');});*/
+    }
+    google.maps.event.addDomListener(window, "load", initmap);
 </script>
 
 <div id="map-canvas" style="height:600px"></div>
@@ -108,41 +114,41 @@ htmlhead: '
 <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyBR0NgEYSTNc4qn2CQeHp8lYj49mbu2UGw&sensor=false"></script>
 <script type="text/javascript" src="/assets/themes/twitter/js/markerwithlabel.js"></script>
 <script type="text/javascript">
-      function initialize() {
+    function initmap() {
 	var locations = [
-     		['Berchtesgaden', 47.55,12.916635, 'Berchtesgaden'],
-     		['loc2', 51.082822,10.933578, 'loc2'],
-     		['loc3', 49.082822,12.433578, 'loc3'],
-     		['loc4', 53.082822,13.433578, 'loc4'],
-     		['loc5', 49.082822,11.433578, 'loc5']
+     		['Berchtesgaden', 47.55,12.916635,'#wzj1','<a href="#Berchtesgaden">Berchtesgaden</a>'],
+     		['test', 51.082822,10.933578, '#wzj2' ,'loc2'],
+     		['测试', 49.082822,12.433578, '#wzj3' ,'loc3']
 	];
 	var mapOptions = {
-          center: new google.maps.LatLng(51.082822,10.433578),
-          zoom: 5,
+          center: new google.maps.LatLng(51.002822,10.433578),
+          zoom: 6,
 	  mapTypeId: google.maps.MapTypeId.HYBRID
         };
         var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
 	for (var i = 0; i < locations.length; i++) {
-		var loc = locations[i];
-		var myLatLng = new google.maps.LatLng(loc[1], loc[2]);
 		var marker = new MarkerWithLabel({
-			position: myLatLng,
-			draggable: true,
+			position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+			draggable: false,
 			raiseOnDrag: true,
 			map: map,
-			labelContent: loc[0],
+			url: locations[i][3],
+			labelContent: locations[i][0],
 			labelAnchor: new google.maps.Point(22, 0),
 			labelClass: "labels",
-			labelStyle: {opacity: 0.75}
+			labelStyle: {opacity: 0.65}
 		});
-		var iw = new google.maps.InfoWindow({
-			content: loc[3];
-		});
-		google.maps.event.addListener(marker, "click", function () { iw.open(map, this); });
+    		attachSecretMessage(marker, i);
 	}
-      }
-      google.maps.event.addDomListener(window, "load", initialize);
+	function attachSecretMessage(marker, i) {
+  		var infowindow = new google.maps.InfoWindow({ content: locations[i][4]});
+  		google.maps.event.addListener(marker, 'click',    function() {infowindow.open(map, marker);map.panTo(marker.getPosition());});
+  		google.maps.event.addListener(marker, 'dblclick', function() {window.location.href = marker.url;});
+	}
+	google.maps.event.addDomListener( document.getElementById("icon-resize"),"click",function(){ google.maps.event.trigger(map, 'resize');});
+    }
+    google.maps.event.addDomListener(window, "load", initmap);
 </script>
 
-<div id="map-canvas" style="height:500px"></div>
+<div id="map-canvas" style="height:600px"></div>
 {% endcomment %} 
