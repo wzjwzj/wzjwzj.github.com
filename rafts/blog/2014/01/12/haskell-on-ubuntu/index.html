@@ -1,0 +1,618 @@
+
+<!DOCTYPE html>
+<!--[if IE 7 ]>    <html lang="zh-CN" class="ie7"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="zh-CN" class="ie8"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> <html lang="zh-CN"> <!--<![endif]-->
+
+<head>
+  <meta charset="UTF-8">
+  <!--[if IE 8 ]><meta http-equiv="X-UA-Compatible" content="IE=7"><![endif]-->
+
+  <title>haskell on ubuntu</title>
+  
+  
+  <meta name="author" content="孤月谁明">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="/favicon.ico">
+
+  <!-- Feed -->
+  <link rel="alternate" type="application/rss+xml" title="RSS Feed" href="/rss.xml">
+  <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/atom.xml">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/assets/themes/twitter/css/style.min.css">
+  <!--link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet"-->
+  <link rel="stylesheet" href="/assets/font-awesome-4.0.3/css/font-awesome.min.css">
+  <!--link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet"-->
+  <!--link rel="stylesheet" href="/assets/prettify/prettify.css"-->
+  
+  <!-- Scripts -->
+  <script type="text/javascript" src="/assets/themes/twitter/js/jquery-1.10.1.min.js"></script>
+  <script type="text/javascript" src="/assets/jquery-ui/js/jquery-ui-1.10.4.custom.min.js"></script>
+  <link   rel="stylesheet"      href="/assets/jquery-ui/css/smoothness/jquery-ui-1.10.4.custom.min.css">
+
+  
+
+  
+
+  
+
+  
+
+</head>
+
+<body>
+
+  <div id="wrap">
+    <header id="top">
+      <!-- Navigation Bar -->
+      <nav id="navbar">
+        <ul>
+          
+          <li>
+            <a href="/" rel="nofollow" title="首页">首页</a>
+          </li>
+          <li>
+            <a href="/archives.html" rel="nofollow" title="archives">归档</a>
+          </li>
+          <li>
+            <a href="/messages.html" rel="nofollow" title="留言板">留言板</a>
+          </li>
+	  
+	  <li>
+	  <a href="/links.html" rel="nofollow" title="链接">链接</a>
+	  </li>
+	  
+          <li>
+            <a href="/about.html" rel="nofollow" title="关于">关于</a>
+	  </li>
+
+          <li>
+	  <a href="/lino.html" rel="nofollow" title="便签">便签</a>
+	  </li>
+
+	  <li>
+	  <a href="/gallery.html" rel="nofollow" title="相册">相册</a>
+	  </li>
+
+	  <li>
+	  <a href="/slide.html" rel="nofollow" title="PPT">PPT</a>
+	  </li>
+	  
+	  <li>
+	  <a href="/docs/" rel="nofollow" title="docs">docs</a>
+	  </li>
+
+          <li>
+            <a href="/rss.xml" rel="nofollow" title="订阅 RSS"><i class="fa fa-rss fa-2"></i></a>
+          </li>
+	  <li >
+            <i id="icon-resize" class="fa fa-expand fa-2"></i>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <section id="main">
+
+      <!-- Sidebar -->
+      <aside id="sidebar">
+        <section id="search-box">
+	 
+<CENTER>
+<!--img src="/assets/themes/twitter/img/google_search.png" border="0" alt="Google" align="absmiddle" style="padding-bottom:20px" /--> 
+<!--FONT class='wdnx' ><B>惟德乃兴</B></FONT-->
+
+<form  method="get" action="/gsearch.html">
+  <input  type="text"   class="search-query" name="q"   placeholder="谷歌引擎搜索"></input>   
+  <!--button type="submit" class="search-button" ><i class="icon-search"></i></button-->
+</form>
+
+<form  method="get" action="/search.html">
+  <input  type="text"   class="search-query" name="q"   placeholder="站内正则搜索"></input>   
+  <!--button type="submit" class="search-button" ><i class="icon-search"></i></button-->
+</form>
+
+<form  method="get" action="/dict.html">
+  <input  type="text"   class="search-query" name="q"   placeholder="dict.cn 海词"></input>   
+  <!--button type="submit" class="search-button" ><i class="icon-search"></i></button-->
+</form>
+
+<form id="glosbe" name="glosbe"  method="get" action="/glosbe.html"> 
+  <input  type="text"   id="phrase"  name="phrase"  placeholder="dictionary" class="search-query">  
+  <select name="from" onchange='set_item_from( )'>
+    <option value="deu" >deutsch</option>
+    <option value="eng" >english</option>
+    <option value="zho" >汉语</option>
+  </select>
+  <select name="dest" onchange='set_item_dest( )' >
+    <option value="zho">汉语</option>
+    <option value="eng">english</option>
+    <option value="deu">deutsch</option>
+  </select> 
+  <!--input  type="text"   id="phrase"  name="phrase"  placeholder="dictionary" class="search-query"-->  
+  <!--button type="submit" class="search-button" ><i class="icon-search"></i></button-->
+</form> 
+<div id="keyboard" style="display:none; "> 
+	<a href="javascript:addSpecChar('ä')" class="btn">ä</a> 
+	<a href="javascript:addSpecChar('Ä')" class="btn">Ä</a> 
+	<a href="javascript:addSpecChar('ö')" class="btn">ö</a> 
+	<a href="javascript:addSpecChar('Ö')" class="btn">Ö</a> 
+	<a href="javascript:addSpecChar('ü')" class="btn">ü</a> 
+	<a href="javascript:addSpecChar('Ü')" class="btn">Ü</a> 
+	<a href="javascript:addSpecChar('ß')" class="btn">ß</a> 
+	<a href="javascript:addSpecChar('ẞ')" class="btn">ẞ</a> 
+</div>
+</CENTER>
+
+
+<SCRIPT language=JavaScript>
+  function showhidekeyboard(){
+    if($('#glosbe select[name="from"]').val() == 'deu' ){
+	$('#keyboard').css("display","inline-block");
+    }else{
+	$('#keyboard').css("display","none");
+    }
+  }
+  if ( !sessionStorage.getItem("from") ) {  
+	sessionStorage.setItem("from", "deu");
+        $('#glosbe select[name="from"]').val("deu");
+  }else{
+	$('#glosbe select[name="from"]').val(sessionStorage.getItem("from"));
+  }
+  showhidekeyboard();
+  if ( !sessionStorage.getItem("dest") ) {  
+	sessionStorage.setItem("dest", "zho");
+        $('#glosbe select[name="dest"]').val("zho");
+  }else{
+        $('#glosbe select[name="dest"]').val(sessionStorage.getItem("dest"));
+  }
+  function set_item_from( ){
+	sessionStorage.setItem('from', $('#glosbe select[name="from"]').val());
+	showhidekeyboard();
+  }
+  function set_item_dest( ){
+	sessionStorage.setItem('dest', $('#glosbe select[name="dest"]').val());
+  }
+  function addSpecChar(NewCode) {
+    document.glosbe.phrase.value += ''+NewCode+''; 
+    var t=$("#phrase").val(); $("#phrase").val("").focus().val(t);
+  };
+</SCRIPT>
+
+
+	</section>
+	<section>
+	 <div style="padding:22px 18px">
+	 <a class=social style="background-image: url('/images/social/Icon_Seminar.jpg');"  target="_blank" href="http://seismo.geo.uni-potsdam.de/upseismo/wiki/SeminarTalks" title="Seminar Talks">social</a>
+	 <a class=social style="background-image: url('/images/social/mail-icon.jpg');"  target="_blank" href="https://coesite.geo.uni-potsdam.de/src/login.php" title="Email Coesite">social</a>
+	 <a class=social style="background-image: url('/images/social/calligraphy.png');"  target="_blank" href="/demos/calligraphy.html" title="每日一字">calligraphy</a>
+	 <a class=social style="background-image: url('/images/social/gmt_nav.gif');"  target="_blank" href="http://gmt.soest.hawaii.edu/doc/5.1.0/index.html" title="gmt">gmt</a>
+	 <a class=social style="background-image: url('/images/social/kiwi.png');"  target="_blank" href="http://kinherd.org/" title="kiwi tools">kiwi</a>
+	 </div>
+	</section>
+	<!--toc>
+	<div id="toc_wraper" style="display:none">
+	<section>
+	   <a href="#"><i class="fa fa-list fa-2"></i> 目录 </a>
+	   <div class="toc">
+	</section>
+	</div-->
+	
+	<!--toc-->
+	
+
+	<!--widget default include  -->
+	
+	   
+  <section  class="active"><a href="/archive.html" title="查看所有文章"><i class="fa fa-file-text fa-2"></i> 最近发表</a>
+<span title="文章总数">18</span>
+<ul>
+
+  <li><a href="/blog/2014/04/16/abic0" title="查看《ABIC0》">ABIC0</a></li>
+
+  <li><a href="/blog/2014/03/03/ABIC" title="查看《ABIC》">ABIC</a></li>
+
+  <li><a href="/blog/2014/02/25/chinese-food-recipe" title="查看《菜单》">菜单</a></li>
+
+  <li><a href="/blog/2014/02/17/tar" title="查看《[转]tar 压缩解压缩命令详解》">[转]tar 压缩解压缩命令详解</a></li>
+
+  <li><a href="/blog/2014/02/09/pjax" title="查看《[转]Pjax是什么以及为什么推荐大家用》">[转]Pjax是什么以及为什么推荐大家用</a></li>
+
+  <li><a href="/blog/2014/02/08/nationalparks-in-deutschland" title="查看《测试谷歌地图:德国国家公园》">测试谷歌地图:德国国家公园</a></li>
+
+  <li><a href="/blog/2014/01/20/kiwi_info" title="查看《kiwi_info》">kiwi_info</a></li>
+
+  <li><a href="/blog/2014/01/14/smalltool" title="查看《small tools,widgets or applets list》">small tools,widgets or applets list</a></li>
+
+  <li><a href="/blog/2014/01/12/haskell-on-ubuntu" title="查看《haskell on ubuntu》">haskell on ubuntu</a></li>
+
+  <li><a href="/blog/2014/01/11/command_pool" title="查看《常用命令示例》">常用命令示例</a></li>
+
+  <li><a href="/blog/2014/01/08/amssymbols" title="查看《AMSsymbols》">AMSsymbols</a></li>
+
+  <li><a href="/blog/2013/12/18/build-repository-with-dropbox" title="查看《用dropbox虚拟github建立私有仓库》">用dropbox虚拟github建立私有仓库</a></li>
+
+  <li><a href="/blog/2013/12/17/scripts" title="查看《一些示例脚本存档》">一些示例脚本存档</a></li>
+
+  <li><a href="/blog/2013/12/15/test-self-def-input" title="查看《测试自定义输入》">测试自定义输入</a></li>
+
+  <li><a href="/blog/2013/12/14/problems-refer-cygwin" title="查看《cygwin下个人使用过程中所遇问题汇总》">cygwin下个人使用过程中所遇问题汇总</a></li>
+
+</ul>
+</section>
+  <section ><a href="/categories.html" title="查看所有分类"><i class="fa fa-folder-open fa-2"></i> 文章分类</a>
+<span title="分类总数">8</span>
+<ul>
+
+  <li><a href="/categories.html#uncategorized-ref" rel="nofollow">uncategorized (8)</a></li>
+
+  <li><a href="/categories.html#info-ref" rel="nofollow">info (5)</a></li>
+
+  <li><a href="/categories.html#git-ref" rel="nofollow">git (1)</a></li>
+
+  <li><a href="/categories.html#programming-ref" rel="nofollow">programming (1)</a></li>
+
+  <li><a href="/categories.html#dropbox-ref" rel="nofollow">dropbox (1)</a></li>
+
+  <li><a href="/categories.html#study-ref" rel="nofollow">study (1)</a></li>
+
+  <li><a href="/categories.html#旅游-ref" rel="nofollow">旅游 (1)</a></li>
+
+  <li><a href="/categories.html#unix-ref" rel="nofollow">unix (1)</a></li>
+
+</ul>
+</section>
+  <section ><a href="/tags.html" title="查看所有标签"><i class="fa fa-tags fa-2"></i> 标签云</a>
+<span title="标签总数">19</span>
+<div id="tag-cloud">
+
+
+  
+  <a href="/tags.html#info-ref" rel="nofollow" style="font-size: 18pt; color: #000;">info</a>
+
+  
+  <a href="/tags.html#git-ref" rel="nofollow" style="font-size: 9pt; color: #999;">git</a>
+
+  
+  <a href="/tags.html#cygwin-ref" rel="nofollow" style="font-size: 9pt; color: #999;">cygwin</a>
+
+  
+  <a href="/tags.html#error-ref" rel="nofollow" style="font-size: 9pt; color: #999;">error</a>
+
+  
+  <a href="/tags.html#test-ref" rel="nofollow" style="font-size: 9pt; color: #999;">test</a>
+
+  
+  <a href="/tags.html#script-ref" rel="nofollow" style="font-size: 9pt; color: #999;">script</a>
+
+  
+  <a href="/tags.html#code-ref" rel="nofollow" style="font-size: 9pt; color: #999;">code</a>
+
+  
+  <a href="/tags.html#dropbox-ref" rel="nofollow" style="font-size: 9pt; color: #999;">dropbox</a>
+
+  
+  <a href="/tags.html#github-ref" rel="nofollow" style="font-size: 9pt; color: #999;">github</a>
+
+  
+  <a href="/tags.html#AMS-ref" rel="nofollow" style="font-size: 9pt; color: #999;">AMS</a>
+
+  
+  <a href="/tags.html#symbols-ref" rel="nofollow" style="font-size: 9pt; color: #999;">symbols</a>
+
+  
+  <a href="/tags.html#mathjax-ref" rel="nofollow" style="font-size: 9pt; color: #999;">mathjax</a>
+
+  
+  <a href="/tags.html#latex-ref" rel="nofollow" style="font-size: 9pt; color: #999;">latex</a>
+
+  
+  <a href="/tags.html#tex-ref" rel="nofollow" style="font-size: 9pt; color: #999;">tex</a>
+
+  
+  <a href="/tags.html#command-ref" rel="nofollow" style="font-size: 9pt; color: #999;">command</a>
+
+  
+  <a href="/tags.html#haskell-ref" rel="nofollow" style="font-size: 9pt; color: #999;">haskell</a>
+
+  
+  <a href="/tags.html#cabal-ref" rel="nofollow" style="font-size: 9pt; color: #999;">cabal</a>
+
+  
+  <a href="/tags.html#ghc-ref" rel="nofollow" style="font-size: 9pt; color: #999;">ghc</a>
+
+  
+  <a href="/tags.html#installation-ref" rel="nofollow" style="font-size: 9pt; color: #999;">installation</a>
+
+</div>
+</section>
+
+  <!--section id="xiami" style="padding-top:10px; height:275px; overflow-y:hidden;"><script type="text/javascript" src="http://www.xiami.com/widget/player-multi?uid=30536045&sid=1771893720,1771286689,1771179817,1460646,3418644,2178964,1275039,&width=250&height=320&mainColor=aaaaaa&backColor=e6e6e6&autoplay=0&mode=js"></script>
+</section-->
+
+<div id="fixed-container">
+  <section id="rlist"><a href="#"><i class="fa fa-code fa-2"></i> 代码仓库</a>
+<ul>
+  <li><a href="http://github.com/liberize/liberize.github.com">本博客源码</a></li>
+  <!--
+  <li><a href="http://github.com/liberize/rhythmbox-doubanfm-plugin">Rhythmbox 豆瓣 FM 插件</a></li>
+  <li><a href="http://github.com/liberize/rhythmbox-osdlyrics-plugin">Rhythmbox 歌词插件</a></li>
+  -->
+</ul>
+</section>
+  <section id="llist"><a href="#"><i class="fa fa-link fa-2"></i> 友情链接</a>
+<ul>
+  <li><a href="https://github.com/Shopify/liquid/wiki/Liquid-for-Designers" target="_blank" rel="nofollow">Liquid 模板引擎</a></li>
+  <li><a href="http://jekyllrb.com/" target="_blank" rel="nofollow">Jekyll 静态博客生成器</a></li>
+</ul>
+</section>
+  <section id="clist"><a href="#"><i class="fa fa-heart fa-2"></i> 与我联系</a>
+<div id="contacts-list">
+  <a href="mailto:wzjwzj@mail.ustc.edu.cn" target="_blank" rel="nofollow" title="Gmail">
+    <i class="fa fa-envelope fa-3"></i>
+  </a>
+  <a href="http://wzjwzj.github.io/" target="_blank" rel="nofollow" title="Github">
+    <i class="fa fa-github fa-3"></i>
+  </a>
+  <a href="http://wzjwzj.github.io/" target="_blank" rel="nofollow" title="新浪微博">
+    <i class="fa fa-weibo fa-3"></i>
+  </a>
+  <a href="https://sites.google.com/site/guyueshuiming/" target="_blank" rel="nofollow" title="Google+">
+    <i class="fa fa-google-plus fa-3"></i>
+  </a>
+  <a href="http://wzjwzj.github.io/" target="_blank" rel="nofollow" title="Twitter">
+    <i class="fa fa-twitter fa-3"></i>
+  </a>
+  <a href="http://wzjwzj.github.io/" target="_blank" rel="nofollow" title="Facebook">
+    <i class="fa fa-facebook-square fa-3"></i>
+  </a>
+</div>
+</section>
+</div>
+
+
+	
+      </aside>
+      <!-- Main Content -->
+      <div id="main-inner">
+        <div id="loader"><img src="/assets/themes/twitter/img/loading.gif" alt="请稍侯"></div>
+        <div id="main-content">
+          
+<section id="content">
+  <article class="post">
+
+    <header>
+      <h1>haskell on ubuntu</h1>
+    </header>
+
+    <section>
+      <div class="post-extra">
+        <div class="pull-left">
+	   <span>12 January 2014  <a href="https://github.com/wzjwzj/wzjwzj.github.com/edit/master/_posts/2014-01-12-haskell-on-ubuntu.md">编辑本文</a></span>
+        </div>
+	
+      </div>
+      <p>Install Haskell (haskell-plateform-2013.2.0.0 + GHC 7.6.3) on Ubuntu</p>
+
+<p>see <a href="https://gist.github.com/Dexyne/5791465">gist Dexyne/5791465</a></p>
+
+<!--end_excerpt-->
+
+
+
+
+<script src="https://gist.github.com/5791465.js"> </script>
+
+
+
+
+      
+      <footer>
+        <p>
+          本作品由 <a href="mailto:wzjwzj@mail.ustc.edu.cn" rel="nofollow">孤月谁明</a> 创作，采用
+          <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="查看协议详细信息" target="_blank">CC BY-NC-SA 3.0 许可协议</a>
+          进行许可。
+        </p>
+      </footer>
+      
+    </section>
+
+  </article>
+</section>
+
+<section>
+
+  
+  <ul class="tag-box inline">
+    <li><i class="fa fa-folder-open fa-4"></i></li>
+    
+    
+
+
+  
+     
+    	<li><a href="/categories.html#info-ref" rel="nofollow">
+    		info <span>5</span>
+    	</a></li>
+     
+    	<li><a href="/categories.html#study-ref" rel="nofollow">
+    		study <span>1</span>
+    	</a></li>
+    
+  
+
+
+  </ul>
+  
+
+  
+  <ul class="tag-box inline">
+    <li><i class="fa fa-tags fa-4"></i></li>
+    
+    
+
+
+  
+     
+    	<li><a href="/tags.html#haskell-ref" rel="nofollow">haskell <span>1</span></a></li>
+     
+    	<li><a href="/tags.html#cabal-ref" rel="nofollow">cabal <span>1</span></a></li>
+     
+    	<li><a href="/tags.html#ghc-ref" rel="nofollow">ghc <span>1</span></a></li>
+     
+    	<li><a href="/tags.html#installation-ref" rel="nofollow">installation <span>1</span></a></li>
+    
+  
+
+
+
+  </ul>
+  
+
+  <div class="pagination">
+    <ul>
+      
+      <li class="prev"><a href="/blog/2014/01/11/command_pool" title="常用命令示例">&larr; 上一篇</a></li>
+      
+      <li><a href="/archive.html" rel="nofollow">文章列表</a></li>
+      
+      <li class="next"><a href="/blog/2014/01/14/smalltool" title="small tools,widgets or applets list">下一篇 &rarr;</a></li>
+      
+    </ul>
+  </div>
+
+</section>
+
+<section id="comments">
+  
+
+
+  <div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_developer = 1;
+    var disqus_shortname = 'guyueshuiming'; // required: replace example with your forum shortname
+    
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        var dsc = document.createElement('script'); dsc.type = 'text/javascript'; dsc.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        dsc.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(dsc);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+
+
+</section>
+
+
+        </div>
+      </div>
+      
+      <div id="back-top">
+  <a href="#top" title="回到顶部"></a>
+</div>
+<script type="text/javascript">
+$("#back-top").hide();
+$(document).ready(function () {
+  $(window).scroll(function () {
+    if ($(this).scrollTop() > 100) {
+      $('#back-top').fadeIn();
+    } else {
+      $('#back-top').fadeOut();
+    }
+  });
+  $('#back-top a').click(function () {
+    $('body,html').animate({
+      scrollTop: 0
+    }, 800);
+    return false;
+  });
+});
+</script>
+
+    </section>
+
+    <footer id="bottom">
+      <p align="center">&copy; 2014 guyueshuiming
+        with help from <a href="http://jekyllbootstrap.com" target="_blank" rel="nofollow" title="The Definitive Jekyll Blogging Framework">Jekyll Bootstrap</a>
+        and <a href="http://twitter.github.com/bootstrap/" target="_blank" rel="nofollow">Twitter Bootstrap</a>
+      </p>
+    </footer>
+  </div>
+
+
+
+
+<!-- fixed toc or fix container -->
+
+<script type="text/javascript">
+   $(document).ready(function(){
+   
+      var f= $('#fixed-container') ;
+   
+
+   f.css({ 'z-index':'99999'});
+   var h= f.height();
+   var position = f.offset();
+
+   $(window).scroll(function() {
+      if($(window).scrollTop() > position.top ) {
+         v = 129 + h - $(window).innerHeight()  ;
+         u = $( document ).height()-$(window).scrollTop()-$(window).innerHeight();
+         if( v > 0 && u < h && u < v ) {
+            f.css('position','fixed').css('top',-(u+v));
+         } else {
+            f.css('position','fixed').css('top', -1);
+         }
+      } else {
+       f.css('position','static');
+      }
+   });
+   if(matchMedia) {
+     var mq = matchMedia('(max-width: 999px)');
+     mq.addListener(function(mql) {
+       if (!mql.matches) {
+         position = f.offset();
+       }
+     });
+   }
+});
+</script>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    $("table.highlighttable").wrap('<div style="overflow:auto;border: 1px solid rgba(0,0,0,0.15);border-radius: 4px;"></div>');
+    /*$('pre:not(table.highlighttable pre, div.highlight pre, div.gist pre, pre.plain)').addClass('prettyprint linenums').attr('style', 'overflow:auto'); 
+      $.getScript('/assets/prettify/prettify.js',function(){ prettyPrint();});*/
+    $("#icon-resize").click(function(){
+      if($(this).hasClass("fa-expand")){
+         $(this).removeClass("fa-expand");
+         $(this).addClass("fa-compress");
+	 $("#wrap").css("width","100%");
+      } else{
+         $(this).removeClass("fa-compress");
+         $(this).addClass("fa-expand");
+	 $("#wrap").css("width","1000px");
+      }
+     });
+     	
+  });
+</script>
+
+<script src="/assets/themes/twitter/js/hc.js" type="text/javascript"></script>
+<!--script src="http://dict.cn/hc/" type="text/javascript"></script-->
+<script type="text/javascript">
+dictInit();
+</script>
+</body>
+</html>
+
