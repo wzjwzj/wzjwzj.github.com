@@ -17,7 +17,7 @@ htmlhead:
 
 <div>$$
 \begin{aligned}
-\dot{D}_q^0\left(t,\xi\right) \thickapprox \sum_{k=1}^K \sum_{l=1}^L a_{qkl} & X_k\left(\xi\right)T_l\left(t-t_k\right) \\
+\dot{D}_q^0\left(t,\xi\right) \thickapprox \sum_{k=1}^K \sum_{l=1}^L a_{qkl}  X_k\left(\xi\right) & T_l\left(t-t_k\right) \quad;\quad a_{qkl}~\sim~\overline{D} \\
 \int X_k\left(\mathbf{\xi}\right) ~d\mathbf{\xi} =  \Delta \xi_1 \Delta \xi_2 \quad  &; \quad \int  ~ T_l\left(t-t_k\right) ~  ~dt = 1
 \end{aligned}
 $$</div>
