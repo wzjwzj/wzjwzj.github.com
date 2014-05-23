@@ -11,11 +11,13 @@ prettify:
 htmlhead:
 ---
 {% include JB/setup %}
+
+most problems caused by manual install on cygwin platform.
+package installation on cygwin is realy a great challenge. 
  
 <!--end_excerpt-->
 
-
-## SAC
+## SAC	[ok]
 @ `2014/05/22`, `cygwin`:     
 >install `sac-101.5` on `cygwin`,  source-code copy from ubuntu. 
 
@@ -33,7 +35,7 @@ For bash, edit ~/.bashrc adding the lines
 >source ${SACHOME}/bin/sacinit.sh     
 
 
-## HDF5
+## HDF5 [ok]
 
 @ `2014/05/22`, `cygwin`:        
 
@@ -51,7 +53,8 @@ Install HDF5 on Cygwin
 +  download `pre-build binary` distribution `hdf5-1.8.13-cygwin32-static.tar.gz` from `http://www.hdfgroup.org/HDF5/release/obtain5.html`        
 +  extract to /usr/local/local_software/hdf5-1.8.13-pre-build-binary-cygwin32-static-CYGWIN_NT-6.11.7.28      
 +  uninstall old version and update to pre-build cygwin version.
-+  `hdf5-1.8.13-cygwin32-static.tar.gz` include fortran interface , however `Fatal Error: Wrong module version '10' (expected '4') for file 'hdf5.mod' opened at (1)`    
+
+`hdf5-1.8.13-cygwin32-static.tar.gz` include fortran interface ,however have conflict with the version problem.  `Fatal Error: Wrong module version '10' (expected '4') for file 'hdf5.mod' opened at (1)` , resort to self compile.
 
 ```sh
  cd hdf5-1.8.10-patch1
@@ -61,7 +64,6 @@ Install HDF5 on Cygwin
 ** source code for all platform: **
 
 + download src files via `http://www.hdfgroup.org/HDF5/release/obtainsrc.html`
- 
 
 ```sh
   ./configure 
@@ -75,8 +77,7 @@ Install HDF5 on Cygwin
   make install           # make install > "make_instal_out_info"
 ```
 
-
-## libmseed
+## libmseed [ok]
 @ `2014/05/22`, `cygwin`:          
 >download `libmseed-2.12.tar.gz` from `https://seiscode.iris.washington.edu/projects/libmseed/files`      
 >extract to `/usr/local/local_software/libmseed-2.12`      
@@ -88,7 +89,7 @@ Install HDF5 on Cygwin
   cp *.h /usr/local/include/
 ```
 
-## kiwi
+## kiwi [ binary ok ]
 @ `2014/05/22`, `cygwin`:          
 >view `https://github.com/emolch/kiwi/wiki/Installation` for instruction   
 
@@ -103,9 +104,215 @@ Dependencies
 + `cp Makefile.local.example Makefile.local`    
 + Edit Makefile.local 
 + Edit hostinfo.pl  add `$os = 'linux' if $uname_a =~ /Cygwin/i;`  treat Cygwin as linux.
++ make
++ make check
 
-  
-Administrator@WIN-N3R5KVBJ1GG /usr/local/local_software/kiwi
+```sh
 $ cat Makefile.local
+## Fortran 95 compiler:
 FORTRANC = gfortran
 
+## Adjust if HDF5 is installed at a custom location
+INCHDF = -I/usr/local/hdf5/include
+LIBHDF = -L/usr/local/hdf5/lib -lhdf5_fortran -lhdf5 -lz -lsz
+
+## Adjust if FFTW is installed at a custom location
+INCFFTW = -I/usr/include
+LIBFFTW = -L/usr -lfftw3f
+
+## Uncomment to disable SAC IO support to not depend on libsacio
+LIBSAC = `sac-config -c -l sacio sac`
+```
+
+edit ~/.bashrc, add following environment variables:
+> `export PATH=$PATH:/usr/local/kiwi/bin`   
+> `export KIWI_HOME=/usr/local/kiwi/share/kiwi`   
+
+
+Install kiwi python modules
+```sh
+# in the kiwi source directory:
+cd python
+sudo python setup.py install
+```
+### Pyrocko
+pyrocko < scipy < numpy,atlas,lapack < nose
+
+#### nose [ok]
+
+```
+ tar xzf nose-1.3.3.tar.gz
+ cd nose-1.3.3/
+ python setup.py build
+ python setup.py install
+```
+
+#### lapack [ _ok_ ]
+
+[ build lib: ok, testing: failed, `cp *.a /usr/local/lib`;  **cygwin already exist in**  `/usr/lib` ]
+
+```sh
+tar zxf lapack-3.5.0.tgz
+cd lapack-3.5.0/
+cp make.inc.example make.inc
+vim Makefile   # edit line: set variable, "lib: blaslib variants lapacklib tmglib"
+make lib       # make : default make all, would test, however fail when test TESTING/xeights  " (core dumped) ./xeigtsts < sed.in" 
+cp librefblas.a libblas.a   && cp *.a /usr/local/lib
+cd .. && rm lapack-3.5.0/
+```
+
+#### atlas
+
+atlas3.10.1.tar.bz2 [install got some problems]
+
+
++ configure need without `-Fa alg`
++ need modify  `CONFIG/src/atlconf_misc.c` add following code in function  `char *GetPathEnvVar(void)`
+
+```sh
+      else if (path[i] == '(')
+      {
+         *p = '\\';
+	 p[1] = '(';
+	 p += 2;
+      }
+      else if (path[i] == ')')
+      {
+         *p = '\\';
+	 p[1] = ')';
+	 p += 2;
+      }
+```
+
+<br/>
+
+```
+ tar jxvf atlas3.10.1.tar.bz2
+ cd ATLAS/
+ # view  INSTALL.txt for instructions
+ mkdir atlas_build_cygwin ; cd atlas_build_cygwin
+ ../configure -b 32 -D c -DPentiumCPS=2494  --with-netlib-lapack-tarfile=/usr/local/local_software/lapack-3.5.0.tgz   --shared   --prefix=/usr/local/ATLAS
+ make              # tune and compile library
+ make check        # perform sanity tests
+ make ptcheck      # checks of threaded code for multiprocessor systems
+ make time         # provide performance summary as % of clock rate
+ make install      # Copy library and include files to other directories
+```
+
+#### NumPy
+
+```
+ tar zxf numpy-1.8.1.tar.gz
+ cd  numpy-1.8.1
+```
+
+#### SciPy
+```
+
+```
+### rdseed [pre-build ok]
+
+```sh
+#download src code from `http://www.iris.edu/forms/rdseed_request.htm`
+tar xzf rdseedv5.3.1.tar.gz
+cd rdseedv5.3.1
+cp rdseed.windows.cygwin_32.exe /usr/local/bin
+```
+
+view `README`
+
+Already five excutables, if you do not want use pre-build version, then recompile it.
+for 32-bit comilation
+
+uncomment the cflags line `#CFLAGS = -O -m32 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE` to force 32-bit compilation.
+
+```
+cp   Makefile makefile_cygwin
+vim  makefile_cygwin         # edit cflags  
+make clean                 
+make -f makefile_cygwin      # faild can not find -lnsl
+```
+
+### GMT
+
+### gmtpy
+view `http://emolch.github.io/gmtpy/install.html`
+
+##### pycdf 
+view `http://pysclint.sourceforge.net/pycdf/INSTALL
+To install, follow these steps.
+
+1-Install the Python `devel` package, holding the python libraries and header files.     
+
+2-Install the netcdf library. Source code is available at:    
+  `http://www.unidata.ucar.edu/software/netcdf` . Binary packages    
+  are available for most popular environments.    
+
+3-Install one of the python Numeric or numarray packages.     
+  Numeric source code is available at: numpy.sourceforge.net,     
+  and numarray source code at `http://sourceforge.net/projects/numpy` .    
+  Binary packages are available for most popular environments.   
+
+4-Uncompress and untar the pycdf tar ball, then cd to the    
+  pycdf-xxx directory just created.   
+
+5-Edit the `setup.py` file, and locate the line reading `USE = ...`.   
+  Set `USE = NUMERIC` to create a Numeric-based version of pycdf.    
+  Set `USE = NUMARRAY` to create a numarray-based version.   
+
+5-If your netcdf library lives in a non-standard directory   
+  (eg not on the standard library search path),   
+  edit the `setup.py` file and locate the line reading:   
+
+    #library_dirs=["non standard path where libs live"],   
+
+  Remove the pound sign to uncomment the line, and enter the non-
+  standard path in quotes between the square brackets. For ex.:
+
+    library_dirs = ["/usr/local/netcdf-3.5.0/lib"],
+
+6-As root, execute the command:
+    python setup.py install
+
+
+### python-progressbar [ok]
+
+```sh
+tar xzf progressbar-2.2.tar.gz
+cd progressbar-2.2/
+python setup.py build
+python setup.py install
+```
+
+example: 
+
+```
+$ python
+>>> from progressbar import ProgressBar
+>>> pbar = ProgressBar(10)
+>>> for i in range(10):
+...     pbar.update(i+1)
+... 
+100% |######################################################################|
+```
+
+### Cheetah  [ok]
+
+模板引擎
+
+```sh
+tar xzf Cheetah-2.4.4.tar.gz
+cd Cheetah-2.4.4/
+python setup.py build
+python setup.py install
+```
+
+### convert [ok]
+
+```sh
+ #download `ImageMagick-i686-pc-cygwin.tar.gz` via `http://www.imagemagick.org/script/binary-releases.php#unix`
+ tar xzf ImageMagick-i686-pc-cygwin.tar.gz
+ cd ImageMagick-6.8.8/
+ # pre-build
+ vim ~/.bashrc  # export MAGICK_HOME="$HOME/ImageMagick-6.8.8" ; export PATH="$MAGICK_HOME/bin:$PATH"
+```
