@@ -17,6 +17,29 @@ package installation on cygwin is realy a great challenge.
  
 <!--end_excerpt-->
 
+Rebase Everything
+Now that no Cygwin services are running, you can rebase your packages. Open a Windows command prompt (by going to the `Run` menu and entering `cmd`). Once there, type or right-click and paste the following commands. Be patient, this&prime;ll take a minute:
+
+```
+\cygwin\bin\dash -c '/usr/bin/rebaseall'
+exit
+```
+
+Under Windows 7 (and possibly Vista), the above may not be able to rebase everything due to permissions. So instead, go to C:\cygwin\bin, and via right-click run the file dash.exe as Administrator, and then at the dash command prompt, type the following commands:
+
+```
+/usr/bin/rebaseall -v
+exit
+```
+
+Rebasing all your packages will take a few minutes but should resolve the forking errors. Unfortunately, this seems to be machine-specific and can&prime;t be done by Cygwin&prime;s upstream.
+
+If you want to execute this in an BATCH installation script, you can use:
+
+```
+D:\cygwin\bin\dash.exe -c '/usr/bin/rebaseall -v'
+```
+
 ## SAC	[ok]
 @ `2014/05/22`, `cygwin`:     
 >install `sac-101.5` on `cygwin`,  source-code copy from ubuntu. 
