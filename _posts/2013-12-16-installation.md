@@ -21,7 +21,7 @@ package installation on cygwin is realy a great challenge.
 @ `2014/05/22`, `cygwin`:     
 >install `sac-101.5` on `cygwin`,  source-code copy from ubuntu. 
 
-```bash
+```sh
 # check README for instruction
 cd /usr/local/local_software/sac-101.5
 make
@@ -43,8 +43,9 @@ For bash, edit ~/.bashrc adding the lines
 > `h5cc -showconfig` to check configuration or view `your_hdf5_install_path/lib/libhdf5.settings`, `README.txt`   
 
 Dependencies 
-+ zlib : exist 
-+ Szip : download from `http://www.hdfgroup.org/doc_resource/SZIP/`,  `./configure --prefix=/usr/local`, `make`,`make install`
+
++ zlib : exist     
++ Szip : download from `http://www.hdfgroup.org/doc_resource/SZIP/`,  `./configure --prefix=/usr/local`, `make`,`make install`   
 
 Install HDF5 on Cygwin
 
@@ -82,9 +83,9 @@ Install HDF5 on Cygwin
 >download `libmseed-2.12.tar.gz` from `https://seiscode.iris.washington.edu/projects/libmseed/files`      
 >extract to `/usr/local/local_software/libmseed-2.12`      
 
-```bash
+```sh
   # check `INSTALL` and `Makefile` for instruction
-  make gcc                               # `make` default with `cc`
+  make gcc                               #  default with "cc"
   cp libmseed.a /usr/local/lib/
   cp *.h /usr/local/include/
 ```
@@ -136,11 +137,13 @@ cd python
 sudo python setup.py install
 ```
 ### Pyrocko
-pyrocko < scipy < numpy,atlas,lapack < nose
+pyrocko < scipy < numpy,atlas,lapack < ... 
 
 #### nose [ok]
+@ `2014/05/22`, `cygwin`:     
+only for test numpy, not for use it. see `INSTALL.txt` in numpy-1.8.1
 
-```
+```sh
  tar xzf nose-1.3.3.tar.gz
  cd nose-1.3.3/
  python setup.py build
@@ -148,7 +151,7 @@ pyrocko < scipy < numpy,atlas,lapack < nose
 ```
 
 #### lapack [ _ok_ ]
-
+@ `2014/05/22`, `cygwin`:     
 [ build lib: ok, testing: failed, `cp *.a /usr/local/lib`;  **cygwin already exist in**  `/usr/lib` ]
 
 ```sh
@@ -162,14 +165,14 @@ cd .. && rm lapack-3.5.0/
 ```
 
 #### atlas
-
+@ `2014/05/24`, `cygwin`:     
 atlas3.10.1.tar.bz2 [install got some problems]
 
 
 + configure need without `-Fa alg`
 + need modify  `CONFIG/src/atlconf_misc.c` add following code in function  `char *GetPathEnvVar(void)`
 
-```sh
+```c
       else if (path[i] == '(')
       {
          *p = '\\';
@@ -186,30 +189,62 @@ atlas3.10.1.tar.bz2 [install got some problems]
 
 <br/>
 
-```
+```sh
  tar jxvf atlas3.10.1.tar.bz2
  cd ATLAS/
  # view  INSTALL.txt for instructions
  mkdir atlas_build_cygwin ; cd atlas_build_cygwin
  ../configure -b 32 -D c -DPentiumCPS=2494  --with-netlib-lapack-tarfile=/usr/local/local_software/lapack-3.5.0.tgz   --shared   --prefix=/usr/local/ATLAS
  make              # tune and compile library
- make check        # perform sanity tests
+ make check        # perform sanity tests,
  make ptcheck      # checks of threaded code for multiprocessor systems
  make time         # provide performance summary as % of clock rate
- make install      # Copy library and include files to other directories
+ make install      # Copy library and include files to other directories :: 
+                   #   make install:  configure with shared, lib***.a :ok lib***.so failed. 
 ```
 
 #### NumPy
+@ `2014/05/24`, `cygwin`:
 
-```
+view `site.cfg.example`, `INSTALL.txt`
+Prerequisites:  []: means optional, 
+ ATLAS (or OpenBLAS, or MKL), [ FFTW ( or djbfft) ], [ UMFPACK ] ...
+
+```sh
  tar zxf numpy-1.8.1.tar.gz
  cd  numpy-1.8.1
+ # view INSTALL.txt for instructions
+ # view site.cfg    for instructions
+ cp site.cfg.example site.cfg
+ vim site.cfg   # Edit site.cfg for cumstom setting
+ python setup.py build --fcompiler=gnu95    
+ python setup.py install
 ```
 
-#### SciPy
+
+$cat site.cfg
+
+```python
+[atlas]
+libraries = lapack,f77blas,cblas,atlas
+library_dirs = /usr/local/ATLAS/lib
+include_dirs = /usr/local/ATLAS/include
+[amd]
+amd_libs = amd
+[umfpack]
+umfpack_libs = umfpack
+[fftw]
+libraries = fftw3
 ```
 
+#### scipy
+
+```sh
+ python setup.py build --fcompiler=gnu95    
+ python setup.py install  # address space needed by 'lapack_lite.dll' (0x610000) is already occupied
 ```
+cygwin ash rebase
+
 ### rdseed [pre-build ok]
 
 ```sh
@@ -226,7 +261,7 @@ for 32-bit comilation
 
 uncomment the cflags line `#CFLAGS = -O -m32 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE` to force 32-bit compilation.
 
-```
+```sh
 cp   Makefile makefile_cygwin
 vim  makefile_cygwin         # edit cflags  
 make clean                 
@@ -286,7 +321,7 @@ python setup.py install
 
 example: 
 
-```
+```python
 $ python
 >>> from progressbar import ProgressBar
 >>> pbar = ProgressBar(10)
@@ -315,4 +350,20 @@ python setup.py install
  cd ImageMagick-6.8.8/
  # pre-build
  vim ~/.bashrc  # export MAGICK_HOME="$HOME/ImageMagick-6.8.8" ; export PATH="$MAGICK_HOME/bin:$PATH"
+```
+
+
+### matplotlib [ok]
+
+@ `2014/05/24`, `cygwin`:     
+
+lib/matplotlib/tri/_tri.cpp:2180:28: 4mNs#:expected unqualified-id before numeric constant    
+>There is a variable called "_C" defined in lib/matplotlib/tri/_tri.h on line 821 and invoked in tri.cpp on lines 2180 and 2186. For some reason gcc doesn&prime;t like this (is it a reserved word in some architecture?). I just renamed the variable to "_Co" in both tri.h and tri.cpp, and the compilation finished successfully.
+
+/usr/share/python2.7/CXX/cxxsupport.cxx:40:38: error: Src/Python2/cxxsupport.cxx: No such file or directory
+> cp CXX/Python2 src/Python2 -r
+
+```sh
+python setup.py build
+python setup.py install 
 ```
