@@ -14,11 +14,14 @@ htmlhead:
 
 most problems caused by manual install on cygwin platform.
 package installation on cygwin is realy a great challenge. 
- 
+
 <!--end_excerpt-->
 
-Rebase Everything
-Now that no Cygwin services are running, you can rebase your packages. Open a Windows command prompt (by going to the `Run` menu and entering `cmd`). Once there, type or right-click and paste the following commands. Be patient, this&prime;ll take a minute:
+first of all we come to one of the most common problem always get after updating or installing packages.
+
+Sometimes, after updating or installing packages, you&prime;ll start to get strange errors related to "fork()" or .dll loading. These errors are usually solved by rebasing your packages.
+
+Now that `no Cygwin services are running`, you can rebase your packages. Open a Windows command prompt (by going to the `Run` menu and entering `cmd`). Once there, type or right-click and paste the following commands. Be patient, this&prime;ll take a minute:
 
 ```
 \cygwin\bin\dash -c '/usr/bin/rebaseall'
@@ -39,6 +42,9 @@ If you want to execute this in an BATCH installation script, you can use:
 ```
 D:\cygwin\bin\dash.exe -c '/usr/bin/rebaseall -v'
 ```
+
+---
+
 
 ## SAC	[ok]
 @ `2014/05/22`, `cygwin`:     
@@ -390,3 +396,8 @@ lib/matplotlib/tri/_tri.cpp:2180:28: 4mNs#:expected unqualified-id before numeri
 python setup.py build
 python setup.py install 
 ```
+
+## ruby-2.1.2
+ruby-2.1.2: troubleshooting
+vim ruby-2.1.2/ext/digest/md5/Makefile /ruby-2.1.2/ext/digest/sha1/Makefile /ruby-2.1.2/ext/digest/sha1/Makefile
+add cflag `-DHAVE_OPENSSL_MD5_H -DSHA2_USE_OPENSSL`

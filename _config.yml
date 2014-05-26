@@ -10,7 +10,9 @@ safe: false
 exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md","documents"]
 #auto: true
 paginate: 10
-pygments: true
+#highlighter : rouge
+highlighter : pygments
+#pygments: true
 
 #markdown: kramdown
 #markdown: redcarpet

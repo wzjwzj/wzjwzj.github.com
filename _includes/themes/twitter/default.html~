@@ -193,13 +193,14 @@
 {% include widgets/toc %}
 <script type="text/javascript">
   $(document).ready(function() {
-    {% comment %}{% endcomment %}
-    $("table.highlighttable").wrap('<div style="overflow:auto;border: 1px solid rgba(0,0,0,0.15);border-radius: 4px;"></div>');
-    {% if page.syntaxhighlighter %}
+    {% comment %}
+        $("table.highlighttable").wrap('<div style="overflow:auto;border: 1px solid rgba(0,0,0,0.15);border-radius: 4px;"></div>');
+        {% if page.syntaxhighlighter %}
           $('section>pre>code').unwrap();
           SyntaxHighlighter.config.tagName="code";	
           SyntaxHighlighter.all();
-    {% endif %}
+        {% endif %}
+    {% endcomment %}
     $("#icon-resize").click(function(){
       if($(this).hasClass("fa-expand")){
          $(this).removeClass("fa-expand");
@@ -215,5 +216,9 @@
 </script>
 {% include JB/analytics %}
 <script src="{{ ASSET_PATH }}/js/hc.js" type="text/javascript"></script>
+<!--script src="http://dict.cn/hc/" type="text/javascript"></script-->
+<!--script type="text/javascript">
+dictInit();
+</script-->
 </body>
 </html>
