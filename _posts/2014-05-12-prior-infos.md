@@ -25,10 +25,10 @@ $$</div>
 
 
 <div  style="width:100% ; height:174px;overflow-x:auto;overflow-y:hidden">
- <div style="width:430px; height:154px;margin:0 auto;">
- <div style="width:330px; height:75px;float:left;">$$ m(\xi)=\int_t \sum_{k=1}^K \sum_{l=1}^L a_{qkl}X_k\left(\xi\right)T_l\left(t-\tau_k\right)~dt \iff $$ </div> 
+ <div style="width:460px; height:154px;margin:0 auto;">
+ <div style="width:360px; height:75px;float:left;">$$ m(\xi)=\int_t \sum_{k=1}^K \sum_{l=1}^L a_{qkl}X_k\left(\xi\right)T_l\left(t-\tau_k\right)~dt \iff $$ </div> 
  <div style="width:100px; height:75px;float:right;background-image:url(/images/figures/2014041604.jpg);-moz-background-size:100% 100%;background-size:100% 100%;"></div>
- <div style="width:330px; height:75px;float:left;">$$ m(t)=\int_\Sigma \sum_{k=1}^K \sum_{l=1}^L a_{qkl}X_k\left(\xi\right)T_l\left(t-\tau_k\right)~d\xi \iff $$ </div> 
+ <div style="width:360px; height:75px;float:left;">$$ m(t)=\int_\Sigma \sum_{k=1}^K \sum_{l=1}^L a_{qkl}X_k\left(\xi\right)T_l\left(t-\tau_k\right)~d\xi \iff $$ </div> 
  <div style="width:100px; height:75px;float:right;background-image:url(/images/figures/2014041605.jpg);-moz-background-size:100% 100%;background-size:100% 100%;"></div>
  </div>
 </div>
@@ -70,7 +70,7 @@ $$</div>
    \dfrac{\partial^2 f_2}{\partial \xi_2\,\partial \xi_1} & \dfrac{\partial^2 f_2}{\partial \xi_2^2}  \\
  \end{bmatrix} = \mathbf{0} \\
  ~ \\
- \textit{suppose}\, f_1,\,f_2\,\textit{independent, so we can quantify as follows} \\
+ \textit{suppose}\, f_1,\,f_2\,\textit{independent, so we can quantify as follows(not unique)} \\
  ~ \\
 \iff  \left[
     \left(\dfrac{\partial^2 f_j}{\partial \xi_1^2}\right)^2  + \left(\dfrac{\partial^2 f_j}{\partial \xi_1\,\partial \xi_2}\right)^2  +
