@@ -4,17 +4,17 @@
 <!--FONT class='wdnx' ><B>惟德乃兴</B></FONT-->
 
 <form  method="get" action="/gsearch.html">
-  <input  type="text"   class="search-query" name="q"   placeholder="谷歌引擎搜索"></input>   
+  <input  type="text"   class="search-query" name="q"   placeholder="谷歌引擎搜索"/>   
   <!--button type="submit" class="search-button" ><i class="icon-search"></i></button-->
 </form>
 
 <form  method="get" action="/search.html">
-  <input  type="text"   class="search-query" name="q"   placeholder="站内正则搜索"></input>   
+  <input  type="text"   class="search-query" name="q"   placeholder="站内正则搜索"/>   
   <!--button type="submit" class="search-button" ><i class="icon-search"></i></button-->
 </form>
 
 <form  method="get" action="/dict.html">
-  <input  type="text"   class="search-query" name="q"   placeholder="dict.cn 海词"></input>   
+  <input  type="text"   class="search-query" name="q"   placeholder="dict.cn 海词"/>   
   <!--button type="submit" class="search-button" ><i class="icon-search"></i></button-->
 </form>
 
