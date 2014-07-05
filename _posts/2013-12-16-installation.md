@@ -44,6 +44,9 @@ If you want to execute this in an BATCH installation script, you can use:
 D:\cygwin\bin\dash.exe -c '/usr/bin/rebaseall -v'
 ```
 
+*ruby rebase*
+>run rubyrebase directly in bash 
+
 ---
 
 
@@ -108,6 +111,10 @@ Install HDF5 on Cygwin
   make check             # make check > "make_check_out_info"
   make install           # make install > "make_instal_out_info"
 ```
+
+@ `2014/07/05`, `cygwin`:  
+>update cygwin gcc to 4.8.3
+>now use prebuild hdf5-1.8.13-cygwin32-static.tar.gz which by gcc-4.8.2
 
 ## libmseed [ok]
 @ `2014/05/22`, `cygwin`:          
@@ -459,7 +466,7 @@ YY = $(FC) $(OPTS0) -o $@ $(MODLIB) $@.$(SUF) $(OPTLIB) $(LIBS)
 
 ```
 
-```
+```brush: bash
 vim make.inc
 cd SRC
 make single_double_complex_dcomplex
