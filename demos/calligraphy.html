@@ -1,11 +1,10 @@
+---
+description: "calligraphy"
+---
 <!doctype html>
 <html>
 <head>
 <meta charset="UTF-8"/>
-<!--link   rel="stylesheet"      href="http://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
-<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>	
-<script type="text/javascript" src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
-<script type="text/javascript" src="../../lib.turn.min.js"></script-->
 
 <link   rel="stylesheet"      href="/assets/jquery-ui/css/smoothness/jquery-ui-1.10.4.custom.min.css">
 <script type="text/javascript" src="/assets/themes/twitter/js/jquery-1.10.1.min.js"></script>
@@ -114,16 +113,15 @@ body{
 	// Sample using dynamic pages with turn.js
 
 	var numberOfPages = 188; 
-
+	
 	function dayOfYear()
      	{
       	 	var firstJan = Math.floor((new Date().setFullYear(new Date().getFullYear(),0,1))/86400000);
        		var today    = Math.ceil((new Date().getTime())/86400000);
        		return(today-firstJan);
 	}
-
+	
 	var doy=dayOfYear();
-
 
 	// Adds the pages that the book will need
 	function addPage(page, book) {
@@ -137,9 +135,7 @@ body{
 			// Let's assum that the data is comming from the server and the request takes 1s.
 			setTimeout(function(){
 				if(page>2 && page<numberOfPages-2 ){
-				//element.html('<div class="data">Data for page '+(page-2)+'</div>');
-				//element.html('<div class="content" style="background-image:url(../../../images/meiriyizi_img_'+Math.floor((page-3)/2)+'.jpg); '+((page>184) ?  'background-size:100% 100%;':' ') +((page%2==1) ? ' ' : 'background-position-x: -100%;')+'">'+((page-2)*2-1)+'-'+(page-2)*2+'</div>');
-				element.html('<div class="content" style="background-image:url(https://dl.dropboxusercontent.com/u/176212214/meiriyizi/meiriyizi_img_'+Math.floor((page-3)/2)+'.jpg); '+((page>184) ?  'background-size:100% 100%;':' ') +((page%2==1) ? ' ' : 'background-position-x: -100%;')+'">'+((page-2)*2-1)+'-'+(page-2)*2+'</div>');
+				element.html('<div class="content" style="background-image:url({{ site.dropbox }}/meiriyizi/meiriyizi_img_'+Math.floor((page-3)/2)+'.jpg); '+((page>184) ?  'background-size:100% 100%;':' ') +((page%2==1) ? ' ' : 'background-position-x: -100%;')+'">'+((page-2)*2-1)+'-'+(page-2)*2+'</div>');
 				}else if(page==numberOfPages-1)
 					element.html('<div class="data"> bye </div>');
 			}, 1000);

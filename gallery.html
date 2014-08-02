@@ -4,19 +4,17 @@ title: "孤月谁明相册"
 description: "galleries specify gallery, with parm dir name viewer"
 group: navigation
 viewer : TiltViewer
-dropbox: https://dl.dropboxusercontent.com/u/176212214/
 galleries : [
     ['golm',    'golm小调',  '3'],
     ['golm',    'golm',  '4']
 ]
 ---
 
-
 <div class="iw_wrapper">
 <ul class="iw_thumbs" id="iw_thumbs">
 {% for gallery in page.galleries %}
 <li><a href="/gallery/{{gallery[0]}}/?q={{gallery[2]}}">
-<img src="{{page.dropbox}}/gallery/{{gallery[0]}}/thumbs/{{gallery[2]}}.jpg"  alt="{{gallery[1]}}"/>
+<img src="{{site.dropbox}}/gallery/{{gallery[0]}}/thumbs/{{gallery[2]}}.jpg"  alt="{{gallery[1]}}"/>
 <div><h2>{{gallery[1]}}</h2></div>
 </a></li>
 {% endfor %}
